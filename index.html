@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3e00ef2ebf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container"> 
+        <nav>
+            <img src="images/Gouthumk.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#miniprojects">Mini Projects</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Aspiring Data Scientist / Data Analyst</p>
+            <h1>Hi, I'm <span>Gouthum</span><br>Kharvi From India</h1>
+        </div>  
+    </div>
+</div>
+<!-- -----------about---------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/dp.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I am a dedicated Data Scientist and Analyst with a robust foundation in machine learning, data visualization, and statistical analysis. Currently aspiring to leverage my technical expertise in data science, I have honed my skills through various roles, including my recent position as a Technical Support Engineer, where I developed strong problem-solving abilities and client interaction skills.
+
+                    My technical proficiency includes programming languages such as Python and R, alongside expertise in SQL for database management. I am skilled in data visualization tools like Tableau and Power BI, enabling me to create impactful dashboards that drive business decisions. Additionally, I have experience with machine learning techniques, deep learning frameworks, and natural language processing (NLP) for analyzing complex datasets.
+                    
+                    I have successfully completed a Data Science Bootcamp from UpGrad, where I gained hands-on experience in developing predictive models and conducting in-depth data analyses. My commitment to continuous learning is evident in my participation in hackathons and collaborative projects, where I thrive in team environments.
+                    
+                    With a passion for uncovering insights from data and a keen interest in big data technologies, I am eager to contribute to innovative data-driven solutions. Let’s connect to explore how I can bring value to your team!
+                </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('certificates')">Certificates</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <ul>
+                            <ul>
+                                <li><span>Data Analysis</span><br>Using Excel for insights and data manipulation.</li>
+                                <li><span>SQL</span><br>Database management and querying for structured data analysis.</li>
+                                <li><span>Data Visualization</span><br>Creating dashboards with Power BI for effective storytelling.</li>
+                                <li><span>Python</span><br>Data science and analysis using libraries like Pandas and NumPy.</li>
+                                <li><span>Tableau</span><br>Interactive data visualization for business intelligence.</li>
+                                <li><span>Machine Learning</span><br>Developing and deploying predictive models to derive actionable insights from data.</li>
+                                <li><span>Deep Learning</span><br>Building complex neural networks for advanced pattern recognition and image processing.</li>
+                                <li><span>NLP</span><br>Natural Language Processing techniques for analyzing and interpreting textual data.</li>
+                                <li><span>AI</span><br>Utilizing algorithms to enhance decision-making processes and automate tasks.</li>
+                                <li><span>Cloud Computing</span><br>Utilizing AWS for scalable data solutions and storage.</li>
+                                <li><span>NoSQL</span><br>Working with non-relational databases for flexible data storage solutions.</li>
+                                <li><span>MLOps</span><br>Streamlining the deployment and monitoring of machine learning models for continuous integration.</li>
+                                <li><span>Data Cleaning</span><br>Preparing and preprocessing data to ensure accuracy and quality for analysis.</li>
+                                <li><span>Statistical Analysis</span><br>Applying statistical methods to interpret data trends and patterns.</li>
+                                <li><span>Feature Engineering</span><br>Creating and selecting the right features to improve model performance.</li>
+                                <li><span>Big Data Technologies</span><br>Utilizing tools like Hadoop and Spark for processing large datasets.</li>
+                                <li><span>Time Series Analysis</span><br>Analyzing data points collected or recorded at specific time intervals for forecasting.</li>
+                                
+                            </ul>
+                            
+                        </ul>
+                        
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Current</span><br>Aspiring Data Scientist / Data Analyst</li>
+                        <li><span>2021 - 2023</span><br>Technical Support Engineer at GlowTouch Technologies</li>
+                        <li><span>2020 - 2021</span><br>EPUB Operator at Bit9 Business Solutions Pvt LTD</li>
+                        <li><span>2019 - 2019</span><br>Claims Adjudicator at HGS - Hinduja Global Solutions</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2024</span><br>Data Science from Upgrad Bangalore.</li>
+                        <li><span>2019</span><br>BCA from Bhandarkars arts and science college Kundapura.</li>
+                        <li><span>2016</span><br>PUC from SVPU college Gangolli.</li>
+                        <li><span>2014</span><br>SSLC from stella maris english medium high school Gangolli.</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="certificates">
+                    <ul>
+                        <li><span>Certificate</span><br>Data Science Bootcamp Certificate from UpGrad</li>
+                        <li><span>Certificate</span><br>Hackathon Certificate from UpGrad</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="miniprojects">
+    <div class="container">
+        <h1 class="sub-title">My mini Projects</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/nft (1).jpg">
+                <div class="layer">
+                    <h3>NFT-Market-Trends-SQL-Analysis-of-Cryptopunks-Transactions</h3>
+                    <p>This project analyzes Cryptopunks NFT sales from January 2018 to December 2021 using SQL. We explore total sales, top transactions, average prices, and daily trends, including buyer-specific insights and price distributions. The goal is to uncover valuable insights into the NFT market dynamics.</p>
+                    <a href="https://github.com/GouthumKharvi/NFT-Market-Trends-SQL-Analysis-of-Cryptopunks-Transactions" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/st1 (5).jpg">
+                <div class="layer">
+                    <h3>Counting-Claims-A-Statistical-Deep-Dive-into-Dental-Reimbursements</h3>
+                    <p>This project analyzes a random sample of dental claims to estimate average reimbursements for 2021. Confidence intervals are constructed at 90%, 95%, and 99% confidence levels using Excel. The analysis blends statistical rigor with practical healthcare finance insights, revealing how data informs reimbursement understanding.</p>
+                    <a href="https://github.com/GouthumKharvi/Counting-Claims-A-Statistical-Deep-Dive-into-Dental-Reimbursements" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/stt1 (1).jpg">
+                <div class="layer">
+                    <h3>Statistical-Analysis-of-Factors-Influencing-House-Prices.</h3>
+                    <p>This study employs multiple regression analysis to evaluate the impact of price per square foot, number of bathrooms, and floor size on the price of high-floor, spacious 2-bedroom houses, testing the null hypothesis that these factors have no significant effect.</p>
+                    <a href="https://github.com/GouthumKharvi/-Statistical-Analysis-of-Factors-Influencing-House-Prices" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/Healthcaree (1).png">
+                <div class="layer">
+                    <h3>Healthcare-summary-report-Tableu</h3>
+                    <p>This project analyzes patient health metrics from a Healthcare dataset, focusing on diabetes, blood pressure, and BMI. Two interactive dashboards highlight diabetic and non-diabetic distributions and summarize patient data by blood pressure and BMI, culminating in a comprehensive story of key insights and visualizations.</p>
+                    <a href="https://github.com/GouthumKharvi/Healthcare-summary-report-Tableu-" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/superstone (1).png">
+                <div class="layer">
+                    <h3>Superstore-Sales-Performance-Dashboard-Tableu</h3>
+                    <p>This project provides an interactive Tableau dashboard to analyze Superstore’s sales performance from 2018 to 2021. The dashboard allows users to filter data by date, segment, ship mode, and state, providing a flexible view into various sales metrics and trends.</p>
+                    <a href="https://github.com/GouthumKharvi/Superstore-Sales-Performance-Dashboard-Tableu-" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- ----------Portfolio------------ -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My projects</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/ccard (1).png">
+                <div class="layer">
+                    <h3>Machine Learning Projects</h3>
+                    <p>A credit card fraud detection project leveraging machine learning. It encompasses data exploration, cleaning, balancing (SMOTE), feature engineering, and model evaluation. Various models, including Logistic Regression, XGBoost, and Decision Tree were tested, with the final model achieving impressive ROC-AUC scores of 0.99 (train) and 0.97 (test).</p>
+                    <a href="https://github.com/GouthumKharvi/Credit-Card-Capstone-" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/Ecom1.png">
+                <div class="layer">
+                    <h3>Ecommerce Product Categorization</h3>
+                    <p>A project focused on e-commerce product categorization by description, utilizing NLP along with Machine Learning and Deep Learning, implemented with PyTorch.</p>
+                    <a href="https://github.com/GouthumKharvi/Product-Categorization" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/NLP (1).jpg">
+                <div class="layer">
+                    <h3>Duplicate Detection using Random Forest and Bag of Words (BoW)</h3>
+                    <p>This project addresses the problem of identifying duplicate questions using NLP. It combines Bag of Words text vectorization with custom feature engineering to create a powerful feature set. A RandomForestClassifier is trained on these features to predict question duplication, with the model deployed via Streamlit on Heroku.</p>
+                    <a href="https://github.com/GouthumKharvi/Duplicate_Question_Pair-NLP-" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/Blinkitt (1).png">
+                <div class="layer">
+                    <h3>Comprehensive-Sales-Analysis-of-Blinkit-Using-Power-BI</h3>
+                    <p>This project focuses on an in-depth analysis of Blinkit's sales data to explore performance metrics, customer satisfaction, and inventory management using Power BI. By examining various KPIs, the analysis seeks to uncover actionable insights and highlight opportunities for business improvement.</p>
+                    <a href="https://github.com/GouthumKharvi/Comprehensive-Sales-Analysis-of-Blinkit-Using-Power-BI" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                
+            </div>
+            <div class="work">
+                <img src="images/HR (1).jpeg">
+                <div class="layer">
+                    <h3>HR-Insights-and-Employee-Data-Dashboard</h3>
+                    <p>This Tableau dashboard provides HR managers with a clear view of workforce data, including key metrics, demographics, and income analysis. It tracks hires, terminations, department distributions, and salary variations, with detailed employee records and filters for in-depth analysis.</p>
+                    <a href="https://github.com/GouthumKharvi/HR-Insights-and-Employee-Data-Dashboard?tab=readme-ov-file#hr-insights-and-employee-data-dashboard" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/sqll (1).png">
+                <div class="layer">
+                    <h3>Car-Sales-Database-Management-System-using-SQL</h3>
+                    <p>The `GlobalCarDetails` database structures car sales data for effective analysis. It organizes information on manufacturers, models, sales, and regions, enabling insights into sales trends, pricing, and manufacturer performance across different markets using SQL queries and sample datasets.</p>
+                    <a href="https://github.com/GouthumKharvi/Car-Sales-Database-Management-System-using-SQL" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/excel (1).jpg">
+                <div class="layer">
+                    <h3>Virat Kohli's Complete T20 Performance Analysis (2010-2024)using Excel.</h3>
+                    <p>The `GlobalCarDetails` database structures car sales data for effective analysis. It organizes information on manufacturers, models, sales, and regions, enabling insights into sales trends, pricing, and manufacturer performance across different markets using SQL queries and sample datasets.</p>
+                    <a href="https://github.com/GouthumKharvi/ViratKohli_T20_Stats_2010-2024" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- ----------contact------------- -->
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> gouthumkharvi1899@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> 9071101929</p>
+                
+                <div class="social-icons">
+                    <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                     </a>
+                    <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                    <a href="https://github.com/GouthumKharvi" target="_blank" aria-label="github">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gouthum-kharvi-2366a6219" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <a href="images/GouthumK(DataScientist).pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+
+</script>
+<script>
+    const scriptURL = '< add you own link here >' // add your own app script link here
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
