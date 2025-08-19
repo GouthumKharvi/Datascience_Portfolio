@@ -1,3 +1,5 @@
+Style.css
+
 *{
     margin: 0;
     padding: 0;
@@ -181,58 +183,6 @@ nav ul li a:hover::after{
 #portfolio{
     padding: 50px 0;
 }
-
-/* Portfolio container with navigation */
-.portfolio-container {
-    position: relative;
-    margin-top: 50px;
-}
-
-/* Horizontal scrolling container */
-.work-list-horizontal {
-    display: flex;
-    gap: 40px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 20px 0;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-}
-
-.work-list-horizontal::-webkit-scrollbar {
-    display: none; /* WebKit */
-}
-
-/* Navigation arrows */
-.scroll-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 0, 79, 0.8);
-    color: white;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18px;
-    z-index: 10;
-    transition: all 0.3s ease;
-}
-
-.scroll-btn:hover {
-    background: #ff004f;
-    transform: translateY(-50%) scale(1.1);
-}
-
-.scroll-left {
-    left: -25px;
-}
-
-.scroll-right {
-    right: -25px;
-}
-
 .work-list{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -243,8 +193,6 @@ nav ul li a:hover::after{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    min-width: 300px; /* Fixed width for horizontal scroll */
-    flex-shrink: 0; /* Prevent shrinking */
 }
 .work img{
     width: 100%;
@@ -438,16 +386,6 @@ nav .fas{
     }
     .copyright{
         font-size: 14px;
-    }
-    
-    /* Hide scroll buttons on mobile */
-    .scroll-btn {
-        display: none;
-    }
-    
-    /* Adjust work cards for mobile */
-    .work {
-        min-width: 250px;
     }
 }
 #msg{
