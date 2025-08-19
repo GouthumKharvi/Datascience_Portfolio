@@ -155,10 +155,6 @@
             </div>
             
             </div>
-            </div>
-            <button class="scroll-btn scroll-right" onclick="scrollProjects('right')">
-                <i class="fas fa-chevron-right"></i>
-            </button>
         </div>
         
     </div>
@@ -168,14 +164,10 @@
 <div id="portfolio">
     <div class="container">
         <h1 class="sub-title">My projects</h1>
-        <div class="portfolio-container">
-            <button class="scroll-btn scroll-left" onclick="scrollProjects('left')">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <div class="work-list-horizontal" id="projectsContainer">
+        <div class="work-list">
             <!-- AI/ML Internship Projects -->
             <div class="work">
-                <img src="images/ai-translator.jpg">
+                <img src="images/aitranslator.jpeg">
                 <div class="layer">
                     <h3>AI Global Translator</h3>
                     <p>Advanced AI-powered translation system developed during internship at Pinnacle Labs. Supports multiple languages with high accuracy using state-of-the-art NLP techniques and transformer models.</p>
@@ -423,18 +415,6 @@
         }
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
-    }
-
-    // Projects scrolling function
-    function scrollProjects(direction) {
-        const container = document.getElementById('projectsContainer');
-        const scrollAmount = 350; // Width of one project card + gap
-        
-        if (direction === 'left') {
-            container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        } else {
-            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        }
     }
 </script>
 
