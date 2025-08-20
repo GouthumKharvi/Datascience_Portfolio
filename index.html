@@ -385,7 +385,7 @@
         <div class="work-list">
             
             <div class="certificate-item" onclick="openCertificate('cert1')">
-                <img src="images/Upgrad Datascience Certifictae (1).pdf" alt="Data Science Bootcamp Certificate">
+                <img src="images/upgrad_certificate.jpg" alt="Data Science Bootcamp Certificate">
                 <div class="certificate-overlay">
                     <h3>Data Science Bootcamp</h3>
                     <p>upGrad - August 2024</p>
@@ -396,7 +396,7 @@
             </div>
 
             <div class="certificate-item" onclick="openCertificate('cert2')">
-                <img src="images/AI for All From Basics to GenAI Practice_AI for All From Basics to GenAI Practice  Course Completion Certificate.pdf" alt="AI for All Certificate">
+                <img src="images/nvidia_certificate.jpg" alt="AI for All Certificate">
                 <div class="certificate-overlay">
                     <h3>AI for All: From Basics to GenAI Practice</h3>
                     <p>NVIDIA - July 2025</p>
@@ -407,7 +407,7 @@
             </div>
 
             <div class="certificate-item" onclick="openCertificate('cert3')">
-                <img src="images/certificate (1).pdf" alt="TATA Job Simulation Certificate">
+                <img src="images/tata_certificate.jpg" alt="TATA Job Simulation Certificate">
                 <div class="certificate-overlay">
                     <h3>GenAI Powered Data Analytics Job Simulation</h3>
                     <p>TATA over Forage - August 2025</p>
@@ -418,7 +418,18 @@
             </div>
 
             <div class="certificate-item" onclick="openCertificate('cert4')">
-                <img src="images/GOUTHUM KHARVI Internship Certificate (1).pdf" alt="Data Science Internship Certificate">
+                <img src="images/future_interns_certificate.jpg" alt="Data Science Internship Certificate">
+                <div class="certificate-overlay">
+                    <h3>Data Science & Analytics Internship</h3>
+                    <p>Future Interns - July 2025</p>
+                    <span class="view-btn">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="certificate-item" onclick="openCertificate('cert5')">
+                <img src="images/future_interns_certificate_lor.jpg" alt="Data Science Internship Certificate LOR">
                 <div class="certificate-overlay">
                     <h3>Data Science & Analytics Internship</h3>
                     <p>Future Interns - July 2025</p>
@@ -506,8 +517,42 @@
         .catch(error => console.error('Error!', error.message))
     })
 </script>
+
+<script>
+// Certificate images data
+const certificateImages = {
+    'cert1': 'images/upgrad_certificate.jpg',
+    'cert2': 'images/nvidia_certificate.jpg', 
+    'cert3': 'images/tata_certificate.jpg',
+    'cert4': 'images/future_interns_certificate.jpg'
+    'cert5': 'images/future_interns_certificate.jpg'
+};
+
+function openCertificate(certId) {
+    const modal = document.getElementById('certificateModal');
+    const modalImg = document.getElementById('modalCertificateImage');
+    
+    modalImg.src = certificateImages[certId];
+    modal.style.display = 'block';
+}
+
+function closeCertificate() {
+    const modal = document.getElementById('certificateModal');
+    modal.style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('certificateModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+</script>
+
 </body>
 </html>
+
 
 
 
