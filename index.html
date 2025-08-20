@@ -9,25 +9,25 @@
     <script src="https://kit.fontawesome.com/3e00ef2ebf.js" crossorigin="anonymous"></script>
     <style>
         /* ✅ Fix for portfolio projects uniform sizing */
-        #portfolio .work-list {
+        #portfolio .work-list, #miniprojects .work-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             grid-gap: 20px;
         }
-        #portfolio .work {
+        #portfolio .work, #miniprojects .work {
             position: relative;
             overflow: hidden;
             border-radius: 10px;
             width: 100%;
             height: 250px; /* uniform container height */
         }
-        #portfolio .work img {
+        #portfolio .work img, #miniprojects .work img {
             width: 100%;
             height: 100%;
             object-fit: cover; /* ensures image fits nicely */
             display: block;
         }
-        #portfolio .layer {
+        #portfolio .layer, #miniprojects .layer {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -40,7 +40,7 @@
             padding: 20px;
             overflow-y: auto;
         }
-        #portfolio .work:hover .layer {
+        #portfolio .work:hover .layer, #miniprojects .work:hover .layer {
             opacity: 1;
         }
     </style>
@@ -81,7 +81,7 @@
                     
                     I have successfully completed a Data Science Bootcamp from UpGrad, where I gained hands-on experience in developing predictive models and conducting in-depth data analyses. My commitment to continuous learning is evident in my participation in hackathons and collaborative projects, where I thrive in team environments.
                     
-                    With a passion for uncovering insights from data and a keen interest in big data technologies, I am eager to contribute to innovative data-driven solutions. Let’s connect to explore how I can bring value to your team!
+                    With a passion for uncovering insights from data and a keen interest in big data technologies, I am eager to contribute to innovative data-driven solutions. Let's connect to explore how I can bring value to your team!
                 </p>
                 <div class="tab-titles">
                     <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -181,50 +181,7 @@
                     </a>
                 </div>
             </div>
-            <div class="work">
-                <img src="images/NLP (1).jpg">
-                <div class="layer">
-                    <h3>Duplicate Detection using Random Forest and Bag of Words (BoW)</h3>
-                    <p>This project addresses the problem of identifying duplicate questions using NLP. It combines Bag of Words text vectorization with custom feature engineering to create a powerful feature set. A RandomForestClassifier is trained on these features to predict question duplication, with the model deployed via Streamlit on Heroku.</p>
-                    <a href="https://github.com/GouthumKharvi/Duplicate_Question_Pair-NLP-" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="images/nft (1).jpg">
-                <div class="layer">
-                    <h3>NFT-Market-Trends-SQL-Analysis-of-Cryptopunks-Transactions</h3>
-                    <p>This project analyzes Cryptopunks NFT sales from January 2018 to December 2021 using SQL. We explore total sales, top transactions, average prices, and daily trends, including buyer-specific insights and price distributions. The goal is to uncover valuable insights into the NFT market dynamics.</p>
-                    <a href="https://github.com/GouthumKharvi/NFT-Market-Trends-SQL-Analysis-of-Cryptopunks-Transactions" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="images/Blinkitt (1).png">
-                <div class="layer">
-                    <h3>Comprehensive-Sales-Analysis-of-Blinkit-Using-Power-BI</h3>
-                    <p>This project focuses on an in-depth analysis of Blinkit's sales data to explore performance metrics, customer satisfaction, and inventory management using Power BI. By examining various KPIs, the analysis seeks to uncover actionable insights and highlight opportunities for business improvement.</p>
-                    <a href="https://github.com/GouthumKharvi/Comprehensive-Sales-Analysis-of-Blinkit-Using-Power-BI" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="images/superstone (1).png">
-                <div class="layer">
-                    <h3>Superstore-Sales-Performance-Dashboard-Tableu</h3>
-                    <p>This project provides an interactive Tableau dashboard to analyze Superstore’s sales performance from 2018 to 2021. The dashboard allows users to filter data by date, segment, ship mode, and state, providing a flexible view into various sales metrics and trends.</p>
-                    <a href="https://github.com/GouthumKharvi/Superstore-Sales-Performance-Dashboard-Tableu-" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            
-            </div>
         </div>
-        
     </div>
 </div>
 
@@ -270,7 +227,7 @@
                 <div class="layer">
                     <h3>Artificial Intelligence Projects</h3>
                     <p>This project creates an AI-powered web application that detects defective products from uploaded images using deep learning models including MobileNetV2, Custom CNN, and EfficientNetB0. Built with Streamlit, the system provides real-time binary classification (good vs defective) with confidence scoring, email alerts for low-confidence predictions, Grad-CAM visualization for model explainability, and comprehensive logging for performance monitoring, serving as an automated quality control solution for manufacturing environments.</p>
-                    <a href=https://github.com/GouthumKharvi/AI-Product-Defect" target="_blank">
+                    <a href="https://github.com/GouthumKharvi/AI-Product-Defect" target="_blank">
                         <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
@@ -356,7 +313,6 @@
                     </a>
                 </div>
             </div>
-            </div>
             <div class="work">
                 <img src="images/hrimage.jpg">
                 <div class="layer">
@@ -389,6 +345,7 @@
             </div>
         </div>
     </div>
+</div>
 
 <!-- ----------contact------------- -->
 <div id="contact">
@@ -427,7 +384,6 @@
         </div>
     </div>
 </div>
-</div>
 <script>
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
@@ -460,31 +416,3 @@
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
