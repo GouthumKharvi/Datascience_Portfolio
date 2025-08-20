@@ -194,8 +194,11 @@ nav ul li a:hover::after{
     position: relative;
     overflow: hidden;
 }
-.work img{
+.work img {
     width: 100%;
+    height: 220px;          /* ✅ fixed uniform height */
+    object-fit: cover;      /* ✅ crops without stretching */
+    object-position: center;/* ✅ keeps middle visible */
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
@@ -393,3 +396,4 @@ nav .fas{
     margin-top: -40px;
     display: block;
 }
+
