@@ -858,73 +858,49 @@ nav .fas{
 }
 
 
-/* ======= Advanced animations & custom cursor ======= */
-
-/* Custom cursor */
+/* ======= Custom cursor styles (drop-in, keep theme) ======= */
 .cursor, .cursor-follower {
   position: fixed;
   pointer-events: none;
-  z-index: 3000;
+  z-index: 99999;
   left: 0;
   top: 0;
   transform: translate(-50%, -50%);
-  mix-blend-mode: normal;
-  transition: opacity 0.15s ease, transform 0.15s ease;
-  will-change: transform;
-}
-.cursor { width: 8px; height: 8px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(255,255,255,0.15);}
-.cursor-follower { width: 44px; height: 44px; border-radius: 50%; border: 2px solid rgba(255,0,79,0.15); backdrop-filter: blur(2px); }
-
-/* Grow effect when hovering interactive elements */
-.cursor--hover { transform: translate(-50%, -50%) scale(1.6); background: #ff004f; }
-.cursor-follower--hover { transform: translate(-50%, -50%) scale(1.15); border-color: rgba(255,0,79,0.45); }
-
-/* Subtle trail for follower (fade) */
-.cursor-follower { transition: transform 0.18s cubic-bezier(.2,.9,.2,1), opacity 0.18s linear; }
-
-/* Top scroll progress bar */
-.page-progress {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 3px;
-  width: 0%;
-  z-index: 2500;
-  background: linear-gradient(90deg, #ff004f, #fff);
-  box-shadow: 0 0 10px rgba(255,0,79,0.12);
-  transition: width 0.12s linear;
-}
-
-/* Parallax data attribute for subtle parallax layers */
-[data-parallax] {
-  transform: translateY(0);
-  will-change: transform;
-  transition: transform 0.2s linear;
-}
-
-/* Animated floating icons (optional) */
-.float-blob {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0.08;
-  filter: blur(8px);
-  z-index: 1;
-  mix-blend-mode: screen;
-}
-
-/* Enhanced scroll-reveal with scale + opacity + slide */
-.scroll-reveal {
-  transform: translateY(30px) scale(0.98);
-  opacity: 0;
-  transition: transform 0.7s cubic-bezier(.2,.9,.2,1), opacity 0.7s ease, filter 0.6s ease;
-}
-.scroll-reveal.active {
-  transform: translateY(0) scale(1);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  will-change: transform, opacity;
   opacity: 1;
-  filter: none;
 }
 
-/* Small tweak for interactive project cards when mouse moves over them */
-.work .layer { transition: transform 0.35s cubic-bezier(.2,.9,.2,1), opacity 0.35s ease; }
-.work.mouse-tilt img { transform-origin: center center; }
+/* small dot */
+.cursor {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(255,255,255,0.12), 0 0 24px rgba(255,0,79,0.03);
+}
+
+/* larger soft follower */
+.cursor-follower {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,0,79,0.14);
+  backdrop-filter: blur(2px);
+  background: rgba(255,255,255,0.01);
+}
+
+/* hover state */
+.cursor--hover { transform: translate(-50%, -50%) scale(1.65); background: #ff004f; }
+.cursor-follower--hover { transform: translate(-50%, -50%) scale(1.12); border-color: rgba(255,0,79,0.45); }
+
+/* ensure inputs keep native cursor when focused */
+input, textarea, select, button { cursor: auto !important; }
+
+/* small safeguard for visibility on very dark sections (no theme changes) */
+.cursor, .cursor-follower { mix-blend-mode: normal; }
+
+/* page progress bar */
+.page-progress { position: fixed; left:0; top:0; height:3px; width:0%; z-index:99998;
+  background: linear-gradient(90deg,#ff004f,#fff); box-shadow:0 0 8px rgba(255,0,79,0.08); transition:width .12s linear; }
+
