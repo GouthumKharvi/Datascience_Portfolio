@@ -1336,6 +1336,160 @@
     
     window.addEventListener('scroll', scrollReveal);
     scrollReveal(); // Initial check on page load
+
+/* ======== Cursor follower + hover interactions ======== */
+(function(){
+  // create cursor elements and append to body
+  const cursor = document.createElement('div');
+  cursor.className = 'cursor';
+  const follower = document.createElement('div');
+  follower.className = 'cursor-follower';
+  document.body.appendChild(cursor);
+  document.body.appendChild(follower);
+
+  let mouseX = window.innerWidth/2, mouseY = window.innerHeight/2;
+  let posX = mouseX, posY = mouseY;
+  const lerp = (a,b,n) => (1-n)*a + n*b;
+
+  // update mouse pos on move
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+  });
+
+  // animate follower using requestAnimationFrame (smooth trailing)
+  function animateFollower(){
+    posX = lerp(posX, mouseX, 0.16);
+    posY = lerp(posY, mouseY, 0.16);
+    follower.style.transform = `translate(${posX}px, ${posY}px) translate(-50%, -50%)`;
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
+
+  // hover interactions for links, buttons, .work and interactive elements
+  const hoverTargets = document.querySelectorAll('a, button, .work, .logo, .layer a, .tab-links');
+  hoverTargets.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.classList.add('cursor--hover');
+      follower.classList.add('cursor-follower--hover');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.classList.remove('cursor--hover');
+      follower.classList.remove('cursor-follower--hover');
+    });
+  });
+
+  // hide native cursor when our script runs (but keep for inputs)
+  const styleEl = document.createElement('style');
+  styleEl.innerHTML = `* { cursor: none !important; } input, textarea, select, a[href^="mailto:"] { cursor: auto !important; }`;
+  document.head.appendChild(styleEl);
+})();
+
+/* ======== Scroll progress bar + parallax layers ======== */
+(function(){
+  const progress = document.createElement('div');
+  progress.className = 'page-progress';
+  document.body.appendChild(progress);
+
+  const parallaxNodes = document.querySelectorAll('[data-parallax]');
+
+  function onScroll(){
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const scrolled = (window.scrollY / Math.max(1, docHeight)) * 100;
+    progress.style.width = scrolled + '%';
+
+    // parallax effect: elements with data-parallax="0.2" (value = multiplier)
+    parallaxNodes.forEach(node => {
+      const speed = parseFloat(node.getAttribute('data-parallax')) || 0.12;
+      const y = window.scrollY * speed;
+      node.style.transform = `translateY(${y}px)`;
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+
+/* ======== Improved scroll reveal with IntersectionObserver (stagger + once) ======== */
+(function(){
+  const revealItems = document.querySelectorAll('.scroll-reveal');
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          // optional per-element delay if data-delay present
+          const delay = parseFloat(el.dataset.delay) || 0;
+          setTimeout(() => {
+            el.classList.add('active');
+          }, delay);
+          // we only want it once; uncomment next line to reveal repeatedly:
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach((el, idx) => {
+      // add small stagger by default
+      if (!el.dataset.delay) el.dataset.delay = (idx % 6) * 80;
+      io.observe(el);
+    });
+  } else {
+    // fallback to your existing scrollReveal() if IntersectionObserver not supported
+    // (your file already defines scrollReveal()) — keep it as-is.
+  }
+})();
+
+/* ======== Mouse-driven tilt for .work cards (small 3D tilt) ======== */
+(function(){
+  const cards = document.querySelectorAll('.work');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      const rotateX = (y - 0.5) * 6; // tilt intensity
+      const rotateY = (x - 0.5) * -6;
+      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(6px)`;
+      card.classList.add('mouse-tilt');
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.classList.remove('mouse-tilt');
+    });
+  });
+})();
+
+/* ===== optional: add subtle floating blobs in header for depth ===== */
+(function(){
+  try {
+    const header = document.getElementById('header');
+    if (!header) return;
+    const sizes = [160, 240, 320];
+    sizes.forEach((s, i) => {
+      const blob = document.createElement('div');
+      blob.className = 'float-blob';
+      blob.style.width = s + 'px';
+      blob.style.height = s + 'px';
+      blob.style.left = (10 + i*25) + '%';
+      blob.style.top = (10 + i*15) + '%';
+      blob.style.background = i%2 ? '#ff004f' : '#ffffff';
+      blob.style.opacity = 0.05 + (i*0.02);
+      header.appendChild(blob);
+
+      // gentle floating
+      let dir = 1;
+      setInterval(() => {
+        const top = parseFloat(blob.style.top || 0);
+        blob.style.top = (top + dir * 0.25) + '%';
+        if (top > 30 || top < 6) dir *= -1;
+      }, 2400 + (i*300));
+    });
+  } catch(e) { /* fail silently */ }
+})();
+
 </script>
 
 </body>
@@ -1343,4 +1497,5 @@
 
                        
                       
+
 
