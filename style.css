@@ -13,6 +13,89 @@ body{
     background: #080808;
     color: #fff;
 }
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Scroll reveal animation */
+.scroll-reveal {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+}
+
 #header{
     width: 100%;
     height: 100vh;
@@ -20,9 +103,25 @@ body{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
 }
+
+/* Animated gradient overlay */
+#header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,0,79,0.1), transparent);
+    animation: pulse 4s ease-in-out infinite;
+}
+
 .container{
     padding: 10px 10%;
+    position: relative;
 }
 
 nav{
@@ -30,24 +129,44 @@ nav{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out;
 }
 
 .logo{
     width: 140px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
 }
 
 nav ul li{
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
+    animation: fadeInUp 1s ease-out backwards;
 }
+
+nav ul li:nth-child(1) { animation-delay: 0.1s; }
+nav ul li:nth-child(2) { animation-delay: 0.2s; }
+nav ul li:nth-child(3) { animation-delay: 0.3s; }
+nav ul li:nth-child(4) { animation-delay: 0.4s; }
+nav ul li:nth-child(5) { animation-delay: 0.5s; }
+nav ul li:nth-child(6) { animation-delay: 0.6s; }
 
 nav ul li a{
     color: #fff;
     text-decoration: none;
     font-size: 18px;
     position: relative;
+    transition: color 0.3s ease;
 }
+
+nav ul li a:hover {
+    color: #ff004f;
+}
+
 nav ul li a::after{
     content: '';
     width: 0;
@@ -56,22 +175,37 @@ nav ul li a::after{
     position: absolute;
     left: 0;
     bottom: -6px;
-    transition: 0.5s;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 nav ul li a:hover::after{
     width: 100%;
 }
+
 .header-text{
     margin-top: 20%;
     font-size: 30px;
+    animation: fadeInLeft 1.2s ease-out;
 }
+
+.header-text p {
+    background: linear-gradient(90deg, #fff, #ff004f, #fff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+}
+
 .header-text h1{
     font-size: 60px;
     margin-top: 20px;
+    animation: fadeInLeft 1.5s ease-out;
 }
 .header-text h1 span{
     color: #ff004f;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
 }
+
 /* -----------about--------------- */
 #about{
     padding: 80px 0;
@@ -89,7 +223,15 @@ nav ul li a:hover::after{
 .about-col-1 img{
     width: 100%;
     border-radius: 15px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 0 20px rgba(255,0,79,0.3);
 }
+
+.about-col-1 img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 40px rgba(255,0,79,0.6);
+}
+
 .about-col-2{
     flex-basis: 60%;
 }
@@ -98,6 +240,23 @@ nav ul li a:hover::after{
     font-size: 60px;
     font-weight: 600;
     color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.sub-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: #ff004f;
+    transition: width 0.5s ease;
+}
+
+.sub-title:hover::after {
+    width: 100%;
 }
 
 .tab-titles{
@@ -110,7 +269,14 @@ nav ul li a:hover::after{
     font-weight: 500;
     cursor: pointer;
     position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
+
+.tab-links:hover {
+    color: #ff004f;
+    transform: translateY(-3px);
+}
+
 .tab-links::after{
     content: '';
     width: 0;
@@ -119,7 +285,7 @@ nav ul li a:hover::after{
     position: absolute;
     left: 0;
     bottom: -8px;
-    transition: 0.5s;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tab-links.active-link::after{
@@ -129,7 +295,16 @@ nav ul li a:hover::after{
 .tab-contents ul li{
     list-style: none;
     margin: 10px 0;
+    padding: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    border-radius: 5px;
 }
+
+.tab-contents ul li:hover {
+    transform: translateX(10px);
+    background: rgba(255,0,79,0.1);
+}
+
 .tab-contents ul li span{
     color: #b54769;
     font-size: 14px;
@@ -139,92 +314,77 @@ nav ul li a:hover::after{
 }
 .tab-contents.active-tab{
     display: block;
+    animation: fadeInUp 0.6s ease-out;
 }
 
-/* ----------------services------------- */
-#services{
-    padding: 30px 0;
-}
-.services-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
-}
-.services-list div{
-    background: #262626;
-    padding: 40px;
-    font-size: 13px;
-    font-weight: 300;
-    border-radius: 10px;
-    transition: background 0.5s, transform 0.5s;
-}
-.services-list div i{
-    font-size: 50px;
-    margin-bottom: 30px;
-}
-.services-list div h2{
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-.services-list div a{
-    text-decoration: none;
-    color: #fff;
-    font-size: 12px;
-    margin-top: 20px;
-    display: inline-block;
-}
-.services-list div:hover{
-    background: #ff004f;
-    transform: translateY(-10px);
-}
 /* -------portfolio----------- */
-#portfolio{
+#portfolio, #miniprojects{
     padding: 50px 0;
 }
+
 .work-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
 }
+
 .work{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    height: 250px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
+
+.work:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 40px rgba(255,0,79,0.4);
+}
+
 .work img {
     width: 100%;
-    height: 220px;          /* ✅ fixed uniform height */
-    object-fit: cover;      /* ✅ crops without stretching */
-    object-position: center;/* ✅ keeps middle visible */
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     border-radius: 10px;
     display: block;
-    transition: transform 0.5s;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .layer{
     width: 100%;
-    height: 0;
+    height: 100%;
     background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
     border-radius: 10px;
     position: absolute;
     left: 0;
     bottom: 0;
-    overflow: hidden;
+    overflow-y: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 40px;
+    padding: 20px;
     text-align: center;
     font-size: 12px;
-   transition: height 0.5s;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .layer h3{
     font-weight: 500;
     margin-bottom: 20px;
+    transform: translateY(20px);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
 }
+
+.layer p {
+    transform: translateY(20px);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
 .layer a{
     margin-top: 20px;
     color: #ff004f;
@@ -236,13 +396,30 @@ nav ul li a:hover::after{
     height: 60px;
     border-radius: 50%;
     text-align: center;
+    transform: translateY(20px) scale(0.8);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
 }
+
 .work:hover img{
-    transform: scale(1.1);
+    transform: scale(1.2) rotate(3deg);
 }
+
 .work:hover .layer{
-    height: 100%;
+    opacity: 1;
 }
+
+.work:hover .layer h3,
+.work:hover .layer p,
+.work:hover .layer a {
+    transform: translateY(0) scale(1);
+}
+
+.work:hover .layer a:hover {
+    background: #ff004f;
+    color: #fff;
+    transform: translateY(0) scale(1.1);
+}
+
 .btn{
     display: block;
     margin: 50px auto;
@@ -252,10 +429,30 @@ nav ul li a:hover::after{
     border-radius: 6px;
     text-decoration: none;
     color: #fff;
-    transition: background 0.5s;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
-.btn:hover{
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
     background: #ff004f;
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+.btn:hover::before {
+    left: 0;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255,0,79,0.4);
 }
 
 /* ---------contact-------- */
@@ -267,12 +464,24 @@ nav ul li a:hover::after{
 }
 .contact-left p{
     margin-top: 30px;
+    transition: transform 0.3s ease;
 }
+
+.contact-left p:hover {
+    transform: translateX(10px);
+}
+
 .contact-left p i{
     color: #ff004f;
     margin-right: 15px;
     font-size: 25px;
+    transition: transform 0.3s ease;
 }
+
+.contact-left p:hover i {
+    transform: scale(1.2) rotate(15deg);
+}
+
 .social-icons{
     margin-top: 30px;
 }
@@ -282,15 +491,17 @@ nav ul li a:hover::after{
     margin-right: 15px;
     color: #ababab;
     display: inline-block;
-    transition: transform 0.5s;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-icons a:hover{
     color: #ff004f;
-    transform: translateY(-5px);
+    transform: translateY(-10px) rotate(360deg);
 }
 .btn.btn2{
     display: inline-block;
     background: #ff004f;
+    position: relative;
+    z-index: 1;
 }
 .contact-right form{
     width: 100%;
@@ -305,13 +516,184 @@ form input, form textarea{
     color: #fff;
     font-size: 18px;
     border-radius: 6px;
+    transition: all 0.3s ease;
 }
+
+form input:focus, form textarea:focus {
+    background: #333;
+    box-shadow: 0 0 20px rgba(255,0,79,0.3);
+    transform: scale(1.02);
+}
+
 form .btn2{
     padding: 14px 60px;
     font-size: 18px;
     margin-top: 20px;
     cursor: pointer;
 }
+
+/* Certificates Section */
+#certificates {
+    padding: 50px 0;
+}
+
+#certificates .work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    margin-top: 50px;
+}
+
+#certificates .certificate-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    height: 250px;
+    background: #262626;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+#certificates .certificate-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255,0,79,0.4);
+}
+
+#certificates .certificate-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.7s ease;
+}
+
+#certificates .certificate-item:hover img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+#certificates .certificate-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#certificates .certificate-item:hover .certificate-overlay {
+    opacity: 1;
+}
+
+#certificates .certificate-overlay h3 {
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 16px;
+    transform: translateY(20px);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+#certificates .certificate-overlay p {
+    font-size: 12px;
+    margin-bottom: 15px;
+    transform: translateY(20px);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+#certificates .certificate-overlay .view-btn {
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+    transform: translateY(20px) scale(0.8);
+}
+
+#certificates .certificate-item:hover .certificate-overlay h3,
+#certificates .certificate-item:hover .certificate-overlay p,
+#certificates .certificate-item:hover .certificate-overlay .view-btn {
+    transform: translateY(0) scale(1);
+}
+
+#certificates .certificate-overlay .view-btn:hover {
+    background: #ff004f;
+    color: #fff;
+    transform: translateY(0) scale(1.2) rotate(360deg);
+}
+
+/* Certificate Modal */
+.certificate-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    animation: fadeInUp 0.3s ease-out;
+}
+
+.certificate-modal-content {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.certificate-modal img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(255,0,79,0.5);
+}
+
+.certificate-close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.certificate-close:hover {
+    color: #ff004f;
+    transform: rotate(90deg) scale(1.2);
+}
+
+#msg{
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
+    animation: fadeInUp 0.5s ease-out;
+}
+
 .copyright{
     width: 100%;
     text-align: center;
@@ -327,6 +709,7 @@ form .btn2{
     color: #ff004f;
     text-decoration: none;
 }
+
 /* -----------------css for small screens--------- */
 nav .fas{
     display: none;
@@ -391,139 +774,4 @@ nav .fas{
         font-size: 14px;
     }
 }
-#msg{
-    color: #61b752;
-    margin-top: -40px;
-    display: block;
-}
 
-/* Certificates Section Styling */
-#certificates {
-    padding: 50px 0;
-}
-
-#certificates .work-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px;
-    margin-top: 50px;
-}
-
-#certificates .certificate-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    width: 100%;
-    height: 250px;
-    background: #262626;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-#certificates .certificate-item:hover {
-    transform: translateY(-5px);
-}
-
-#certificates .certificate-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-}
-
-#certificates .certificate-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    color: #fff;
-    opacity: 0;
-    transition: 0.5s;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-#certificates .certificate-item:hover .certificate-overlay {
-    opacity: 1;
-}
-
-#certificates .certificate-overlay h3 {
-    font-weight: 500;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-#certificates .certificate-overlay p {
-    font-size: 12px;
-    margin-bottom: 15px;
-}
-
-#certificates .certificate-overlay .view-btn {
-    color: #ff004f;
-    text-decoration: none;
-    font-size: 18px;
-    background: #fff;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-}
-
-#certificates .certificate-overlay .view-btn:hover {
-    background: #ff004f;
-    color: #fff;
-}
-
-/* Certificate Modal Styles */
-.certificate-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.9);
-}
-
-.certificate-modal-content {
-    position: relative;
-    margin: auto;
-    padding: 20px;
-    width: 90%;
-    max-width: 800px;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-}
-
-.certificate-modal img {
-    max-width: 100%;
-    max-height: 80vh;
-    border-radius: 10px;
-}
-
-.certificate-close {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    color: #fff;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.certificate-close:hover {
-    color: #ff004f;
-}
