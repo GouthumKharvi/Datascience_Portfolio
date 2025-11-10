@@ -723,5 +723,66 @@ document.querySelectorAll('nav ul li a, .sub-title, .layer h3').forEach(el => {
 });
 </script>
 
+
+
+<!-- ⚡ Enhanced Cinematic Animations Script -->
+<script>
+// ======== ✨ Next-Level Animations ========
+
+// Fade-up reveal animation
+const fadeElements = document.querySelectorAll('.scroll-reveal, .fade-up');
+function handleScrollAnimations() {
+  fadeElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) el.classList.add('visible');
+  });
+}
+window.addEventListener('scroll', handleScrollAnimations);
+handleScrollAnimations();
+
+// 3D parallax tilt for project cards
+document.querySelectorAll('.work').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    card.style.transform = `rotateY(${x/40}deg) rotateX(${y/-40}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+  });
+});
+
+// Magnetic hover attraction effect
+const magneticItems = document.querySelectorAll('.btn, .tab-links');
+magneticItems.forEach(el => {
+  el.addEventListener('mousemove', e => {
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    el.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) scale(1.05)`;
+  });
+  el.addEventListener('mouseleave', () => {
+    el.style.transform = 'translate(0, 0) scale(1)';
+  });
+});
+
+// Floating idle motion for profile & icons
+document.querySelectorAll('.about-col-1 img, .social-icons a').forEach(el => {
+  el.classList.add('parallax-float');
+});
+
+// Neon hover glow for titles and links
+document.querySelectorAll('nav ul li a, .sub-title, .layer h3').forEach(el => {
+  el.classList.add('neon-hover');
+});
+
+// Delayed fade-in on load
+window.addEventListener('load', () => {
+  document.body.style.opacity = '1';
+});
+</script>
+
 </body>
 </html>
+
