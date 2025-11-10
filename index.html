@@ -38,14 +38,6 @@
     </div>
 </div>
 
-
-
-
-    
-<p class="typewriter"></p>
-
-
-
     
 <!-- -----------about---------- -->
 <div id="about">
@@ -702,53 +694,10 @@
         });
     })();
 </script>
-
-
-
-
-<script>
-const roles = [
-  "AI-ML Engineer",
-  "Data Scientist",
-  "Generative AI & Agentic AI Enthusiast",
-  "Data Analyst"
-];
-let i = 0, j = 0;
-const speed = 120;
-const textEl = document.querySelector('.typewriter');
-
-function type() {
-  if (i < roles.length) {
-    if (j < roles[i].length) {
-      textEl.innerHTML = roles[i].substring(0, j+1) + "<span class='cursor'>|</span>";
-      j++;
-      setTimeout(type, speed);
-    } else {
-      j = 0; i++;
-      setTimeout(type, 1000);
-    }
-  } else {
-    i = 0; setTimeout(type, 1000);
-  }
-}
-type();
-</script>
-
-<style>
-.typewriter { 
-  font-size: 20px; color: #b68eff; font-weight: 500; 
-  font-family: 'Poppins', sans-serif; letter-spacing: 1px;
-}
-.cursor { color: #b68eff; animation: blink 1s infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-</style>
-
-
-
-
     
 </body>
 </html>
+
 
 
 
