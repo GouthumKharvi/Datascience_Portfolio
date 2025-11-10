@@ -692,9 +692,41 @@
             }
         });
     })();
+
+<script>
+// ======== ✨ Modern Animations Trigger ========
+
+// Smooth fade-in animation on scroll
+const fadeElements = document.querySelectorAll('.scroll-fade-in, .fade-up');
+function handleScrollAnimations() {
+  fadeElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) el.classList.add('visible', 'active');
+  });
+}
+window.addEventListener('scroll', handleScrollAnimations);
+handleScrollAnimations();
+
+// Apply parallax-float class to portfolio and image sections
+document.querySelectorAll('.work img, .about-col-1 img').forEach(el => {
+  el.classList.add('parallax-float');
+});
+
+// Apply floating animation to buttons
+document.querySelectorAll('.btn, .tab-links').forEach(el => {
+  el.classList.add('float-bounce');
+});
+
+// Apply neon-hover to nav links and section titles
+document.querySelectorAll('nav ul li a, .sub-title, .layer h3').forEach(el => {
+  el.classList.add('neon-hover');
+});
+</script>
+
 </script>
 
 </body>
 </html>
+
 
 
