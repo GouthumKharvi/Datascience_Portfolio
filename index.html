@@ -42,10 +42,8 @@
 
 
     
-<!-- ===== AI Particle Wave Animation Section ===== -->
-<section id="ai-wave">
-  <canvas id="waveCanvas"></canvas>
-</section>
+<p class="typewriter"></p>
+
 
 
     
@@ -708,54 +706,50 @@
 
 
 
-    
 <script>
-// ====== AI Particle Wave Animation ======
-const canvas = document.getElementById('waveCanvas');
-const ctx = canvas.getContext('2d');
-let particlesArray = [];
-let hue = 260; // Purple tone
+const roles = [
+  "AI-ML Engineer",
+  "Data Scientist",
+  "Generative AI & Agentic AI Enthusiast",
+  "Data Analyst"
+];
+let i = 0, j = 0;
+const speed = 120;
+const textEl = document.querySelector('.typewriter');
 
-function initParticles() {
-  canvas.width = window.innerWidth;
-  canvas.height = 160;
-  particlesArray = [];
-  for (let i = 0; i < 120; i++) {
-    particlesArray.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      size: Math.random() * 2 + 1,
-      speedX: Math.random() * 1 - 0.5,
-      speedY: Math.random() * 1 - 0.5
-    });
+function type() {
+  if (i < roles.length) {
+    if (j < roles[i].length) {
+      textEl.innerHTML = roles[i].substring(0, j+1) + "<span class='cursor'>|</span>";
+      j++;
+      setTimeout(type, speed);
+    } else {
+      j = 0; i++;
+      setTimeout(type, 1000);
+    }
+  } else {
+    i = 0; setTimeout(type, 1000);
   }
 }
-
-function animateParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  hue += 0.5;
-  particlesArray.forEach(p => {
-    p.x += p.speedX;
-    p.y += p.speedY;
-    if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fillStyle = `hsl(${hue}, 80%, 60%)`;
-    ctx.fill();
-  });
-  requestAnimationFrame(animateParticles);
-}
-initParticles();
-animateParticles();
-window.addEventListener('resize', initParticles);
+type();
 </script>
+
+<style>
+.typewriter { 
+  font-size: 20px; color: #b68eff; font-weight: 500; 
+  font-family: 'Poppins', sans-serif; letter-spacing: 1px;
+}
+.cursor { color: #b68eff; animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+</style>
+
 
 
 
     
 </body>
 </html>
+
 
 
 
