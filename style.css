@@ -904,3 +904,114 @@ input, textarea, select, button { cursor: auto !important; }
 .page-progress { position: fixed; left:0; top:0; height:3px; width:0%; z-index:99998;
   background: linear-gradient(90deg,#ff004f,#fff); box-shadow:0 0 8px rgba(255,0,79,0.08); transition:width .12s linear; }
 
+/* ======== ✨ Modern Motion Enhancements (Non-destructive additions) ======== */
+
+/* Smooth fade-up with delay for sections */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Parallax float effect for images */
+.parallax-float {
+  transition: transform 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.parallax-float:hover {
+  transform: scale(1.05) translateY(-10px) rotate3d(1, 1, 0, 8deg);
+}
+
+/* Neon glow hover for text links and headings */
+.neon-hover {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.neon-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff004f, #fff, #ff004f);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+.neon-hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Smooth floating effect for buttons and cards */
+.float-bounce {
+  animation: floatBounce 6s ease-in-out infinite;
+}
+
+@keyframes floatBounce {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Layer glow pulse for project cards */
+.layer::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,0,79,0.1), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.work:hover .layer::before {
+  opacity: 1;
+}
+
+/* 3D hover tilt for portfolio cards */
+.work {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.work:hover {
+  transform: rotate3d(1, 1, 0, 8deg);
+}
+
+/* Glowing gradient animation for section titles */
+.sub-title {
+  background: linear-gradient(90deg, #ff004f, #ffffff, #ff004f);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradient 6s ease infinite;
+}
+
+@keyframes textGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Smooth scroll reveal for elements */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
