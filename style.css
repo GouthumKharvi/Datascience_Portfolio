@@ -1015,3 +1015,74 @@ input, textarea, select, button { cursor: auto !important; }
 }
 
 
+
+
+/* ====== ⚡ Stunning Animation Additions ====== */
+
+/* Smooth fade-up animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating subtle motion */
+.parallax-float {
+  animation: floatPulse 6s ease-in-out infinite;
+}
+@keyframes floatPulse {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Glowing neon text */
+.neon-hover {
+  transition: text-shadow 0.4s, color 0.4s;
+}
+.neon-hover:hover {
+  color: #9f66ff;
+  text-shadow: 0 0 10px #9f66ff, 0 0 20px #c18bff, 0 0 30px #dcbaff;
+}
+
+/* Magnetic button hover */
+.btn, .tab-links {
+  position: relative;
+  transition: transform 0.25s ease-out;
+}
+.btn:hover, .tab-links:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 25px rgba(160, 82, 255, 0.6);
+}
+
+/* 3D Project Card Tilt */
+.work img {
+  transition: transform 0.2s ease-out;
+  transform-style: preserve-3d;
+}
+.work:hover img {
+  transform: perspective(800px) rotateY(5deg) rotateX(5deg) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* Section title animation pulse */
+.sub-title {
+  animation: glowPulse 3s infinite alternate;
+}
+@keyframes glowPulse {
+  from { text-shadow: 0 0 10px #9f66ff, 0 0 20px #b97aff; }
+  to { text-shadow: 0 0 25px #d6aaff, 0 0 50px #e7caff; }
+}
+
+/* Smooth page entrance */
+body {
+  animation: pageFadeIn 1.2s ease-in-out both;
+}
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
