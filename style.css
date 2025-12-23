@@ -11,7 +11,24 @@ html{
 }
 body{
     background: #080808;
+    background-image: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #080808 100%);
     color: #fff;
+    line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+    background: #ff004f;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #b54769;
 }
 
 /* ========== ANIMATIONS ========== */
@@ -258,6 +275,7 @@ nav ul li a::after{
     left: 0;
     bottom: -6px;
     transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 10px #ff004f;
 }
 nav ul li a:hover::after{
     width: 100%;
@@ -412,7 +430,7 @@ nav ul li a:hover::after{
 }
 
 .work{
-    border-radius: 10px;
+    border-radius: 20px;
     position: relative;
     overflow: hidden;
     height: 250px;
@@ -422,7 +440,7 @@ nav ul li a:hover::after{
 
 .work:hover {
     transform: translateY(-15px);
-    box-shadow: 0 15px 40px rgba(255,0,79,0.4);
+    box-shadow: 0 15px 40px rgba(255,0,79,0.6);
 }
 
 .work img {
@@ -430,7 +448,7 @@ nav ul li a:hover::after{
     height: 100%;
     object-fit: cover;
     object-position: center;
-    border-radius: 10px;
+    border-radius: 20px;
     display: block;
     transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -438,8 +456,10 @@ nav ul li a:hover::after{
 .layer{
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
-    border-radius: 10px;
+    background: rgba(255, 0, 79, 0.8);
+    backdrop-filter: blur(5px);
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(255, 0, 79, 0.9));
+    border-radius: 20px;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -508,12 +528,13 @@ nav ul li a:hover::after{
     width: fit-content;
     border: 1px solid #ff004f;
     padding: 14px 50px;
-    border-radius: 6px;
+    border-radius: 30px;
     text-decoration: none;
     color: #fff;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    background: rgba(255, 0, 79, 0.2);
 }
 
 .btn::before {
@@ -526,6 +547,7 @@ nav ul li a:hover::after{
     background: #ff004f;
     transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: -1;
+    border-radius: 30px;
 }
 
 .btn:hover::before {
@@ -534,7 +556,7 @@ nav ul li a:hover::after{
 
 .btn:hover{
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(255,0,79,0.4);
+    box-shadow: 0 0 20px rgba(255,0,79,0.6);
 }
 
 /* ---------contact-------- */
@@ -590,19 +612,21 @@ nav ul li a:hover::after{
 }
 form input, form textarea{
     width: 100%;
-    border: 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     outline: none;
-    background: #262626;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
     padding: 15px;
     margin: 15px 0;
     color: #fff;
     font-size: 18px;
-    border-radius: 6px;
+    border-radius: 10px;
     transition: all 0.3s ease;
 }
 
 form input:focus, form textarea:focus {
-    background: #333;
+    background: rgba(51, 51, 51, 0.9);
+    border-color: #ff004f;
     box-shadow: 0 0 20px rgba(255,0,79,0.3);
     transform: scale(1.02);
 }
@@ -1014,3 +1038,16 @@ input, textarea, select, button { cursor: auto !important; }
   transform: translateY(0);
 }
 
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+::-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
