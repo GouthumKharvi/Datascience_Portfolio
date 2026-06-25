@@ -2221,3 +2221,8 @@ input:focus, textarea:focus, select:focus {
     border: 1px solid black !important;
   }
 }
+
+[data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+}
