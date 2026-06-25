@@ -1,649 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Gouthum Kharvi - AIML Engineer specializing in GenAI, RAG pipelines, Agentic AI, Computer Vision, and MLOps."
-  />
-  <meta name="theme-color" content="#09090b" />
-  <title>Gouthum Kharvi | AI/ML Engineer Portfolio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
-    rel="stylesheet"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gouthum Kharvi - Data Science & AI/ML Engineer Portfolio">
+  <title>Gouthum Kharvi | AI/ML Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/3e00ef2ebf.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="cursor-glow" aria-hidden="true"></div>
-  <div class="progress-bar" aria-hidden="true"></div>
-  <div class="bg-grid" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <nav class="nav">
-      <div class="container nav__inner">
-        <a href="#home" class="brand" aria-label="Go to homepage">
-          <span class="brand__mark">GK</span>
-          <span class="brand__text">Gouthum Kharvi</span>
-        </a>
+  <!-- Background Effects -->
+  <div class="mesh-bg"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
 
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+  <!-- Navigation -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="#home" class="logo">
+        <span class="logo__mark">GK</span>
+        <span class="logo__text">Gouthum Kharvi</span>
+      </a>
 
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#miniprojects" class="nav-link">Mini Projects</a></li>
-          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-          <li><a href="#certificates" class="nav-link">Certificates</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+      <button class="menu-btn" aria-label="Toggle Menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#home" class="nav__link active" data-nav>Home</a></li>
+          <li><a href="#about" class="nav__link" data-nav>About</a></li>
+          <li><a href="#miniprojects" class="nav__link" data-nav>Mini Projects</a></li>
+          <li><a href="#portfolio" class="nav__link" data-nav>Portfolio</a></li>
+          <li><a href="#certificates" class="nav__link" data-nav>Certificates</a></li>
+          <li><a href="#contact" class="nav__link" data-nav>Contact</a></li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section id="home" class="hero">
-      <div class="hero__aurora" aria-hidden="true">
-        <span class="hero__orb hero__orb--one"></span>
-        <span class="hero__orb hero__orb--two"></span>
-        <span class="hero__orb hero__orb--three"></span>
-      </div>
-
-      <div class="container hero__layout">
-        <div class="hero__content" data-reveal>
-          <span class="hero__eyebrow">
-            <span class="hero__eyebrow-dot"></span>
-            AIML Engineer • GenAI • RAG • Agentic AI • MLOps
-          </span>
-
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+      <div class="hero__container container">
+        <div class="hero__content reveal-up">
+          <div class="hero__badge">
+            <span class="pulse"></span> AI/ML & Data Science Engineer
+          </div>
           <h1 class="hero__title">
-            Designing <span class="text-gradient">production-grade AI systems</span>
-            with premium engineering and real-world impact.
+            Transforming Data into <br>
+            <span class="gradient-text">Intelligent Systems.</span>
           </h1>
-
-          <p class="hero__subtitle">
-            I build high-performance AI products across Generative AI, multi-agent workflows,
-            RAG systems, computer vision, analytics, and modern MLOps deployment.
+          <p class="hero__desc">
+            I specialize in Generative AI, RAG pipelines, Agentic Workflows, and Computer Vision. Building production-grade AI solutions that drive real business impact.
           </p>
-
-          <div class="hero__cta">
-            <a href="#portfolio" class="btn btn--primary">Explore Portfolio</a>
-            <a href="#contact" class="btn btn--secondary">Let’s Work Together</a>
+          <div class="hero__actions">
+            <a href="#portfolio" class="btn btn--primary">View My Work <i class="fas fa-arrow-right"></i></a>
+            <a href="#contact" class="btn btn--outline">Let's Connect</a>
           </div>
-
           <div class="hero__socials">
-            <a href="https://github.com/GouthumKharvi" target="_blank" rel="noopener noreferrer" class="social-chip">
-              <i class="fab fa-github"></i><span>GitHub</span>
-            </a>
-            <a href="https://linkedin.com/in/gouthumkharvi" target="_blank" rel="noopener noreferrer" class="social-chip">
-              <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
-            </a>
-            <a href="mailto:gouthumkharvi@gmail.com" class="social-chip">
-              <i class="fas fa-envelope"></i><span>Email</span>
-            </a>
-            <a href="https://twitter.com/gouthumkharvi" target="_blank" rel="noopener noreferrer" class="social-chip">
-              <i class="fab fa-twitter"></i><span>Twitter</span>
-            </a>
+            <a href="https://github.com/GouthumKharvi" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/gouthumkharvi" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:gouthumkharvi@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://twitter.com/gouthumkharvi" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
+        <div class="hero__visual reveal-fade">
+          <div class="image-frame">
+            <div class="image-frame__inner">
+              <img src="images/dp.png" alt="Gouthum Kharvi" class="profile-img">
+            </div>
+            <!-- Decorative elements around image -->
+            <div class="floating-badge badge-1">
+              <i class="fas fa-brain"></i>
+              <span>Gen AI</span>
+            </div>
+            <div class="floating-badge badge-2">
+              <i class="fas fa-chart-line"></i>
+              <span>Analytics</span>
+            </div>
+            <div class="floating-badge badge-3">
+              <i class="fas fa-robot"></i>
+              <span>Agentic AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="hero__visual" data-reveal>
-          <div class="hero-card hero-card--main">
-            <div class="hero-card__top">
-              <div>
-                <p class="hero-card__label">AI / ML Engineer</p>
-                <h2 class="hero-card__name">Gouthum Kharvi</h2>
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container">
+        <div class="section-header text-center reveal-up">
+          <span class="subtitle">About Me</span>
+          <h2>A blend of deep engineering <br>& <span class="gradient-text">strategic delivery</span></h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__card reveal-up" style="transition-delay: 0.1s;">
+            <div class="icon-box"><i class="fas fa-bullseye"></i></div>
+            <h3>Product Mindset</h3>
+            <p>I build AI systems not just for technical elegance, but to solve practical problems. My focus is on end-to-end delivery from document ingestion to LLM extraction and ERP integration.</p>
+          </div>
+          <div class="about__card reveal-up" style="transition-delay: 0.2s;">
+            <div class="icon-box"><i class="fas fa-layer-group"></i></div>
+            <h3>Core Strengths</h3>
+            <p>Expertise in GenAI, RAG (LangChain, CrewAI, Pinecone), MLOps (Docker, AWS ECS), Computer Vision (YOLO11, CNNs), and advanced Data Analytics (SQL, Tableau).</p>
+          </div>
+          <div class="about__card reveal-up" style="transition-delay: 0.3s;">
+            <div class="icon-box"><i class="fas fa-server"></i></div>
+            <h3>Production Ready</h3>
+            <p>Strong emphasis on system reliability, observability, and cost-efficiency. I ensure models aren't just accurate in notebooks, but robust in deployment.</p>
+          </div>
+        </div>
+        
+        <div class="stats-row reveal-up">
+          <div class="stat-item">
+            <span class="stat-num" data-count="150">0</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-count="80">0</span>
+            <span class="stat-label">Certificates</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-count="40">0</span>
+            <span class="stat-label">Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-count="120">0</span>
+            <span class="stat-label">Tech Stack</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mini Projects Section -->
+    <section id="miniprojects" class="miniprojects section bg-alt">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="subtitle">Experiments & Analytics</span>
+          <h2>Mini <span class="gradient-text">Projects</span></h2>
+        </div>
+
+        <div class="filter-controls reveal-up">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="stats">Statistics</button>
+          <button class="filter-btn" data-filter="sql">SQL</button>
+          <button class="filter-btn" data-filter="dl">Deep Learning</button>
+          <button class="filter-btn" data-filter="viz">Visualization</button>
+        </div>
+
+        <div class="grid-layout miniproject-grid">
+          <!-- MP 1 -->
+          <div class="card project-card reveal-up" data-category="stats">
+            <div class="card__img">
+              <img src="images/st1 5.jpg" alt="Counting Claims">
+              <div class="card__overlay">
+                <a href="https://github.com/GouthumKharvi/Counting-Claims-A-Statistical-Deep-Dive-into-Dental-Reimbursements" target="_blank" class="card__link"><i class="fas fa-external-link-alt"></i></a>
               </div>
-              <span class="status-pill">Available</span>
             </div>
-
-            <div class="hero-card__image-wrap">
-              <img src="images/dp.png" alt="Gouthum Kharvi" class="hero-card__image" loading="lazy" />
-            </div>
-
-            <div class="hero-card__metrics">
-              <article class="metric-card">
-                <span class="metric-card__value" data-count="150">150</span>
-                <span class="metric-card__label">Projects</span>
-              </article>
-              <article class="metric-card">
-                <span class="metric-card__value" data-count="80">80</span>
-                <span class="metric-card__label">Certificates</span>
-              </article>
-              <article class="metric-card">
-                <span class="metric-card__value" data-count="4">4</span>
-                <span class="metric-card__label">Core Domains</span>
-              </article>
-              <article class="metric-card">
-                <span class="metric-card__value" data-count="120">120</span>
-                <span class="metric-card__label">Tech Stack</span>
-              </article>
+            <div class="card__body">
+              <span class="tag">Statistics</span>
+              <h3>Counting Claims Statistical Deep-Dive</h3>
+              <p>Confidence interval analysis for dental reimbursement estimates.</p>
             </div>
           </div>
 
-          <div class="floating-note floating-note--one">RAG Systems</div>
-          <div class="floating-note floating-note--two">Agentic Workflows</div>
-          <div class="floating-note floating-note--three">Cloud & MLOps</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="section-tag">About</span>
-          <h2 class="section-title">A premium portfolio with <span class="text-gradient">serious engineering depth</span></h2>
-          <p class="section-copy">
-            Strategic AI engineering, polished product delivery, and reliable deployment thinking built for modern industry expectations.
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <div class="panel panel--story" data-reveal>
-            <h3>Profile</h3>
-            <p>
-              I’m an AIML Engineer focused on building production-grade Generative AI systems, intelligent automation,
-              robust retrieval workflows, and scalable ML solutions that solve practical business problems.
-            </p>
-            <p>
-              I work across LangChain ecosystems, vector databases, MLOps delivery, cloud deployment, and high-value analytics,
-              with a strong emphasis on reliability, observability, quality, and execution.
-            </p>
-          </div>
-
-          <div class="panel" data-reveal>
-            <h3>Core strengths</h3>
-            <div class="icon-list">
-              <div class="icon-item"><i class="fas fa-brain"></i><span>GenAI, RAG, LangChain, CrewAI, Pinecone, Groq</span></div>
-              <div class="icon-item"><i class="fas fa-robot"></i><span>Agentic AI, orchestration, tool use, ReAct workflows</span></div>
-              <div class="icon-item"><i class="fas fa-eye"></i><span>Computer Vision, YOLO11, CNNs, Grad-CAM, detection</span></div>
-              <div class="icon-item"><i class="fas fa-cloud"></i><span>AWS, Docker, CI/CD, MLOps, monitoring pipelines</span></div>
+          <!-- MP 2 -->
+          <div class="card project-card reveal-up" data-category="stats">
+            <div class="card__img">
+              <img src="images/house.jpg" alt="House Prices">
+              <div class="card__overlay">
+                <a href="https://github.com/GouthumKharvi/-Statistical-Analysis-of-Factors-Influencing-House-Prices" target="_blank" class="card__link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <div class="card__body">
+              <span class="tag">Statistics</span>
+              <h3>House Price Statistical Analysis</h3>
+              <p>Regression and hypothesis testing on house-price drivers.</p>
             </div>
           </div>
 
-          <div class="panel" data-reveal>
-            <h3>Professional edge</h3>
-            <div class="badge-grid">
-              <span class="info-badge">Business-first delivery</span>
-              <span class="info-badge">Production thinking</span>
-              <span class="info-badge">Scalable design</span>
-              <span class="info-badge">Strong UX sense</span>
-              <span class="info-badge">Reliable integration</span>
-              <span class="info-badge">Clean presentation</span>
+          <!-- MP 3 -->
+          <div class="card project-card reveal-up" data-category="sql">
+            <div class="card__img">
+              <img src="images/nftt.jpg" alt="NFT Market">
+              <div class="card__overlay">
+                <a href="https://github.com/GouthumKharvi/NFT-Market-Trends-SQL-Analysis-of-Cryptopunks-Transactions" target="_blank" class="card__link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <div class="card__body">
+              <span class="tag">SQL</span>
+              <h3>NFT Market Trends SQL Analysis</h3>
+              <p>Cryptopunks transaction analysis covering sales and pricing trends.</p>
             </div>
           </div>
 
-          <div class="panel panel--image" data-reveal>
-            <img src="images/dp.png" alt="Gouthum Kharvi profile image" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="miniprojects" class="section">
-      <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="section-tag">Mini Projects</span>
-          <h2 class="section-title">Focused builds and <span class="text-gradient">analytical experiments</span></h2>
-        </div>
-
-        <div class="filter-bar" data-reveal>
-          <button class="filter-btn filter-btn--active" data-filter="all" type="button">All</button>
-          <button class="filter-btn" data-filter="statistics" type="button">Statistics</button>
-          <button class="filter-btn" data-filter="sql" type="button">SQL</button>
-          <button class="filter-btn" data-filter="dl" type="button">Deep Learning</button>
-          <button class="filter-btn" data-filter="viz" type="button">Visualization</button>
-        </div>
-
-        <div class="project-grid" id="miniprojects-grid">
-          <article class="project-card" data-category="statistics" data-reveal>
-            <div class="project-card__media"><img src="images/st1 5.jpg" alt="Counting Claims Statistical Analysis" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Statistics</span>
-              <h3>Counting Claims Statistical Deep-Dive into Dental Reimbursements</h3>
-              <p>Confidence interval analysis for healthcare reimbursement insights with a statistical interpretation layer.</p>
-              <a href="https://github.com/GouthumKharvi/Counting-Claims-A-Statistical-Deep-Dive-into-Dental-Reimbursements" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
+          <!-- MP 4 -->
+          <div class="card project-card reveal-up" data-category="viz">
+            <div class="card__img">
+              <img src="images/healthcare-sector.jpg" alt="Healthcare Report">
+              <div class="card__overlay">
+                <a href="https://github.com/GouthumKharvi/Healthcare-summary-report-Tableu-" target="_blank" class="card__link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
             </div>
-          </article>
-
-          <article class="project-card" data-category="statistics" data-reveal>
-            <div class="project-card__media"><img src="images/house.jpg" alt="House Price Statistical Analysis" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Statistics</span>
-              <h3>Statistical Analysis of Factors Influencing House Prices</h3>
-              <p>Regression and hypothesis-testing workflow exploring key housing price drivers.</p>
-              <a href="https://github.com/GouthumKharvi/-Statistical-Analysis-of-Factors-Influencing-House-Prices" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="sql" data-reveal>
-            <div class="project-card__media"><img src="images/nftt.jpg" alt="NFT Market Trends SQL Analysis" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">SQL</span>
-              <h3>NFT Market Trends SQL Analysis of Cryptopunks Transactions</h3>
-              <p>Transaction, pricing, and buyer behavior analysis through SQL-based exploration.</p>
-              <a href="https://github.com/GouthumKharvi/NFT-Market-Trends-SQL-Analysis-of-Cryptopunks-Transactions" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="viz" data-reveal>
-            <div class="project-card__media"><img src="images/healthcare-sector.jpg" alt="Healthcare Summary Report Tableau" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Tableau</span>
+            <div class="card__body">
+              <span class="tag">Tableau</span>
               <h3>Healthcare Summary Report</h3>
-              <p>Interactive healthcare storytelling with dashboard-driven patient insights.</p>
-              <a href="https://github.com/GouthumKharvi/Healthcare-summary-report-Tableu-" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
+              <p>Interactive reporting focused on patient metrics and distribution trends.</p>
             </div>
-          </article>
+          </div>
 
-          <article class="project-card" data-category="dl" data-reveal>
-            <div class="project-card__media"><img src="images/annsalary.png" alt="ANN Regression Salary Prediction" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Deep Learning</span>
+           <!-- MP 5 -->
+          <div class="card project-card reveal-up" data-category="dl">
+            <div class="card__img">
+              <img src="images/annsalary.png" alt="ANN Salary">
+              <div class="card__overlay">
+                <a href="https://github.com/GouthumKharvi/ANN-REGRESSION-SALARY-PREDICTION" target="_blank" class="card__link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <div class="card__body">
+              <span class="tag">Deep Learning</span>
               <h3>ANN Regression Salary Prediction</h3>
-              <p>End-to-end ANN regression solution with deployment-oriented prediction flow.</p>
-              <a href="https://github.com/GouthumKharvi/ANN-REGRESSION-SALARY-PREDICTION" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
+              <p>End-to-end ANN pipeline with deployment-ready prediction flow.</p>
             </div>
-          </article>
+          </div>
 
-          <article class="project-card" data-category="dl" data-reveal>
-            <div class="project-card__media"><img src="images/ann class.png" alt="ANN Customer Churn Prediction" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Deep Learning</span>
+           <!-- MP 6 -->
+          <div class="card project-card reveal-up" data-category="dl">
+            <div class="card__img">
+              <img src="images/ann class.png" alt="ANN Churn">
+              <div class="card__overlay">
+                <a href="https://github.com/GouthumKharvi/ANN-CLASSIFICATION-CUSTOMER-CHURN" target="_blank" class="card__link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <div class="card__body">
+              <span class="tag">Deep Learning</span>
               <h3>ANN Customer Churn Prediction</h3>
-              <p>Churn classification pipeline with model training, evaluation, and inference design.</p>
-              <a href="https://github.com/GouthumKharvi/ANN-CLASSIFICATION-CUSTOMER-CHURN" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
+              <p>Classification workflow with preprocessing and app-based inference.</p>
             </div>
-          </article>
-
-          <article class="project-card" data-category="dl" data-reveal>
-            <div class="project-card__media"><img src="images/endtoend.png" alt="Movie Sentiment Prediction RNN" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Deep Learning</span>
-              <h3>Movie Sentiment Prediction using Simple RNN</h3>
-              <p>Real-time sentiment classification with RNN-based NLP modeling.</p>
-              <a href="https://github.com/GouthumKharvi/End-ToEnd-DL-Projects-with-Simple-RNN-Movie-Sentiment-Prediction-" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="dl" data-reveal>
-            <div class="project-card__media"><img src="images/nextword.png" alt="Next Word Prediction LSTM GRU" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Deep Learning NLP</span>
-              <h3>Next Word Prediction using LSTM GRU</h3>
-              <p>Sequence-generation workflow using recurrent deep learning architectures.</p>
-              <a href="https://github.com/GouthumKharvi/Next-Word-Prediction-Using-LSTM-and-GRU" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="portfolio" class="section">
+    <!-- Main Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
       <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="section-tag">Portfolio</span>
-          <h2 class="section-title">Flagship work with <span class="text-gradient">industry-grade presentation</span></h2>
+        <div class="section-header text-center reveal-up">
+          <span class="subtitle">Flagship Builds</span>
+          <h2>Production-Grade <br><span class="gradient-text">AI Systems</span></h2>
         </div>
 
-        <div class="filter-bar" data-reveal>
-          <button class="filter-btn filter-btn--active" data-filter="all" type="button">All</button>
-          <button class="filter-btn" data-filter="genai" type="button">GenAI</button>
-          <button class="filter-btn" data-filter="agentic" type="button">Agentic AI</button>
-          <button class="filter-btn" data-filter="cv" type="button">Computer Vision</button>
-          <button class="filter-btn" data-filter="ml" type="button">ML / DL</button>
-          <button class="filter-btn" data-filter="data" type="button">Data Analytics</button>
+        <div class="filter-controls portfolio-filters reveal-up">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="genai">GenAI</button>
+          <button class="filter-btn" data-filter="agentic">Agentic AI</button>
+          <button class="filter-btn" data-filter="cv">Computer Vision</button>
+          <button class="filter-btn" data-filter="mldl">ML/DL</button>
+          <button class="filter-btn" data-filter="data">Data Analytics</button>
         </div>
 
-        <div class="project-grid project-grid--featured" id="portfolio-grid">
-          <article class="project-card project-card--featured" data-category="agentic genai" data-reveal>
-            <div class="project-card__media"><img src="images/careernav.png" alt="Career Navigator AI" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Multi-Agent • LangChain</span>
-              <h3>Career Navigator AI</h3>
-              <p>Career intelligence assistant for market analysis, skill extraction, and personalized direction.</p>
-              <a href="https://github.com/GouthumKharvi/CompleteAgenticAI/tree/main/6.1%20Career%20Navigator%20Multi%20Agent-AI-System%20using%20Langchain" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
+        <div class="grid-layout portfolio-grid">
+          
+          <!-- Port 1 -->
+          <div class="card port-card reveal-up" data-category="agentic genai">
+             <div class="card__img">
+                <img src="images/careernav.png" alt="Career Navigator AI">
+             </div>
+             <div class="card__body">
+                <div class="tags">
+                   <span class="tag">Multi-Agent</span>
+                   <span class="tag">LangChain</span>
+                </div>
+                <h3>Career Navigator AI</h3>
+                <p>Intelligent multi-agent career assistant for job analysis, skill extraction, and roadmap generation.</p>
+                <a href="https://github.com/GouthumKharvi/CompleteAgenticAI/tree/main/6.1%20Career%20Navigator%20Multi%20Agent-AI-System%20using%20Langchain" target="_blank" class="btn btn--sm">View Source</a>
+             </div>
+          </div>
 
-          <article class="project-card project-card--featured" data-category="agentic genai" data-reveal>
-            <div class="project-card__media"><img src="images/researchmimd.png" alt="ResearchMind AI" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Research • Multi-Agent</span>
-              <h3>ResearchMind AI</h3>
-              <p>AI research system coordinating search, scraping, evaluation, and report generation.</p>
-              <a href="https://github.com/GouthumKharvi/CompleteAgenticAI/tree/main/6.%20Multi%20Agent-AI-System%20using%20Langchain" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
+          <!-- Port 2 -->
+          <div class="card port-card reveal-up" data-category="agentic genai">
+             <div class="card__img">
+                <img src="images/researchmimd.png" alt="ResearchMind AI">
+             </div>
+             <div class="card__body">
+                <div class="tags">
+                   <span class="tag">Research</span>
+                   <span class="tag">Multi-Agent</span>
+                </div>
+                <h3>ResearchMind AI</h3>
+                <p>AI research assistant coordinating search, scraping, report generation, and evaluation workflows.</p>
+                <a href="https://github.com/GouthumKharvi/CompleteAgenticAI/tree/main/6.%20Multi%20Agent-AI-System%20using%20Langchain" target="_blank" class="btn btn--sm">View Source</a>
+             </div>
+          </div>
 
-          <article class="project-card" data-category="agentic" data-reveal>
-            <div class="project-card__media"><img src="images/agenticaii.png" alt="Agentic AI Travel Planner" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Agentic AI</span>
-              <h3>Agentic AI Travel Planner</h3>
-              <p>Autonomous planner using multi-API workflows and reasoning-driven output.</p>
-              <a href="https://github.com/GouthumKharvi/CompleteAgenticAI/tree/main/5.1%20Agentic-AI-Travel-Planner-Agent" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
+          <!-- Port 3 -->
+          <div class="card port-card reveal-up" data-category="cv">
+             <div class="card__img">
+                <img src="images/ecosort.png" alt="EcoSort Vision">
+             </div>
+             <div class="card__body">
+                <div class="tags">
+                   <span class="tag">Computer Vision</span>
+                   <span class="tag">MLOps</span>
+                </div>
+                <h3>EcoSort Vision</h3>
+                <p>YOLO11-powered waste classification system with Docker, GitHub Actions, AWS, and CI/CD delivery.</p>
+                <a href="https://github.com/GouthumKharvi/EcoSort-Vision-AI-Powered-Waste-Detection-and-Classification-System-using-YOLO11" target="_blank" class="btn btn--sm">View Source</a>
+             </div>
+          </div>
 
-          <article class="project-card" data-category="agentic" data-reveal>
-            <div class="project-card__media"><img src="images/singlee.png" alt="Single AI Agent System" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Single Agent</span>
-              <h3>Single AI Agent System</h3>
-              <p>ReAct-based AI agent with tool calling and intelligent response generation.</p>
-              <a href="https://github.com/GouthumKharvi/CompleteAgenticAI/tree/main/5.Single%20AI%20Agent%20system%20using%20Langchain" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
+          <!-- Port 4 -->
+          <div class="card port-card reveal-up" data-category="genai">
+             <div class="card__img">
+                <img src="images/Medicalbot.png" alt="Medical Chatbot">
+             </div>
+             <div class="card__body">
+                <div class="tags">
+                   <span class="tag">GenAI</span>
+                   <span class="tag">RAG</span>
+                </div>
+                <h3>Medical Chatbot GenAI RAG</h3>
+                <p>Trusted knowledge retrieval chatbot using LangChain, Pinecone, Groq, Flask, Docker, and AWS.</p>
+                <a href="https://github.com/GouthumKharvi/Medical-Chatbot-GenAI-" target="_blank" class="btn btn--sm">View Source</a>
+             </div>
+          </div>
 
-          <article class="project-card project-card--featured" data-category="cv ml" data-reveal>
-            <div class="project-card__media"><img src="images/ecosort.png" alt="EcoSort Vision" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Computer Vision • MLOps</span>
-              <h3>EcoSort Vision</h3>
-              <p>YOLO11-powered waste classification system with deployment-ready MLOps delivery.</p>
-              <a href="https://github.com/GouthumKharvi/EcoSort-Vision-AI-Powered-Waste-Detection-and-Classification-System-using-YOLO11" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
+          <!-- Port 5 -->
+          <div class="card port-card reveal-up" data-category="mldl data">
+             <div class="card__img">
+                <img src="images/invoice.jpg" alt="Invoice Extraction">
+             </div>
+             <div class="card__body">
+                <div class="tags">
+                   <span class="tag">OCR</span>
+                   <span class="tag">Extraction</span>
+                </div>
+                <h3>Invoice Information Extraction</h3>
+                <p>Invoice field extraction pipeline built for scalable key-value pair recognition tasks.</p>
+                <a href="https://github.com/GouthumKharvi/Invoice-Information-Extraction-Using-Python-and-Machine-Learning" target="_blank" class="btn btn--sm">View Source</a>
+             </div>
+          </div>
 
-          <article class="project-card project-card--featured" data-category="genai cv" data-reveal>
-            <div class="project-card__media"><img src="images/Medicalbot.png" alt="Medical Chatbot GenAI RAG" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">GenAI • RAG</span>
-              <h3>Medical Chatbot GenAI RAG</h3>
-              <p>Medical knowledge assistant using LangChain, Pinecone, Groq, Flask, Docker, and AWS.</p>
-              <a href="https://github.com/GouthumKharvi/Medical-Chatbot-GenAI-" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
+           <!-- Port 6 -->
+          <div class="card port-card reveal-up" data-category="data mldl">
+             <div class="card__img">
+                <img src="images/collegeevent.jpeg" alt="Student Feedback Analyzer">
+             </div>
+             <div class="card__body">
+                <div class="tags">
+                   <span class="tag">NLP</span>
+                   <span class="tag">Dashboarding</span>
+                </div>
+                <h3>Student Feedback Analyzer</h3>
+                <p>Sentiment and classification system backed by Streamlit and Power BI for actionable education insights.</p>
+                <a href="https://github.com/GouthumKharvi/FUTUREDS03" target="_blank" class="btn btn--sm">View Source</a>
+             </div>
+          </div>
 
-          <article class="project-card" data-category="genai agentic" data-reveal>
-            <div class="project-card__media"><img src="images/chatbot-restaurant.jpg" alt="AI Global Language Translator Recipe Assistant" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">CrewAI • GenAI</span>
-              <h3>AI Global Language Translator Recipe Assistant</h3>
-              <p>Multi-agent assistant with contextual generation and intelligent interaction flow.</p>
-              <a href="https://github.com/GouthumKharvi/AI-Global-Translator" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="ml" data-reveal>
-            <div class="project-card__media"><img src="images/salarypreictionimage.jpg" alt="Salary Prediction" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">ML • Streamlit</span>
-              <h3>Salary Prediction</h3>
-              <p>Prediction workflow covering EDA, training, comparison, and interactive output.</p>
-              <a href="https://github.com/GouthumKharvi/AI-Global-Translator" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="genai" data-reveal>
-            <div class="project-card__media"><img src="images/aitranslator.jpeg" alt="AI Global Language Translator" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Translation AI</span>
-              <h3>AI Global Language Translator</h3>
-              <p>Multilingual translation for text, files, and speech interaction experiences.</p>
-              <a href="https://github.com/GouthumKharvi/AI-Global-Translator" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="genai ml data" data-reveal>
-            <div class="project-card__media"><img src="images/aiparser.png" alt="AI Resume Parser" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">NLP • Embeddings</span>
-              <h3>AI-Powered Job Recommendation System</h3>
-              <p>Semantic matching engine for resumes and jobs using transformer-based embeddings.</p>
-              <a href="https://github.com/GouthumKharvi/AI-Resume-Parser" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="genai" data-reveal>
-            <div class="project-card__media"><img src="images/aistory.jpg" alt="TinyTales GenAI Story Generator" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">GenAI • GPT-2</span>
-              <h3>GenAI Childrens Story Generator TinyTales</h3>
-              <p>Prompt-based storytelling system for creative educational experiences.</p>
-              <a href="https://github.com/GouthumKharvi/TinyTales-GenAI" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="cv ml" data-reveal>
-            <div class="project-card__media"><img src="images/aidefect.png" alt="Product Defect Detection" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">CV • Quality Control</span>
-              <h3>Product Defect Detection</h3>
-              <p>Real-time defect detection using CNN models, confidence scoring, and explainability.</p>
-              <a href="https://github.com/GouthumKharvi/AI-Product-Defect" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="ml data" data-reveal>
-            <div class="project-card__media"><img src="images/invoice.jpg" alt="Invoice Information Extraction" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">OCR • Extraction</span>
-              <h3>Invoice Information Extraction</h3>
-              <p>Scalable key-value extraction system for structured invoice data processing.</p>
-              <a href="https://github.com/GouthumKharvi/Invoice-Information-Extraction-Using-Python-and-Machine-Learning" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="ml data" data-reveal>
-            <div class="project-card__media"><img src="images/carprice.jpg" alt="Used Car Price Prediction" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Regression • XGBoost</span>
-              <h3>Used Car Price Prediction</h3>
-              <p>Regression modeling with feature engineering and model comparison for price estimation.</p>
-              <a href="https://github.com/GouthumKharvi/usedcarprediction" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="ml data" data-reveal>
-            <div class="project-card__media"><img src="images/collegeevent.jpeg" alt="Student Feedback Analyzer" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">NLP • Dashboarding</span>
-              <h3>Student Feedback Analyzer</h3>
-              <p>Feedback intelligence using sentiment analysis, classification, Streamlit, and Power BI.</p>
-              <a href="https://github.com/GouthumKharvi/FUTUREDS03" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="data" data-reveal>
-            <div class="project-card__media"><img src="images/social.png" alt="Social Media Campaign Performance Tracker" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Power BI</span>
-              <h3>Social Media Campaign Performance Tracker</h3>
-              <p>Campaign analytics dashboard with performance KPIs and ROI visibility.</p>
-              <a href="https://github.com/GouthumKharvi/FUTUREDS02" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
-
-          <article class="project-card" data-category="data" data-reveal>
-            <div class="project-card__media"><img src="images/ecom1.jpeg" alt="E-commerce Sales Dashboard" loading="lazy" /></div>
-            <div class="project-card__content">
-              <span class="project-card__tag">Power BI • Forecasting</span>
-              <h3>E-commerce Sales Dashboard</h3>
-              <p>Sales intelligence dashboard with forecasting, DAX, cleaning, and business trend reporting.</p>
-              <a href="https://github.com/GouthumKharvi/FUTUREDS01" target="_blank" rel="noopener noreferrer" class="text-link">Open Project</a>
-            </div>
-          </article>
         </div>
       </div>
     </section>
 
-    <section id="certificates" class="section">
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates section bg-alt">
       <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="section-tag">Certificates</span>
-          <h2 class="section-title">Recognition, learning, and <span class="text-gradient">validated growth</span></h2>
+        <div class="section-header reveal-up">
+          <span class="subtitle">Validations</span>
+          <h2>Certificates & <span class="gradient-text">Achievements</span></h2>
         </div>
 
-        <div class="certificate-grid">
-          <button class="certificate-card" type="button" data-image="images/upgradcertificate.jpg" data-title="Data Science Bootcamp" data-desc="UpGrad • August 2024" data-reveal>
-            <img src="images/upgradcertificate.jpg" alt="Data Science Bootcamp Certificate" loading="lazy" />
-            <span>Data Science Bootcamp</span>
-          </button>
-          <button class="certificate-card" type="button" data-image="images/nvidiacertificate.jpg" data-title="AI for All From Basics to GenAI Practice" data-desc="NVIDIA • July 2025" data-reveal>
-            <img src="images/nvidiacertificate.jpg" alt="AI for All Certificate" loading="lazy" />
-            <span>AI for All</span>
-          </button>
-          <button class="certificate-card" type="button" data-image="images/tatacertificate.jpg" data-title="GenAI Powered Data Analytics Job Simulation" data-desc="TATA Forage • August 2025" data-reveal>
-            <img src="images/tatacertificate.jpg" alt="TATA Job Simulation Certificate" loading="lazy" />
-            <span>TATA Simulation</span>
-          </button>
-          <button class="certificate-card" type="button" data-image="images/futureinternscertificate.jpg" data-title="Data Science Analytics Internship" data-desc="Future Interns • July 2025" data-reveal>
-            <img src="images/futureinternscertificate.jpg" alt="Future Interns Certificate" loading="lazy" />
-            <span>Future Interns</span>
-          </button>
-          <button class="certificate-card" type="button" data-image="images/futureinternscertificate-lor.jpg" data-title="Data Science Analytics Internship with LOR" data-desc="Future Interns • July 2025" data-reveal>
-            <img src="images/futureinternscertificate-lor.jpg" alt="Future Interns LOR Certificate" loading="lazy" />
-            <span>Internship with LOR</span>
-          </button>
-          <button class="certificate-card" type="button" data-image="images/pinnaclecertificates.jpg" data-title="AI ML Internship Certificate" data-desc="Pinnacle Labs • 2025" data-reveal>
-            <img src="images/pinnaclecertificates.jpg" alt="Pinnacle Labs Certificate" loading="lazy" />
-            <span>Pinnacle Labs</span>
-          </button>
-          <button class="certificate-card" type="button" data-image="images/inlighncertificate.jpg" data-title="AI ML Internship Certificate" data-desc="Inlighn Global X Pvt Ltd • 2025" data-reveal>
-            <img src="images/inlighncertificate.jpg" alt="Inlighn Certificate" loading="lazy" />
-            <span>Inlighn Global</span>
-          </button>
-          <button class="certificate-card" type="button" data-image="images/hackathoncertificate.jpg" data-title="Hackathon Certificate" data-desc="UpGrad • 2024" data-reveal>
-            <img src="images/hackathoncertificate.jpg" alt="Hackathon Certificate" loading="lazy" />
-            <span>Hackathon</span>
-          </button>
+        <div class="cert-grid">
+          <!-- Cert 1 -->
+          <div class="cert-item reveal-up" data-img="images/upgradcertificate.jpg" data-title="Data Science Bootcamp" data-date="August 2024">
+            <div class="cert-img-wrap"><img src="images/upgradcertificate.jpg" alt="Cert"></div>
+            <div class="cert-info">
+              <h4>Data Science Bootcamp</h4>
+              <p>UpGrad</p>
+            </div>
+            <div class="cert-hover"><i class="fas fa-expand"></i></div>
+          </div>
+          <!-- Cert 2 -->
+          <div class="cert-item reveal-up" data-img="images/nvidiacertificate.jpg" data-title="AI for All" data-date="July 2025">
+            <div class="cert-img-wrap"><img src="images/nvidiacertificate.jpg" alt="Cert"></div>
+            <div class="cert-info">
+              <h4>AI for All</h4>
+              <p>NVIDIA</p>
+            </div>
+            <div class="cert-hover"><i class="fas fa-expand"></i></div>
+          </div>
+          <!-- Cert 3 -->
+          <div class="cert-item reveal-up" data-img="images/tatacertificate.jpg" data-title="Data Analytics Simulation" data-date="August 2025">
+            <div class="cert-img-wrap"><img src="images/tatacertificate.jpg" alt="Cert"></div>
+            <div class="cert-info">
+              <h4>TATA Simulation</h4>
+              <p>TATA Forage</p>
+            </div>
+            <div class="cert-hover"><i class="fas fa-expand"></i></div>
+          </div>
+          <!-- Cert 4 -->
+          <div class="cert-item reveal-up" data-img="images/futureinternscertificate.jpg" data-title="Data Science Internship" data-date="July 2025">
+            <div class="cert-img-wrap"><img src="images/futureinternscertificate.jpg" alt="Cert"></div>
+            <div class="cert-info">
+              <h4>Future Interns</h4>
+              <p>Internship</p>
+            </div>
+            <div class="cert-hover"><i class="fas fa-expand"></i></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section section--contact">
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
       <div class="container">
-        <div class="section-head" data-reveal>
-          <span class="section-tag">Contact</span>
-          <h2 class="section-title">Build with an <span class="text-gradient">industry-ready engineer</span></h2>
-        </div>
-
-        <div class="contact-layout">
-          <div class="panel contact-panel" data-reveal>
-            <h3>Let’s connect</h3>
-            <p>
-              Open to AI/ML roles, freelance opportunities, collaboration, and premium product-focused engineering work.
-            </p>
-
-            <div class="contact-list">
-              <a href="mailto:gouthumkharvi@gmail.com" class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <div><span>Email</span><strong>gouthumkharvi@gmail.com</strong></div>
+        <div class="contact-wrapper box-shadow-glow reveal-up">
+          <div class="contact-info">
+            <h2>Let's build something <br><span class="gradient-text">high-impact</span></h2>
+            <p>I'm available for roles, projects, and collaborations. Reach out directly.</p>
+            
+            <div class="contact-details">
+              <a href="mailto:gouthumkharvi@gmail.com" class="c-item">
+                <div class="c-icon"><i class="fas fa-envelope"></i></div>
+                <div class="c-text">
+                  <span>Email</span>
+                  <strong>gouthumkharvi@gmail.com</strong>
+                </div>
               </a>
-
-              <a href="https://linkedin.com/in/gouthumkharvi" target="_blank" rel="noopener noreferrer" class="contact-item">
-                <i class="fab fa-linkedin-in"></i>
-                <div><span>LinkedIn</span><strong>linkedin.com/in/gouthumkharvi</strong></div>
-              </a>
-
-              <a href="https://github.com/GouthumKharvi" target="_blank" rel="noopener noreferrer" class="contact-item">
-                <i class="fab fa-github"></i>
-                <div><span>GitHub</span><strong>github.com/GouthumKharvi</strong></div>
-              </a>
-
-              <a href="https://twitter.com/gouthumkharvi" target="_blank" rel="noopener noreferrer" class="contact-item">
-                <i class="fab fa-twitter"></i>
-                <div><span>Twitter</span><strong>twitter.com/gouthumkharvi</strong></div>
+              <a href="https://linkedin.com/in/gouthumkharvi" target="_blank" class="c-item">
+                <div class="c-icon"><i class="fab fa-linkedin-in"></i></div>
+                <div class="c-text">
+                  <span>LinkedIn</span>
+                  <strong>linkedin.com/in/gouthumkharvi</strong>
+                </div>
               </a>
             </div>
           </div>
 
-          <form class="panel contact-form" action="https://formspree.io/f/mnnvbvjr" method="POST" data-reveal>
-            <h3>Send message</h3>
-
-            <div class="form-row">
-              <div class="field">
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" placeholder="Your name" required />
+          <div class="contact-form-container">
+            <form action="https://formspree.io/f/mnnvbvjr" method="POST" id="contact-form">
+              <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
               </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="Your email" required />
+              <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required>
               </div>
-            </div>
-
-            <div class="field">
-              <label for="subject">Subject</label>
-              <input id="subject" name="subject" type="text" placeholder="Project, job, or collaboration" required />
-            </div>
-
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Share your requirement or opportunity" required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn--primary btn--full">Send Message</button>
-          </form>
+              <div class="form-group">
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary w-full">Send Message <i class="fas fa-paper-plane"></i></button>
+              <div class="form-status"></div>
+            </form>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
-    <div class="container footer__top">
-      <div class="footer__brand">
-        <div class="footer__logo">
-          <span class="brand__mark">GK</span>
-          <span class="footer__brand-text">Gouthum Kharvi</span>
-        </div>
-        <p class="footer__desc">
-          AIML Engineer building polished AI products across GenAI, RAG, Agentic AI, Computer Vision, Analytics, and MLOps.
-        </p>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <h3>GK.</h3>
+        <p>AIML Engineer • GenAI • RAG • Agentic AI • MLOps</p>
       </div>
-
-      <div class="footer__cols">
-        <div class="footer__col">
-          <h4>Navigation</h4>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#portfolio">Portfolio</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-        <div class="footer__col">
-          <h4>Profiles</h4>
-          <a href="https://github.com/GouthumKharvi" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://linkedin.com/in/gouthumkharvi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="mailto:gouthumkharvi@gmail.com">Email</a>
-          <a href="https://twitter.com/gouthumkharvi" target="_blank" rel="noopener noreferrer">Twitter</a>
-        </div>
-
-        <div class="footer__col">
-          <h4>Focus Areas</h4>
-          <span>Generative AI</span>
-          <span>RAG Pipelines</span>
-          <span>Agentic AI</span>
-          <span>MLOps & Deployment</span>
-        </div>
+      <div class="footer-social">
+        <a href="https://github.com/GouthumKharvi" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/gouthumkharvi" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://twitter.com/gouthumkharvi" target="_blank"><i class="fab fa-twitter"></i></a>
       </div>
-    </div>
-
-    <div class="container footer__bottom">
-      <p>© 2026 Gouthum Kharvi. All rights reserved.</p>
-      <p>Designed for a premium AI/ML engineering presence.</p>
+      <div class="footer-copy">
+        <p>&copy; 2026 Gouthum Kharvi. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
-  <div class="modal" id="certificate-modal" hidden>
-    <div class="modal__backdrop"></div>
-    <div class="modal__dialog">
-      <button class="modal__close" type="button" aria-label="Close modal">&times;</button>
-      <img id="modal-image" src="" alt="" class="modal__image" />
-      <div class="modal__meta">
-        <h3 id="modal-title"></h3>
-        <p id="modal-desc"></p>
+  <!-- Certificate Modal -->
+  <div class="modal-overlay" id="certModal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal"><i class="fas fa-times"></i></button>
+      <img src="" alt="" id="modalImg" class="modal-img">
+      <div class="modal-text">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDate"></p>
       </div>
     </div>
   </div>
