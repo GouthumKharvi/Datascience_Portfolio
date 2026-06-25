@@ -1,606 +1,1158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gouthum Kharvi — AI/ML Engineer specializing in GenAI, RAG pipelines, Agentic AI, and MLOps. Building production-ready intelligent systems.">
-  <meta name="theme-color" content="#0a0a0a">
-  <title>Gouthum Kharvi | AI/ML Engineer Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/space-grotesk@5.0.0/latin.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="style.css">
-  <script defer src="https://kit.fontawesome.com/3e00ef2ebf.js" crossorigin="anonymous"></script>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gouthum Kharvi — AI/ML Engineer specializing in RAG pipelines, Agentic AI, Computer Vision, and MLOps. Building production-ready GenAI systems.">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>Gouthum Kharvi | AI/ML Engineer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3e00ef2ebf.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+    <!-- Progress Bar -->
+    <div class="page-progress" aria-hidden="true"></div>
 
-  <!-- Progress indicator -->
-  <progress id="scroll-progress" value="0" max="100" aria-hidden="true"></progress>
+    <!-- Navigation -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav__container container">
+            <a href="#home" class="nav__logo" aria-label="Go to homepage">
+                <span class="nav__logo-mark">GK</span>
+                <span class="nav__logo-text">Gouthum Kharvi</span>
+            </a>
+            <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+            </button>
+            <ul id="nav-menu" class="nav__menu" role="list">
+                <li><a href="#home" class="nav__link">Home</a></li>
+                <li><a href="#about" class="nav__link">About</a></li>
+                <li><a href="#miniprojects" class="nav__link">Mini Projects</a></li>
+                <li><a href="#portfolio" class="nav__link">Portfolio</a></li>
+                <li><a href="#certificates" class="nav__link">Certificates</a></li>
+                <li><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <!-- Navigation -->
-  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__container container">
-      <a href="#hero" class="nav__logo" aria-label="Go to homepage">
-        <span class="nav__logo-mark" aria-hidden="true">GK</span>
-        <span class="nav__logo-text">Gouthum Kharvi</span>
-      </a>
-      <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
-        <span class="nav__toggle-bar" aria-hidden="true"></span>
-        <span class="nav__toggle-bar" aria-hidden="true"></span>
-        <span class="nav__toggle-bar" aria-hidden="true"></span>
-      </button>
-      <ul class="nav__menu" id="nav-menu" role="menubar">
-        <li role="none"><a href="#hero" class="nav__link" role="menuitem">Home</a></li>
-        <li role="none"><a href="#about" class="nav__link" role="menuitem">About</a></li>
-        <li role="none"><a href="#miniprojects" class="nav__link" role="menuitem">Mini Projects</a></li>
-        <li role="none"><a href="#portfolio" class="nav__link" role="menuitem">Key Projects</a></li>
-        <li role="none"><a href="#certificates" class="nav__link" role="menuitem">Certificates</a></li>
-        <li role="none"><a href="#contact" class="nav__link nav__link--cta" role="menuitem">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <main id="main">
     <!-- Hero Section -->
-    <section id="hero" class="hero" aria-labelledby="hero-title">
-      <div class="hero__background" aria-hidden="true">
-        <div class="hero__grid"></div>
-        <div class="hero__orb hero__orb--1"></div>
-        <div class="hero__orb hero__orb--2"></div>
-        <div class="hero__orb hero__orb--3"></div>
-      </div>
-      <div class="container hero__container">
-        <div class="hero__content">
-          <p class="hero__badge" data-reveal>
-            <span class="hero__badge-dot" aria-hidden="true"></span>
-            AI/ML Engineer • GenAI & Agentic AI Specialist
-          </p>
-          <h1 id="hero-title" class="hero__title" data-reveal>
-            Building <span class="hero__highlight">Production-Ready</span><br>
-            <span class="hero__gradient-text">Intelligent Systems</span>
-          </h1>
-          <p class="hero__description" data-reveal>
-            I design and deploy RAG pipelines, multi-agent AI systems, and MLOps workflows that solve real business problems. Currently building an 11-stage procurement automation system at <strong>Assisto.tech</strong>.
-          </p>
-          <div class="hero__actions" data-reveal>
-            <a href="#portfolio" class="btn btn--primary">
-              <span>View Key Projects</span>
-              <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a href="#contact" class="btn btn--ghost">
-              <span>Get In Touch</span>
-              <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </a>
-          </div>
-          <div class="hero__stats" data-reveal>
-            <div class="hero__stat">
-              <span class="hero__stat-value" data-count="15">0</span>
-              <span class="hero__stat-label">Projects Deployed</span>
-            </div>
-            <div class="hero__stat">
-              <span class="hero__stat-value" data-count="8">0</span>
-              <span class="hero__stat-label">GenAI/RAG Systems</span>
-            </div>
-            <div class="hero__stat">
-              <span class="hero__stat-value" data-count="4">0</span>
-              <span class="hero__stat-label">Internships</span>
-            </div>
-            <div class="hero__stat">
-              <span class="hero__stat-value" data-count="25">0</span>
-              <span class="hero__stat-label">Certifications</span>
-            </div>
-          </div>
+    <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="hero__bg" aria-hidden="true">
+            <div class="hero__gradient-orb orb-1"></div>
+            <div class="hero__gradient-orb orb-2"></div>
+            <div class="hero__grid-pattern"></div>
         </div>
-        <div class="hero__visual" data-reveal>
-          <div class="hero__terminal" id="hero-terminal" aria-label="Code terminal animation">
-            <div class="terminal__header">
-              <div class="terminal__dots" aria-hidden="true">
-                <span></span><span></span><span></span>
-              </div>
-              <span class="terminal__title">pipeline.py</span>
+        <div class="container hero__container">
+            <div class="hero__content" data-reveal>
+                <p class="hero__badge">
+                    <span class="hero__badge-dot" aria-hidden="true"></span>
+                    AI/ML Engineer • GenAI & RAG Specialist • MLOps Practitioner
+                </p>
+                <h1 id="hero-title" class="hero__title">
+                    Hi, I'm <span class="hero__highlight">Gouthum Kharvi</span>
+                </h1>
+                <p class="hero__subtitle">Building production-ready <span class="hero__accent">GenAI systems</span>, <span class="hero__accent">RAG pipelines</span>, and <span class="hero__accent">Agentic AI</span> workflows that solve real business problems.</p>
+                <div class="hero__stats" role="list" aria-label="Key metrics">
+                    <div class="hero__stat" data-reveal>
+                        <span class="hero__stat-value" data-count="15">0</span>
+                        <span class="hero__stat-label">Production Projects</span>
+                    </div>
+                    <div class="hero__stat" data-reveal>
+                        <span class="hero__stat-value" data-count="8">0</span>
+                        <span class="hero__stat-label">Certifications</span>
+                    </div>
+                    <div class="hero__stat" data-reveal>
+                        <span class="hero__stat-value" data-count="4">0</span>
+                        <span class="hero__stat-label">Years Experience</span>
+                    </div>
+                    <div class="hero__stat" data-reveal>
+                        <span class="hero__stat-value" data-count="12">0</span>
+                        <span class="hero__stat-label">Tech Stack Mastered</span>
+                    </div>
+                </div>
+                <div class="hero__actions">
+                    <a href="#portfolio" class="btn btn--primary">
+                        <span>View Projects</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#contact" class="btn btn--ghost">
+                        <span>Get In Touch</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                </div>
+                <div class="hero__social" role="list" aria-label="Social links">
+                    <a href="https://github.com/GouthumKharvi" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="GitHub" data-reveal><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/gouthumkharvi" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="LinkedIn" data-reveal><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:gouthumkharvi@gmail.com" class="hero__social-link" aria-label="Email" data-reveal><i class="fas fa-envelope"></i></a>
+                    <a href="https://twitter.com/gouthumkharvi" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="Twitter" data-reveal><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
-            <pre class="terminal__code" aria-hidden="true"><code id="terminal-code"></code></pre>
-          </div>
+            <div class="hero__visual" data-reveal>
+                <div class="hero__code-window">
+                    <div class="hero__code-header">
+                        <div class="hero__code-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span class="hero__code-title">agentic_rag_pipeline.py</span>
+                    </div>
+                    <pre class="hero__code"><code><span class="kw">from</span> langchain <span class="kw">import</span> <span class="fn">RAGPipeline</span>
+<span class="kw">from</span> crewai <span class="kw">import</span> <span class="fn">Agent</span>, <span class="fn">Task</span>, <span class="fn">Crew</span>
+<span class="kw">from</span> pinecone <span class="kw">import</span> <span class="fn">VectorStore</span>
+
+<span class="cm"># Multi-Agent RAG System</span>
+<span class="fn">class</span> <span class="cl">AgenticRAG</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="va">self</span>):
+        <span class="va">self</span>.<span class="at">retriever</span> = <span class="fn">VectorStore</span>(<span class="st">"pinecone"</span>)
+        <span class="va">self</span>.<span class="at">agents</span> = <span class="va">self</span>.<span class="fn">_build_agents</span>()
+    
+    <span class="kw">def</span> <span class="fn">_build_agents</span>(<span class="va">self</span>):
+        <span class="kw">return</span> {
+            <span class="st">"researcher"</span>: <span class="fn">Agent</span>(<span class="at">role</span>=<span class="st">"Research"</span>, <span class="at">tools</span>=[<span class="va">self</span>.<span class="at">retriever</span>]),
+            <span class="st">"analyst"</span>: <span class="fn">Agent</span>(<span class="at">role</span>=<span class="st">"Analysis"</span>, <span class="at">llm</span>=<span class="st">"llama-3.3-70b"</span>),
+            <span class="st">"validator"</span>: <span class="fn">Agent</span>(<span class="at">role</span>=<span class="st">"Fact-Check"</span>)
+        }
+    
+    <span class="kw">async def</span> <span class="fn">query</span>(<span class="va">self</span>, <span class="va">question</span>: <span class="bu">str</span>) -> <span class="bu">dict</span>:
+        <span class="kw">return</span> <span class="kw">await</span> <span class="fn">Crew</span>(<span class="va">self</span>.<span class="at">agents</span>).<span class="fn">execute</span>(<span class="va">question</span>)
+
+<span class="cm"># Deployed on AWS ECS • <2s latency • 92% accuracy</span></code></pre>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="hero__scroll" aria-hidden="true">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-      </div>
+        <div class="hero__scroll" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="section about" aria-labelledby="about-title">
-      <div class="container">
-        <header class="section__header" data-reveal>
-          <span class="section__tag">About Me</span>
-          <h2 id="about-title" class="section__title">Where Code Meets <span class="gradient-text">Intelligence</span></h2>
-        </header>
-        <div class="about__grid">
-          <div class="about__visual" data-reveal>
-            <div class="about__image-wrapper">
-              <img src="images/dp.png" alt="Gouthum Kharvi — AI/ML Engineer" class="about__image" loading="lazy">
-              <div class="about__image-glow" aria-hidden="true"></div>
-              <div class="about__badges" aria-hidden="true">
-                <div class="badge badge--glow">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><path d="M12 22V12"/></svg>
-                  <span>RAG & Agentic AI</span>
+        <div class="container">
+            <header class="section__header" data-reveal>
+                <span class="section__tag">About Me</span>
+                <h2 id="about-title" class="section__title">Where code meets <span class="text-gradient">intelligence</span></h2>
+            </header>
+            <div class="about__grid">
+                <div class="about__visual" data-reveal>
+                    <div class="about__image-wrapper">
+                        <img src="images/dp.png" alt="Gouthum Kharvi" class="about__image" loading="lazy">
+                        <div class="about__image-glow" aria-hidden="true"></div>
+                    </div>
+                    <div class="about__badges">
+                        <div class="about__badge" data-reveal><i class="fas fa-code"></i><span>Clean Architecture</span></div>
+                        <div class="about__badge" data-reveal><i class="fas fa-cloud"></i><span>AWS & Docker</span></div>
+                        <div class="about__badge" data-reveal><i class="fas fa-brain"></i><span>LLM Fine-tuning</span></div>
+                        <div class="about__badge" data-reveal><i class="fas fa-robot"></i><span>Agentic Workflows</span></div>
+                    </div>
                 </div>
-                <div class="badge">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                  <span>MLOps & Deployment</span>
+                <div class="about__content" data-reveal>
+                    <p class="about__lead">I'm an AI/ML Engineer building production-grade Generative AI systems — from RAG pipelines and multi-agent workflows to computer vision MLOps platforms.</p>
+                    <p class="about__body">Currently developing an <strong>11-stage procurement workflow system</strong> at <strong>Assisto.tech</strong>, where I architect end-to-end GenAI solutions: document ingestion → OCR → vector indexing → LLM-powered extraction → automated validation → ERP integration. My focus is on <span class="text-gradient">reliability, observability, and cost-efficiency</span> in production LLM deployments.</p>
+                    <div class="about__highlights">
+                        <div class="about__highlight"><span class="about__highlight-icon"><i class="fas fa-lightbulb"></i></span><div><strong>GenAI & RAG</strong><br>LangChain, CrewAI, Pinecone, Groq, Llama 3.3</div></div>
+                        <div class="about__highlight"><span class="about__highlight-icon"><i class="fas fa-cubes"></i></span><div><strong>MLOps & Cloud</strong><br>Docker, GitHub Actions, AWS SageMaker, CI/CD</div></div>
+                        <div class="about__highlight"><span class="about__highlight-icon"><i class="fas fa-eye"></i></span><div><strong>Computer Vision</strong><br>YOLO11, Custom CNNs, Grad-CAM, Real-time Detection</div></div>
+                        <div class="about__highlight"><span class="about__highlight-icon"><i class="fas fa-chart-line"></i></span><div><strong>Data & Analytics</strong><br>SQL, Power BI, Tableau, Statistical Modeling</div></div>
+                    </div>
                 </div>
-                <div class="badge">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-                  <span>Computer Vision</span>
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="about__content">
-            <div class="about__tabs" role="tablist" aria-label="About sections">
-              <button class="about__tab is-active" role="tab" aria-selected="true" aria-controls="skills-panel" id="skills-tab" data-tab="skills">Skills</button>
-              <button class="about__tab" role="tab" aria-selected="false" aria-controls="experience-panel" id="experience-tab" data-tab="experience">Experience</button>
-              <button class="about__tab" role="tab" aria-selected="false" aria-controls="education-panel" id="education-tab" data-tab="education">Education</button>
-              <button class="about__tab" role="tab" aria-selected="false" aria-controls="certificates-panel" id="certificates-tab" data-tab="certificates">Certificates</button>
-              <div class="about__tab-indicator" aria-hidden="true"></div>
+
+            <!-- Tabs -->
+            <div class="tabs" data-reveal role="tablist" aria-label="About sections">
+                <button class="tabs__trigger tabs__trigger--active" role="tab" aria-selected="true" aria-controls="skills-panel" id="skills-tab" data-tab="skills">Skills</button>
+                <button class="tabs__trigger" role="tab" aria-selected="false" aria-controls="experience-panel" id="experience-tab" data-tab="experience">Experience</button>
+                <button class="tabs__trigger" role="tab" aria-selected="false" aria-controls="education-panel" id="education-tab" data-tab="education">Education</button>
+                <button class="tabs__trigger" role="tab" aria-selected="false" aria-controls="certificates-panel" id="certificates-tab" data-tab="certificates">Certificates</button>
+                <div class="tabs__indicator" aria-hidden="true"></div>
             </div>
-            <div class="about__panels">
-              <!-- Skills Panel -->
-              <div class="about__panel is-active" role="tabpanel" id="skills-panel" aria-labelledby="skills-tab">
-                <div class="skills__categories">
-                  <article class="skill-category" data-reveal>
-                    <div class="skill-category__header">
-                      <div class="skill-category__icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                      </div>
-                      <h3 class="skill-category__title">LLM &amp; GenAI</h3>
-                    </div>
-                    <ul class="skill-list">
-                      <li class="skill-item"><span class="skill-name">LangChain / LangGraph</span><span class="skill-desc">RAG pipelines, multi-agent workflows, ReAct agents</span></li>
-                      <li class="skill-item"><span class="skill-name">CrewAI / AutoGen</span><span class="skill-desc">Collaborative agent orchestration</span></li>
-                      <li class="skill-item"><span class="skill-name">Vector Databases</span><span class="skill-desc">Pinecone, FAISS, Weaviate, ChromaDB</span></li>
-                      <li class="skill-item"><span class="skill-name">LLM Providers</span><span class="skill-desc">Groq (Llama 3.3), OpenAI, Anthropic, local GGUF</span></li>
-                      <li class="skill-item"><span class="skill-name">Guardrails / Eval</span><span class="skill-desc">LangSmith, RAGAS, custom citation verification</span></li>
-                    </ul>
-                  </article>
-                  <article class="skill-category" data-reveal>
-                    <div class="skill-category__header">
-                      <div class="skill-category__icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                      </div>
-                      <h3 class="skill-category__title">ML / DL Frameworks</h3>
-                    </div>
-                    <ul class="skill-list">
-                      <li class="skill-item"><span class="skill-name">TensorFlow / Keras</span><span class="skill-desc">ANN, RNN, LSTM, GRU, custom training loops</span></li>
-                      <li class="skill-item"><span class="skill-name">PyTorch</span><span class="skill-desc">Custom models, transformers, acceleration</span></li>
-                      <li class="skill-item"><span class="skill-name">Scikit-learn / XGBoost</span><span class="skill-desc">Classical ML, tabular, ensemble methods</span></li>
-                      <li class="skill-item"><span class="skill-name">Hugging Face 🤗</span><span class="skill-desc">Transformers, PEFT/LoRA, model hub</span></li>
-                    </ul>
-                  </article>
-                  <article class="skill-category" data-reveal>
-                    <div class="skill-category__header">
-                      <div class="skill-category__icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-                      </div>
-                      <h3 class="skill-category__title">MLOps &amp; Cloud</h3>
-                    </div>
-                    <ul class="skill-list">
-                      <li class="skill-item"><span class="skill-name">Docker / Docker Compose</span><span class="skill-desc">Multi-stage builds, GPU support</span></li>
-                      <li class="skill-item"><span class="skill-name">AWS (SageMaker, ECS, Lambda)</span><span class="skill-desc">Managed ML, serverless, container orchestration</span></li>
-                      <li class="skill-item"><span class="skill-name">GitHub Actions / CI/CD</span><span class="skill-desc">Automated testing, deployment, model registry</span></li>
-                      <li class="skill-item"><span class="skill-name">Streamlit / FastAPI / Gradio</span><span class="skill-desc">Rapid ML app deployment</span></li>
-                      <li class="skill-item"><span class="skill-name">Monitoring</span><span class="skill-desc">CloudWatch, LangSmith, Prometheus/Grafana</span></li>
-                    </ul>
-                  </article>
-                  <article class="skill-category" data-reveal>
-                    <div class="skill-category__header">
-                      <div class="skill-category__icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                      </div>
-                      <h3 class="skill-category__title">Data &amp; Analytics</h3>
-                    </div>
-                    <ul class="skill-list">
-                      <li class="skill-item"><span class="skill-name">SQL / PostgreSQL</span><span class="skill-desc">Complex queries, optimization, window functions</span></li>
-                      <li class="skill-item"><span class="skill-name">Pandas / Polars / NumPy</span><span class="skill-desc">Data wrangling, feature engineering</span></li>
-                      <li class="skill-item"><span class="skill-name">Power BI / Tableau</span><span class="skill-desc">Executive dashboards, DAX, storytelling</span></li>
-                      <li class="skill-item"><span class="skill-name">Statistics</span><span class="skill-desc">Hypothesis testing, regression, A/B testing</span></li>
-                    </ul>
-                  </article>
-                  <article class="skill-category" data-reveal>
-                    <div class="skill-category__header">
-                      <div class="skill-category__icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                      </div>
-                      <h3 class="skill-category__title">NLP &amp; Computer Vision</h3>
-                    </div>
-                    <ul class="skill-list">
-                      <li class="skill-item"><span class="skill-name">spaCy / NLTK</span><span class="skill-desc">NER, POS tagging, custom pipelines</span></li>
-                      <li class="skill-item"><span class="skill-name">BERT / Sentence Transformers</span><span class="skill-desc">Embeddings, semantic search, fine-tuning</span></li>
-                      <li class="skill-item"><span class="skill-name">YOLOv11 / OpenCV</span><span class="skill-desc">Object detection, segmentation, real-time inference</span></li>
-                      <li class="skill-item"><span class="skill-name">OCR (Tesseract, PaddleOCR)</span><span class="skill-desc">Document parsing, invoice extraction</span></li>
-                    </ul>
-                  </article>
+
+            <!-- Skills Panel -->
+            <div class="tabs__panel tabs__panel--active" id="skills-panel" role="tabpanel" aria-labelledby="skills-tab" data-reveal>
+                <div class="skills__grid">
+                    <article class="skill-card">
+                        <div class="skill-card__icon"><i class="fas fa-brain"></i></div>
+                        <h3 class="skill-card__title">GenAI & Agentic AI</h3>
+                        <ul class="skill-card__list">
+                            <li><strong>LangChain:</strong> RAG pipelines, Multi-agent systems, ReAct agents</li>
+                            <li><strong>CrewAI:</strong> Collaborative agent workflows, Role-based delegation</li>
+                            <li><strong>LLMs:</strong> Groq (Llama 3.3), GPT-4, Claude, Local models (Ollama)</li>
+                            <li><strong>Vector DBs:</strong> Pinecone, FAISS, ChromaDB, Weaviate</li>
+                            <li><strong>Guardrails:</strong> Citation verification, Hallucination detection</li>
+                        </ul>
+                    </article>
+                    <article class="skill-card">
+                        <div class="skill-card__icon"><i class="fas fa-network-wired"></i></div>
+                        <h3 class="skill-card__title">ML & Deep Learning</h3>
+                        <ul class="skill-card__list">
+                            <li><strong>Frameworks:</strong> TensorFlow/Keras, PyTorch, Scikit-learn, XGBoost</li>
+                            <li><strong>Architectures:</strong> CNN, RNN/LSTM/GRU, Transformers, ANN</li>
+                            <li><strong>Tasks:</strong> Classification, Regression, NLP, Time Series, CV</li>
+                            <li><strong>Techniques:</strong> Transfer Learning, Fine-tuning, Hyperparameter Tuning</li>
+                            <li><strong>Evaluation:</strong> Cross-validation, ROC-AUC, Confusion Matrix, SHAP</li>
+                        </ul>
+                    </article>
+                    <article class="skill-card">
+                        <div class="skill-card__icon"><i class="fas fa-server"></i></div>
+                        <h3 class="skill-card__title">MLOps & Deployment</h3>
+                        <ul class="skill-card__list">
+                            <li><strong>Containers:</strong> Docker, Docker Compose, Multi-stage builds</li>
+                            <li><strong>Cloud:</strong> AWS (ECS, SageMaker, Lambda, S3, CloudWatch)</li>
+                            <li><strong>CI/CD:</strong> GitHub Actions, Automated Testing, Staging/Prod</li>
+                            <li><strong>APIs:</strong> FastAPI, Flask, Streamlit, RESTful Design</li>
+                            <li><strong>Monitoring:</strong> Logging, Metrics, Drift Detection, Alerting</li>
+                        </ul>
+                    </article>
+                    <article class="skill-card">
+                        <div class="skill-card__icon"><i class="fas fa-database"></i></div>
+                        <h3 class="skill-card__title">Data Engineering & Analytics</h3>
+                        <ul class="skill-card__list">
+                            <li><strong>SQL:</strong> Complex Queries, Window Functions, CTEs, Optimization</li>
+                            <li><strong>Processing:</strong> Pandas, Polars, NumPy, Feature Engineering</li>
+                            <li><strong>Visualization:</strong> Power BI, Tableau, Streamlit, Plotly</li>
+                            <li><strong>Statistics:</strong> Hypothesis Testing, Regression, A/B Testing</li>
+                            <li><strong>NLP:</strong> spaCy, Hugging Face, BERT, Sentiment Analysis</li>
+                        </ul>
+                    </article>
                 </div>
-              </div>
-
-              <!-- Experience Panel -->
-              <div class="about__panel" role="tabpanel" id="experience-panel" aria-labelledby="experience-tab" hidden>
-                <ol class="timeline">
-                  <li class="timeline__item" data-reveal>
-                    <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
-                      <time class="timeline__date" datetime="2025-08">Aug 2025 – Present</time>
-                      <h3 class="timeline__title">AI/ML Engineer Intern</h3>
-                      <p class="timeline__company">Assisto.tech (Inlighn X Tech Pvt Ltd)</p>
-                      <ul class="timeline__highlights">
-                        <li>Building 11-stage procurement workflow automation with RAG-based contract analysis</li>
-                        <li>Developing agentic AI system for document classification, clause extraction, and risk scoring</li>
-                        <li>Integrating FAISS/Pinecone vector search with Llama 3.3 (Groq) for sub-2s query latency</li>
-                        <li>Implementing CI/CD with GitHub Actions, Docker, AWS for production deployment</li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="timeline__item" data-reveal>
-                    <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
-                      <time class="timeline__date" datetime="2025-08">Aug – Nov 2025</time>
-                      <h3 class="timeline__title">AI/ML Engineer Intern</h3>
-                      <p class="timeline__company">InLighnX Global Pvt Ltd</p>
-                      <ul class="timeline__highlights">
-                        <li>Built Career Navigator AI: multi-agent system for live job analysis &amp; skill gap detection</li>
-                        <li>Developed ResearchMind AI: autonomous web research with report generation</li>
-                        <li>Created Agentic Travel Planner with real-time APIs (weather, currency, attractions)</li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="timeline__item" data-reveal>
-                    <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
-                      <time class="timeline__date" datetime="2025-08">Aug – Sep 2025</time>
-                      <h3 class="timeline__title">AI/ML Engineer Intern</h3>
-                      <p class="timeline__company">Pinnacle Labs</p>
-                      <ul class="timeline__highlights">
-                        <li>EcoSort Vision: YOLOv11 waste classification (10 categories) with Flask, Docker, AWS CI/CD</li>
-                        <li>Medical Chatbot: RAG system with Pinecone, Groq Llama 3.3, Docker, AWS deployment</li>
-                        <li>Product Defect Detection: MobileNetV2/EfficientNetB0 with Grad-CAM explainability</li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="timeline__item" data-reveal>
-                    <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
-                      <time class="timeline__date" datetime="2025-07">Jul – Aug 2025</time>
-                      <h3 class="timeline__title">Data Science &amp; Analytics Intern</h3>
-                      <p class="timeline__company">Future Interns</p>
-                      <ul class="timeline__highlights">
-                        <li>E-commerce sales dashboard (Power BI), Blinkit sales analysis, HR analytics (Tableau)</li>
-                        <li>Student feedback NLP analyzer with VADER/TextBlob sentiment + Streamlit deployment</li>
-                        <li>Real-time SLA monitoring system with automated email alerts &amp; Streamlit dashboard</li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="timeline__item" data-reveal>
-                    <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
-                      <time class="timeline__date" datetime="2021-2023">2021 – 2023</time>
-                      <h3 class="timeline__title">Technical Support Engineer</h3>
-                      <p class="timeline__company">GlowTouch Technologies</p>
-                    </div>
-                  </li>
-                  <li class="timeline__item" data-reveal>
-                    <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
-                      <time class="timeline__date" datetime="2020-2021">2020 – 2021</time>
-                      <h3 class="timeline__title">EPUB Operator</h3>
-                      <p class="timeline__company">Bit9 Business Solutions Pvt Ltd</p>
-                    </div>
-                  </li>
-                  <li class="timeline__item" data-reveal>
-                    <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
-                      <time class="timeline__date" datetime="2019">2019</time>
-                      <h3 class="timeline__title">Claims Adjudicator</h3>
-                      <p class="timeline__company">HGS – Hinduja Global Solutions</p>
-                    </div>
-                  </li>
-                </ol>
-              </div>
-
-              <!-- Education Panel -->
-              <div class="about__panel" role="tabpanel" id="education-panel" aria-labelledby="education-tab" hidden>
-                <ul class="education-list">
-                  <li class="education-item" data-reveal>
-                    <div class="education__icon" aria-hidden="true">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                    </div>
-                    <div class="education__content">
-                      <h3 class="education__title">Data Science Bootcamp</h3>
-                      <p class="education__institution">UpGrad, Bangalore</p>
-                      <time class="education__year" datetime="2024">2024</time>
-                    </div>
-                  </li>
-                  <li class="education-item" data-reveal>
-                    <div class="education__icon" aria-hidden="true">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                    </div>
-                    <div class="education__content">
-                      <h3 class="education__title">BCA (Bachelor of Computer Applications)</h3>
-                      <p class="education__institution">Bhandarkar's Arts &amp; Science College, Kundapura</p>
-                      <time class="education__year" datetime="2019">2019</time>
-                    </div>
-                  </li>
-                  <li class="education-item" data-reveal>
-                    <div class="education__icon" aria-hidden="true">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                    </div>
-                    <div class="education__content">
-                      <h3 class="education__title">PUC (Pre-University Course)</h3>
-                      <p class="education__institution">SVPU College, Gangolli</p>
-                      <time class="education__year" datetime="2016">2016</time>
-                    </div>
-                  </li>
-                  <li class="education-item" data-reveal>
-                    <div class="education__icon" aria-hidden="true">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-                    </div>
-                    <div class="education__content">
-                      <h3 class="education__title">SSLC (Secondary School Leaving Certificate)</h3>
-                      <p class="education__institution">Stella Maris English Medium High School, Gangolli</p>
-                      <time class="education__year" datetime="2014">2014</time>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Certificates Panel -->
-              <div class="about__panel" role="tabpanel" id="certificates-panel" aria-labelledby="certificates-tab" hidden>
-                <div class="certificates-grid">
-                  <article class="cert-card" data-reveal>
-                    <div class="cert-card__icon" aria-hidden="true">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    </div>
-                    <h3 class="cert-card__title">Data Science Bootcamp Certificate</h3>
-                    <p class="cert-card__issuer">UpGrad — August 2024</p>
-                  </article>
-                  <article class="cert-card" data-reveal>
-                    <div class="cert-card__icon" aria-hidden="true">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    </div>
-                    <h3 class="cert-card__title">AI for All: Basics to GenAI Practice</h3>
-                    <p class="cert-card__issuer">NVIDIA — July 2025</p>
-                  </article>
-                  <article class="cert-card" data-reveal>
-                    <div class="cert-card__icon" aria-hidden="true">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    </div>
-                    <h3 class="cert-card__title">GenAI Powered Data Analytics Job Simulation</h3>
-                    <p class="cert-card__issuer">TATA (via Forage) — August 2025</p>
-                  </article>
-                  <article class="cert-card" data-reveal>
-                    <div class="cert-card__icon" aria-hidden="true">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    </div>
-                    <h3 class="cert-card__title">Data Science &amp; Analytics Internship</h3>
-                    <p class="cert-card__issuer">Future Interns — July 2025</p>
-                  </article>
-                  <article class="cert-card" data-reveal>
-                    <div class="cert-card__icon" aria-hidden="true">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    </div>
-                    <h3 class="cert-card__title">Data Science Internship + LOR</h3>
-                    <p class="cert-card__issuer">Future Interns — July 2025</p>
-                  </article>
-                  <article class="cert-card" data-reveal>
-                    <div class="cert-card__icon" aria-hidden="true">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    </div>
-                    <h3 class="cert-card__title">AI &amp; ML Internship Certificate</h3>
-                    <p class="cert-card__issuer">Pinnacle Labs</p>
-                  </article>
-                  <article class="cert-card" data-reveal>
-                    <div class="cert-card__icon" aria-hidden="true">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    </div>
-                    <h3 class="cert-card__title">AI &amp; ML Internship Certificate</h3>
-                    <p class="cert-card__issuer">Inlighn Global X Pvt Ltd</p>
-                  </article>
-                  <article class="cert-card" data-reveal>
-                    <div class="cert-card__icon" aria-hidden="true">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    </div>
-                    <h3 class="cert-card__title">Hackathon Certificate</h3>
-                    <p class="cert-card__issuer">UpGrad</p>
-                  </article>
-                </div>
-              </div>
             </div>
-          </div>
+
+            <!-- Experience Panel -->
+            <div class="tabs__panel" id="experience-panel" role="tabpanel" aria-labelledby="experience-tab" hidden data-reveal>
+                <div class="timeline">
+                    <div class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__meta">
+                                <span class="timeline__date">Aug 2025 – Nov 2025</span>
+                                <span class="timeline__company">InLighnX Global Pvt Ltd</span>
+                            </div>
+                            <h3 class="timeline__role">AI-ML Engineer Intern</h3>
+                            <ul class="timeline__details">
+                                <li>Built 11-stage procurement automation workflow using LangChain multi-agent system</li>
+                                <li>Developed RAG pipeline for contract analysis: PDF → OCR → Embeddings → Llama 3.3 extraction</li>
+                                <li>Integrated with ERP systems via REST APIs; reduced manual review time by 60%</li>
+                                <li>Deployed on AWS ECS with Docker, GitHub Actions CI/CD, CloudWatch monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__meta">
+                                <span class="timeline__date">Aug 2025 – Sep 2025</span>
+                                <span class="timeline__company">Pinnacle Labs</span>
+                            </div>
+                            <h3 class="timeline__role">AI-ML Engineer Intern</h3>
+                            <ul class="timeline__details">
+                                <li>Built EcoSort Vision: YOLO11 waste classification (10 categories) with MLOps pipeline</li>
+                                <li>Implemented Grad-CAM explainability, confidence-based alerting, automated retraining</li>
+                                <li>Dockerized Flask API, CI/CD via GitHub Actions, deployed to AWS</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__meta">
+                                <span class="timeline__date">Jul 2025 – Aug 2025</span>
+                                <span class="timeline__company">Future Interns</span>
+                            </div>
+                            <h3 class="timeline__role">Data Science & Analytics Intern</h3>
+                            <ul class="timeline__details">
+                                <li>Delivered 3 Power BI dashboards (E-commerce, Blinkit, Social Media) with DAX modeling</li>
+                                <li>Built NLP sentiment analyzer for student feedback (TextBlob, VADER, Random Forest)</li>
+                                <li>Created Streamlit apps for real-time salary prediction & churn classification</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__meta">
+                                <span class="timeline__date">2021 – 2023</span>
+                                <span class="timeline__company">GlowTouch Technologies</span>
+                            </div>
+                            <h3 class="timeline__role">Technical Support Engineer</h3>
+                            <ul class="timeline__details">
+                                <li>Resolved L2/L3 tickets for enterprise SaaS platform; 98% CSAT score</li>
+                                <li>Automated log analysis with Python scripts, reducing MTTR by 40%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__meta">
+                                <span class="timeline__date">2020 – 2021</span>
+                                <span class="timeline__company">Bit9 Business Solutions Pvt Ltd</span>
+                            </div>
+                            <h3 class="timeline__role">EPUB Operator</h3>
+                            <ul class="timeline__details">
+                                <li>Digital publishing workflow: XML/HTML conversion, QC validation, metadata management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__meta">
+                                <span class="timeline__date">2019</span>
+                                <span class="timeline__company">HGS - Hinduja Global Solutions</span>
+                            </div>
+                            <h3 class="timeline__role">Claims Adjudicator</h3>
+                            <ul class="timeline__details">
+                                <li>Healthcare claims processing: Medical coding, Policy validation, Fraud detection</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Panel -->
+            <div class="tabs__panel" id="education-panel" role="tabpanel" aria-labelledby="education-tab" hidden data-reveal>
+                <div class="education__grid">
+                    <article class="education__card">
+                        <div class="education__icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="education__meta">
+                            <span class="education__year">2024</span>
+                            <span class="education__institution">UpGrad, Bangalore</span>
+                        </div>
+                        <h3 class="education__degree">Data Science Bootcamp</h3>
+                        <p class="education__desc">Intensive 6-month program covering ML, DL, NLP, MLOps, and Capstone projects. Graduated with distinction.</p>
+                    </article>
+                    <article class="education__card">
+                        <div class="education__icon"><i class="fas fa-university"></i></div>
+                        <div class="education__meta">
+                            <span class="education__year">2019</span>
+                            <span class="education__institution">Bhandarkars Arts & Science College, Kundapura</span>
+                        </div>
+                        <h3 class="education__degree">BCA (Bachelor of Computer Applications)</h3>
+                        <p class="education__desc">Core: Data Structures, Algorithms, Database Systems, Software Engineering, Java, C++.</p>
+                    </article>
+                    <article class="education__card">
+                        <div class="education__icon"><i class="fas fa-school"></i></div>
+                        <div class="education__meta">
+                            <span class="education__year">2016</span>
+                            <span class="education__institution">SVPU College, Gangolli</span>
+                        </div>
+                        <h3 class="education__degree">PUC (Pre-University Course)</h3>
+                        <p class="education__desc">Science stream: Physics, Chemistry, Mathematics, Computer Science.</p>
+                    </article>
+                    <article class="education__card">
+                        <div class="education__icon"><i class="fas fa-school"></i></div>
+                        <div class="education__meta">
+                            <span class="education__year">2014</span>
+                            <span class="education__institution">Stella Maris English Medium High School, Gangolli</span>
+                        </div>
+                        <h3 class="education__degree">SSLC (Secondary School Leaving Certificate)</h3>
+                        <p class="education__desc">Foundation in Mathematics, Science, and Computer Fundamentals.</p>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Certificates Panel -->
+            <div class="tabs__panel" id="certificates-panel" role="tabpanel" aria-labelledby="certificates-tab" hidden data-reveal>
+                <div class="certs__grid">
+                    <article class="cert-card" data-modal="cert1">
+                        <img src="images/upgrad_certificate.jpg" alt="Data Science Bootcamp Certificate" loading="lazy">
+                        <div class="cert-card__overlay">
+                            <h3>Data Science Bootcamp</h3>
+                            <p>UpGrad • August 2024</p>
+                            <span class="cert-card__view"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </article>
+                    <article class="cert-card" data-modal="cert2">
+                        <img src="images/nvidia_certificate.jpg" alt="AI for All Certificate" loading="lazy">
+                        <div class="cert-card__overlay">
+                            <h3>AI for All: From Basics to GenAI Practice</h3>
+                            <p>NVIDIA • July 2025</p>
+                            <span class="cert-card__view"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </article>
+                    <article class="cert-card" data-modal="cert3">
+                        <img src="images/tata_certificate.jpg" alt="TATA Job Simulation Certificate" loading="lazy">
+                        <div class="cert-card__overlay">
+                            <h3>GenAI Powered Data Analytics Job Simulation</h3>
+                            <p>TATA (Forage) • August 2025</p>
+                            <span class="cert-card__view"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </article>
+                    <article class="cert-card" data-modal="cert4">
+                        <img src="images/future_interns_certificate.jpg" alt="Data Science Internship Certificate" loading="lazy">
+                        <div class="cert-card__overlay">
+                            <h3>Data Science & Analytics Internship</h3>
+                            <p>Future Interns • July 2025</p>
+                            <span class="cert-card__view"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </article>
+                    <article class="cert-card" data-modal="cert5">
+                        <img src="images/future_interns_certificate-lor.jpg" alt="Data Science Internship Certificate & LOR" loading="lazy">
+                        <div class="cert-card__overlay">
+                            <h3>Data Science & Analytics Internship</h3>
+                            <p>Future Interns • July 2025 (with LOR)</p>
+                            <span class="cert-card__view"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </article>
+                    <article class="cert-card" data-modal="cert6">
+                        <img src="images/pinnacle_certificates.jpg" alt="AI/ML Internship Certificate" loading="lazy">
+                        <div class="cert-card__overlay">
+                            <h3>AI & ML Internship Certificate</h3>
+                            <p>Pinnacle Labs • 2025</p>
+                            <span class="cert-card__view"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </article>
+                    <article class="cert-card" data-modal="cert7">
+                        <img src="images/inlighn_certificate.jpg" alt="AI/ML Internship Certificate Inlighn" loading="lazy">
+                        <div class="cert-card__overlay">
+                            <h3>AI & ML Internship Certificate</h3>
+                            <p>Inlighn Global X Pvt Ltd • 2025</p>
+                            <span class="cert-card__view"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </article>
+                    <article class="cert-card" data-modal="cert8">
+                        <img src="images/hackathon_certificate.jpg" alt="Hackathon Certificate" loading="lazy">
+                        <div class="cert-card__overlay">
+                            <h3>Hackathon Certificate</h3>
+                            <p>UpGrad • 2024</p>
+                            <span class="cert-card__view"><i class="fas fa-expand"></i></span>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Mini Projects Section -->
     <section id="miniprojects" class="section miniprojects" aria-labelledby="miniprojects-title">
-      <div class="container">
-        <header class="section__header" data-reveal>
-          <span class="section__tag">Mini Projects</span>
-          <h2 id="miniprojects-title" class="section__title">Focused Experiments &amp; <span class="gradient-text">Learning Labs</span></h2>
-          <p class="section__subtitle">Statistical analyses, SQL explorations, and foundational deep learning projects that sharpened my toolkit</p>
-        </header>
-        <div class="projects-grid" id="miniprojects-grid" role="list">
-          <!-- Items injected via JS to avoid duplication -->
+        <div class="container">
+            <header class="section__header" data-reveal>
+                <span class="section__tag">Mini Projects</span>
+                <h2 id="miniprojects-title" class="section__title">Focused experiments & <span class="text-gradient">statistical deep-dives</span></h2>
+            </header>
+            <div class="projects__filter" role="group" aria-label="Filter projects by category" data-reveal>
+                <button class="filter__btn filter__btn--active" data-filter="all">All</button>
+                <button class="filter__btn" data-filter="statistics">Statistics</button>
+                <button class="filter__btn" data-filter="sql">SQL</button>
+                <button class="filter__btn" data-filter="dl">Deep Learning</button>
+                <button class="filter__btn" data-filter="viz">Visualization</button>
+            </div>
+            <div class="projects__grid" id="miniprojects-grid" role="list">
+                <!-- Project 1 -->
+                <article class="project-card" data-category="statistics" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/st1 (5).jpg" alt="Counting Claims Statistical Analysis" loading="lazy">
+                        <div class="project-card__tag">Statistics</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Counting Claims: Statistical Deep-Dive into Dental Reimbursements</h3>
+                        <p class="project-card__desc">Analyzes random sample of dental claims to estimate 2021 average reimbursements. Confidence intervals at 90%, 95%, 99% levels using Excel. Blends statistical rigor with healthcare finance insights.</p>
+                        <div class="project-card__tech"><span>Excel</span><span>Statistics</span><span>Confidence Intervals</span></div>
+                        <a href="https://github.com/GouthumKharvi/Counting-Claims-A-Statistical-Deep-Dive-into-Dental-Reimbursements" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                            <span>View Code</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card" data-category="statistics" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/house.jpg" alt="House Price Statistical Analysis" loading="lazy">
+                        <div class="project-card__tag">Statistics</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Statistical Analysis of Factors Influencing House Prices</h3>
+                        <p class="project-card__desc">Multiple regression analysis evaluating impact of price/sqft, bathrooms, and floor size on high-floor 2-bedroom house prices. Tests null hypothesis of no significant effect.</p>
+                        <div class="project-card__tech"><span>Regression</span><span>Hypothesis Testing</span><span>Excel</span></div>
+                        <a href="https://github.com/GouthumKharvi/-Statistical-Analysis-of-Factors-Influencing-House-Prices" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                            <span>View Code</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card" data-category="sql" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/nftt.jpg" alt="NFT Market Trends SQL Analysis" loading="lazy">
+                        <div class="project-card__tag">SQL</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">NFT Market Trends: SQL Analysis of Cryptopunks Transactions</h3>
+                        <p class="project-card__desc">Analyzes Cryptopunks NFT sales (Jan 2018 – Dec 2021). Explores total sales, top transactions, average prices, daily trends, buyer insights, and price distributions using SQL.</p>
+                        <div class="project-card__tech"><span>SQL</span><span>Data Analysis</span><span>NFT</span></div>
+                        <a href="https://github.com/GouthumKharvi/NFT-Market-Trends-SQL-Analysis-of-Cryptopunks-Transactions" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                            <span>View Code</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card" data-category="viz" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/healthcare-sector.jpg" alt="Healthcare Summary Report Tableau" loading="lazy">
+                        <div class="project-card__tag">Tableau</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Healthcare Summary Report</h3>
+                        <p class="project-card__desc">Analyzes patient health metrics (diabetes, blood pressure, BMI). Two interactive dashboards: diabetic/non-diabetic distributions and patient summaries by BP/BMI.</p>
+                        <div class="project-card__tech"><span>Tableau</span><span>Healthcare Analytics</span><span>Dashboards</span></div>
+                        <a href="https://github.com/GouthumKharvi/Healthcare-summary-report-Tableu-" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                            <span>View Code</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="project-card" data-category="dl" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/annsalary.png" alt="ANN Regression Salary Prediction" loading="lazy">
+                        <div class="project-card__tag">Deep Learning</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">ANN Regression Salary Prediction</h3>
+                        <p class="project-card__desc">End-to-end ANN regression with TensorFlow, Keras, Scikit-learn, Streamlit. Includes preprocessing, feature engineering, categorical encoding, scaling, training, evaluation, and real-time prediction UI.</p>
+                        <div class="project-card__tech"><span>TensorFlow</span><span>Keras</span><span>Streamlit</span><span>ANN</span></div>
+                        <a href="https://github.com/GouthumKharvi/ANN-REGRESSION-SALARY-PREDICTION" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                            <span>View Code</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 6 -->
+                <article class="project-card" data-category="dl" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/ann class.png" alt="ANN Customer Churn Prediction" loading="lazy">
+                        <div class="project-card__tag">Deep Learning</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">ANN Customer Churn Prediction</h3>
+                        <p class="project-card__desc">End-to-end churn prediction with TensorFlow, Keras, Scikit-learn, Streamlit. Preprocessing, label/one-hot encoding, scaling, ANN training, evaluation, real-time inference web app.</p>
+                        <div class="project-card__tech"><span>TensorFlow</span><span>Classification</span><span>Streamlit</span></div>
+                        <a href="https://github.com/GouthumKharvi/ANN-CLASSIFICATION-CUSTOMER-CHURN" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                            <span>View Code</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 7 -->
+                <article class="project-card" data-category="dl" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/endtoend.png" alt="Movie Sentiment Prediction RNN" loading="lazy">
+                        <div class="project-card__tag">Deep Learning</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Movie Sentiment Prediction using Simple RNN</h3>
+                        <p class="project-card__desc">Classifies IMDB reviews as positive/negative. Text preprocessing, sequence padding, Simple RNN training, sentiment prediction, real-time inference via Streamlit interface.</p>
+                        <div class="project-card__tech"><span>RNN</span><span>NLP</span><span>TensorFlow</span><span>Streamlit</span></div>
+                        <a href="https://github.com/GouthumKharvi/End-To_End-DL-Projects-with-Simple-RNN-Movie-Sentiment-Prediction-" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                            <span>View Code</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 8 -->
+                <article class="project-card" data-category="dl" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/nextword.png" alt="Next Word Prediction LSTM GRU" loading="lazy">
+                        <div class="project-card__tag">Deep Learning & NLP</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Next Word Prediction using LSTM & GRU</h3>
+                        <p class="project-card__desc">Predicts next word in sentence using LSTM/GRU networks. Text preprocessing, tokenization, sequence generation, model training, real-time prediction with Shakespeare's Hamlet dataset.</p>
+                        <div class="project-card__tech"><span>LSTM</span><span>GRU</span><span>NLP</span><span>TensorFlow</span></div>
+                        <a href="https://github.com/GouthumKharvi/Next-Word-Prediction-Using-LSTM-and-GRU" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                            <span>View Code</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Portfolio / Key Projects Section -->
+    <!-- Portfolio Section -->
     <section id="portfolio" class="section portfolio" aria-labelledby="portfolio-title">
-      <div class="container">
-        <header class="section__header" data-reveal>
-          <span class="section__tag">Key Projects</span>
-          <h2 id="portfolio-title" class="section__title">Production-Grade <span class="gradient-text">AI Systems</span></h2>
-          <p class="section__subtitle">End-to-end projects with deployed demos, containerized architectures, and real-world impact</p>
-        </header>
-        <div class="projects-grid" id="portfolio-grid" role="list">
-          <!-- Items injected via JS -->
+        <div class="container">
+            <header class="section__header" data-reveal>
+                <span class="section__tag">Portfolio</span>
+                <h2 id="portfolio-title" class="section__title">Production <span class="text-gradient">GenAI Systems</span> & ML Solutions</h2>
+            </header>
+            <div class="projects__filter" role="group" aria-label="Filter projects by category" data-reveal>
+                <button class="filter__btn filter__btn--active" data-filter="all">All</button>
+                <button class="filter__btn" data-filter="genai">GenAI & RAG</button>
+                <button class="filter__btn" data-filter="agentic">Agentic AI</button>
+                <button class="filter__btn" data-filter="cv">Computer Vision</button>
+                <button class="filter__btn" data-filter="ml">ML & DL</button>
+                <button class="filter__btn" data-filter="data">Data & Analytics</button>
+            </div>
+            <div class="projects__grid" id="portfolio-grid" role="list">
+                <!-- Career Navigator AI -->
+                <article class="project-card project-card--featured" data-category="agentic genai" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/careernav.png" alt="Career Navigator AI" loading="lazy">
+                        <div class="project-card__tag">Multi-Agent • LangChain</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Career Navigator AI</h3>
+                        <p class="project-card__desc">Intelligent multi-agent career assistant analyzing live job opportunities, extracting in-demand skills, providing salary insights, creating personalized learning roadmaps, and generating AI-powered career strategies using real-time market data.</p>
+                        <div class="project-card__tech"><span>LangChain</span><span>Multi-Agent</span><span>Real-time APIs</span><span>Streamlit</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/CompleteAgenticAI/tree/main/6.1%20Career%20Navigator%20Multi%20Agent-AI-System%20using%20Langchain" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ResearchMind AI -->
+                <article class="project-card project-card--featured" data-category="agentic genai" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/researchmimd.png" alt="ResearchMind AI" loading="lazy">
+                        <div class="project-card__tag">Multi-Agent • Research</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">ResearchMind AI</h3>
+                        <p class="project-card__desc">Multi-agent AI research assistant performing live web search, intelligent scraping, report generation, and AI-powered research evaluation by coordinating specialized agents through a shared state workflow.</p>
+                        <div class="project-card__tech"><span>LangChain</span><span>Web Scraping</span><span>Multi-Agent</span><span>Report Gen</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/CompleteAgenticAI/tree/main/6.%20Multi%20Agent-AI-System%20using%20Langchain" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Agentic AI Travel Planner -->
+                <article class="project-card" data-category="agentic" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/agenticaii.png" alt="Agentic AI Travel Planner" loading="lazy">
+                        <div class="project-card__tag">Agentic AI • LangChain</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Agentic AI Travel Planner</h3>
+                        <p class="project-card__desc">Intelligent travel planning agent autonomously gathering country info, live weather, real-time currency conversion, and top attractions using multiple APIs via ReAct-based reasoning workflow.</p>
+                        <div class="project-card__tech"><span>LangChain</span><span>ReAct</span><span>APIs</span><span>Streamlit</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/CompleteAgenticAI/tree/main/5.1%20Agentic-AI-Travel-Planner-Agent" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Single AI Agent System -->
+                <article class="project-card" data-category="agentic" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/singlee.png" alt="Single AI Agent System" loading="lazy">
+                        <div class="project-card__tag">Single Agent • ReAct</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Single AI Agent System</h3>
+                        <p class="project-card__desc">Production-style AI agent with LangChain's ReAct framework reasoning through queries, selecting tools, retrieving live web search and weather data, generating intelligent responses via LLMs.</p>
+                        <div class="project-card__tech"><span>LangChain</span><span>ReAct</span><span>Tool Use</span><span>LLM</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/CompleteAgenticAI/tree/main/5.Single%20AI%20Agent%20system%20using%20Langchain" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- EcoSort Vision -->
+                <article class="project-card project-card--featured" data-category="cv mlops" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/ecosort.png" alt="EcoSort Vision" loading="lazy">
+                        <div class="project-card__tag">Computer Vision • MLOps</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">EcoSort Vision</h3>
+                        <p class="project-card__desc">End-to-end CV and MLOps application detecting/classifying 10 waste categories using YOLO11. Flask, Docker, GitHub Actions, AWS, CI/CD for automated training, deployment, real-time object detection.</p>
+                        <div class="project-card__tech"><span>YOLO11</span><span>Docker</span><span>AWS</span><span>CI/CD</span><span>Flask</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/EcoSort-Vision-AI-Powered-Waste-Detection-and-Classification-System-using-YOLO11" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Medical Chatbot -->
+                <article class="project-card project-card--featured" data-category="genai cv" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/Medicalbot.png" alt="Medical Chatbot" loading="lazy">
+                        <div class="project-card__tag">GenAI • RAG • Pinecone</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Medical Chatbot (GenAI & RAG)</h3>
+                        <p class="project-card__desc">RAG medical chatbot with LangChain, Pinecone, Groq Llama 3.3, Flask, Docker, AWS. Retrieves trusted medical knowledge from vector database for accurate, context-aware responses via interactive chat interface.</p>
+                        <div class="project-card__tech"><span>LangChain</span><span>Pinecone</span><span>Llama 3.3</span><span>Docker</span><span>AWS</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/Medical-Chatbot-GenAI-" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- AI Global Language Translator (Recipe Assistant) -->
+                <article class="project-card" data-category="genai agentic" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/chatbot-restaurant.jpg" alt="AI Global Language Translator" loading="lazy">
+                        <div class="project-card__tag">GenAI • CrewAI</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">AI Global Language Translator (Recipe Assistant)</h3>
+                        <p class="project-card__desc">RAG-powered multi-agent Generative AI recipe assistant with CrewAI, LangChain, Groq LLMs. Contextual chat, adaptive recipe generation, smart shopping, order tracking, voice interaction (coming soon) — complete Agentic AI ecosystem via Streamlit.</p>
+                        <div class="project-card__tech"><span>CrewAI</span><span>LangChain</span><span>Groq</span><span>Streamlit</span><span>RAG</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/AI-Global-Translator" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Salary Prediction -->
+                <article class="project-card" data-category="ml" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/salarypreictionimage.jpg" alt="Salary Prediction" loading="lazy">
+                        <div class="project-card__tag">ML • DL • Streamlit</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Salary Prediction</h3>
+                        <p class="project-card__desc">End-to-end pipeline predicting employee salaries using ML. EDA to model training and real-time prediction. Compare model performance and forecast salaries interactively via Streamlit.</p>
+                        <div class="project-card__tech"><span>ML</span><span>Regression</span><span>Streamlit</span><span>EDA</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/AI-Global-Translator" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- AI Global Language Translator (Translation App) -->
+                <article class="project-card" data-category="genai" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/aitranslator.jpeg" alt="AI Global Language Translator" loading="lazy">
+                        <div class="project-card__tag">GenAI • Translation</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">AI Global Language Translator</h3>
+                        <p class="project-card__desc">AI-powered app translating text, speech, and files across 100+ languages. Real-time translation, voice input, text-to-speech, document upload for instant translation. Built with Python, AI, Streamlit.</p>
+                        <div class="project-card__tech"><span>Translation</span><span>Speech-to-Text</span><span>Streamlit</span><span>100+ Langs</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/AI-Global-Translator" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- AI Resume Parser -->
+                <article class="project-card" data-category="genai ml" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/aiparser.png" alt="AI Resume Parser" loading="lazy">
+                        <div class="project-card__tag">NLP • Transformers</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">AI-Powered Job Recommendation System</h3>
+                        <p class="project-card__desc">Semantic matching of candidate resumes with job postings using transformer-based sentence embeddings. Enhances recruitment efficiency beyond keyword-based search.</p>
+                        <div class="project-card__tech"><span>Transformers</span><span>Sentence Embeddings</span><span>NLP</span><span>Semantic Search</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/AI-Resume-Parser" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- TinyTales GenAI Story Generator -->
+                <article class="project-card" data-category="genai" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/aistory.jpg" alt="TinyTales GenAI Story Generator" loading="lazy">
+                        <div class="project-card__tag">GenAI • GPT-2</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">GenAI Children's Story Generator (TinyTales)</h3>
+                        <p class="project-card__desc">Generates imaginative, age-appropriate children's stories from simple prompts using GPT-2 and Hugging Face Transformers. Fun, educational tool for parents, teachers, young learners.</p>
+                        <div class="project-card__tech"><span>GPT-2</span><span>Hugging Face</span><span>Transformers</span><span>GenAI</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/TinyTales-GenAI" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product Defect Detection -->
+                <article class="project-card" data-category="cv ml" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/aidefect.png" alt="Product Defect Detection" loading="lazy">
+                        <div class="project-card__tag">CV • MobileNetV2 • EfficientNetB0</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Product Defect Detection</h3>
+                        <p class="project-card__desc">AI web app detecting defective products from images using MobileNetV2, Custom CNN, EfficientNetB0. Real-time binary classification (good/defective) with confidence scoring, email alerts for low-confidence predictions, Grad-CAM explainability, comprehensive logging for manufacturing QC.</p>
+                        <div class="project-card__tech"><span>MobileNetV2</span><span>EfficientNetB0</span><span>Grad-CAM</span><span>Streamlit</span><span>Custom CNN</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/AI-Product-Defect" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Invoice Information Extraction -->
+                <article class="project-card" data-category="ml data" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/invoice.jpg" alt="Invoice Information Extraction" loading="lazy">
+                        <div class="project-card__tag">ML • OCR • KVP Extraction</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Invoice Information Extraction</h3>
+                        <p class="project-card__desc">Extracts invoice number, date, line items from invoice images. Scalable model structure allowing training for any field and key-value pair extraction.</p>
+                        <div class="project-card__tech"><span>OCR</span><span>KVP Extraction</span><span>ML</span><span>Scalable</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/Invoice-Information-Extraction-Using-Python-and-Machine-Learning" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Used Car Price Prediction -->
+                <article class="project-card" data-category="ml" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/carprice.jpg" alt="Used Car Price Prediction" loading="lazy">
+                        <div class="project-card__tag">ML • XGBoost • Regression</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Used Car Price Prediction</h3>
+                        <p class="project-card__desc">ML model predicting used car prices using regression on brand, model, year, mileage, fuel type. Compares Linear Regression, Random Forest, XGBoost with hyperparameter tuning and cross-validation. RMSE & R² evaluation.</p>
+                        <div class="project-card__tech"><span>XGBoost</span><span>Random Forest</span><span>Regression</span><span>Feature Engineering</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/usedcarprediction" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Student Feedback Analyzer -->
+                <article class="project-card" data-category="ml data" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/collegeevent.jpeg" alt="Student Feedback Analyzer" loading="lazy">
+                        <div class="project-card__tag">NLP • PowerBI • Streamlit</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Student Feedback Analyzer</h3>
+                        <p class="project-card__desc">Analyzes college event feedback via NLP/ML. Processes Google Forms ratings/comments, sentiment analysis (TextBlob, VADER), classification models (Logistic Regression, Random Forest). Streamlit app for real-time prediction + Power BI dashboard. Found seminars outperform workshops.</p>
+                        <div class="project-card__tech"><span>NLP</span><span>Sentiment Analysis</span><span>PowerBI</span><span>Streamlit</span><span>TextBlob</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/FUTURE_DS_03" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Social Media Campaign Tracker -->
+                <article class="project-card" data-category="data" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/social.png" alt="Social Media Campaign Tracker" loading="lazy">
+                        <div class="project-card__tag">PowerBI • DAX • Marketing</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Social Media Campaign Performance Tracker</h3>
+                        <p class="project-card__desc">Power BI dashboard analyzing Facebook/Instagram ad campaign performance. Interactive visualizations, DAX measures, KPI cards revealing user behavior, campaign effectiveness, ROI over time.</p>
+                        <div class="project-card__tech"><span>Power BI</span><span>DAX</span><span>Marketing Analytics</span><span>KPIs</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/FUTURE_DS_02" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- E-commerce Sales Dashboard -->
+                <article class="project-card" data-category="data" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/ecom1.jpeg" alt="E-commerce Sales Dashboard" loading="lazy">
+                        <div class="project-card__tag">Power BI • Forecasting • DAX</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">E-commerce Sales Dashboard</h3>
+                        <p class="project-card__desc">Superstore sales analysis (2011-2014). Power Query cleaning, DAX measures, comprehensive dashboards with charts, maps, forecasts. Top product: Canon copier (₹62K), peak Nov-Dec, West/East regions 62% revenue.</p>
+                        <div class="project-card__tech"><span>Power BI</span><span>DAX</span><span>Forecasting</span><span>Power Query</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/FUTURE_DS_01" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Ecommerce Product Categorization -->
+                <article class="project-card" data-category="ml dl" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/pc.jpg" alt="Ecommerce Product Categorization" loading="lazy">
+                        <div class="project-card__tag">NLP • PyTorch • DL</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Ecommerce Product Categorization</h3>
+                        <p class="project-card__desc">Product categorization by description using NLP with ML and Deep Learning, implemented with PyTorch.</p>
+                        <div class="project-card__tech"><span>PyTorch</span><span>NLP</span><span>Deep Learning</span><span>Classification</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/Product-Categorization" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Retail Store Allocation Optimization -->
+                <article class="project-card" data-category="ml data" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/retails.jpg" alt="Retail Store Allocation Optimization" loading="lazy">
+                        <div class="project-card__tag">Optimization • PuLP • Linear Programming</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Retail Store Allocation Optimization using PuLP</h3>
+                        <p class="project-card__desc">Linear Programming (PuLP/Gurobi) optimizing product distribution from warehouses to retail stores minimizing shipping costs while meeting supply/demand constraints. Classic supply chain optimization solved with Python.</p>
+                        <div class="project-card__tech"><span>PuLP</span><span>Linear Programming</span><span>Optimization</span><span>Supply Chain</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/Retail-Store-Allocation-Optimization-using-PuLP" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Credit Card Fraud Detection -->
+                <article class="project-card" data-category="ml" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/cred.jpg" alt="Credit Card Fraud Detection" loading="lazy">
+                        <div class="project-card__tag">ML • SMOTE • XGBoost</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Credit Card Fraud Detection</h3>
+                        <p class="project-card__desc">ML fraud detection with data exploration, cleaning, balancing (SMOTE), feature engineering, model evaluation. Logistic Regression, XGBoost, Decision Tree tested. Final model: ROC-AUC 0.99 (train), 0.97 (test).</p>
+                        <div class="project-card__tech"><span>XGBoost</span><span>SMOTE</span><span>Fraud Detection</span><span>ROC-AUC 0.97</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/Credit-Card-Capstone-" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Duplicate Question Detection -->
+                <article class="project-card" data-category="ml nlp" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/NLP (1).jpg" alt="Duplicate Question Detection" loading="lazy">
+                        <div class="project-card__tag">NLP • Random Forest • BoW</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Duplicate Detection using Random Forest & BoW</h3>
+                        <p class="project-card__desc">Identifies duplicate questions using NLP. Combines Bag of Words vectorization with custom feature engineering. RandomForestClassifier trained on features, deployed via Streamlit on Heroku.</p>
+                        <div class="project-card__tech"><span>Random Forest</span><span>BoW</span><span>NLP</span><span>Streamlit</span><span>Heroku</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/Duplicate_Question_Pair-NLP-" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blinkit Sales Analysis -->
+                <article class="project-card" data-category="data" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/Blinkitt (1).png" alt="Blinkit Sales Analysis" loading="lazy">
+                        <div class="project-card__tag">Power BI • Sales Analytics</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Comprehensive Sales Analysis of Blinkit</h3>
+                        <p class="project-card__desc">In-depth analysis of Blinkit's sales data exploring performance metrics, customer satisfaction, inventory management. KPIs uncover actionable insights and business improvement opportunities.</p>
+                        <div class="project-card__tech"><span>Power BI</span><span>Sales Analytics</span><span>KPIs</span><span>Inventory</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/Comprehensive-Sales-Analysis-of-Blinkit-Using-Power-BI" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Real-time SLA Monitoring -->
+                <article class="project-card" data-category="data mlops" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/sla.jpg" alt="Real-time SLA Monitoring" loading="lazy">
+                        <div class="project-card__tag">Data Engineering • Streamlit • Monitoring</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Real-Time SLA Monitoring & Alert System</h3>
+                        <p class="project-card__desc">Tracks SLA violations from platform logs, sends automated email alerts, provides interactive Streamlit dashboard with filters and auto-refresh. Simulates cloud storage using local database for scalable report management.</p>
+                        <div class="project-card__tech"><span>Streamlit</span><span>Monitoring</span><span>Alerting</span><span>Data Engineering</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/Real-Time-SLA-Monitoring-and-Alert-System" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- HR Insights Dashboard -->
+                <article class="project-card" data-category="data" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/hrimage.jpg" alt="HR Insights Dashboard" loading="lazy">
+                        <div class="project-card__tag">Tableau • HR Analytics</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">HR Insights & Employee Data Dashboard</h3>
+                        <p class="project-card__desc">Tableau dashboard for HR managers: key metrics, demographics, income analysis. Tracks hires, terminations, department distributions, salary variations with detailed employee records and filters.</p>
+                        <div class="project-card__tech"><span>Tableau</span><span>HR Analytics</span><span>Workforce Data</span><span>Dashboards</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/HR-Insights-and-Employee-Data-Dashboard?tab=readme-ov-file#hr-insights-and-employee-data-dashboard" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Car Sales Database -->
+                <article class="project-card" data-category="data" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/carrsales.jpeg" alt="Car Sales Database" loading="lazy">
+                        <div class="project-card__tag">SQL • Database Design</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Car Sales Database Management System</h3>
+                        <p class="project-card__desc">GlobalCarDetails database structuring car sales data for analysis. Organizes manufacturers, models, sales, regions enabling insights into sales trends, pricing, manufacturer performance across markets via SQL queries.</p>
+                        <div class="project-card__tech"><span>SQL</span><span>Database Design</span><span>Data Modeling</span><span>Analytics</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/Car-Sales-Database-Management-System-using-SQL" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Virat Kohli T20 Analysis -->
+                <article class="project-card" data-category="data" data-reveal role="listitem">
+                    <div class="project-card__media">
+                        <img src="images/vk2.jpeg" alt="Virat Kohli T20 Analysis" loading="lazy">
+                        <div class="project-card__tag">Excel • Sports Analytics</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Virat Kohli's Complete T20 Performance Analysis (2010-2024)</h3>
+                        <p class="project-card__desc">Comprehensive analysis of Virat Kohli's T20 career spanning 2010-2024. Performance metrics, strike rates, milestone tracking, venue-wise breakdown, and opponent analysis using Excel.</p>
+                        <div class="project-card__tech"><span>Excel</span><span>Sports Analytics</span><span>Data Visualization</span></div>
+                        <div class="project-card__links">
+                            <a href="https://github.com/GouthumKharvi/ViratKohli_T20_Stats_2010-2024" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Certificates Section (Visual Gallery) -->
-    <section id="certificates" class="section certificates" aria-labelledby="certificates-gallery-title">
-      <div class="container">
-        <header class="section__header" data-reveal>
-          <span class="section__tag">Certificates</span>
-          <h2 id="certificates-gallery-title" class="section__title">Verified <span class="gradient-text">Credentials</span></h2>
-        </header>
-        <div class="cert-gallery" id="cert-gallery" role="list">
-          <!-- Injected via JS -->
+    <!-- Certificates Section (Dedicated) -->
+    <section id="certificates" class="section certificates" aria-labelledby="certificates-main-title">
+        <div class="container">
+            <header class="section__header" data-reveal>
+                <span class="section__tag">Certificates</span>
+                <h2 id="certificates-main-title" class="section__title">Validated <span class="text-gradient">Expertise</span></h2>
+            </header>
+            <div class="certs__grid" id="certificates-grid" role="list">
+                <!-- Certificates will be rendered here (same as in About tab) -->
+                <!-- Using the same cert-card structure from About tab -->
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section contact" aria-labelledby="contact-title">
-      <div class="container">
-        <header class="section__header" data-reveal>
-          <span class="section__tag">Contact</span>
-          <h2 id="contact-title" class="section__title">Let's Build <span class="gradient-text">Something</span></h2>
-          <p class="section__subtitle">Open to full-time AI/ML roles, freelance GenAI projects, and technical collaborations</p>
-        </header>
-        <div class="contact__grid">
-          <div class="contact__info" data-reveal>
-            <div class="contact__item">
-              <div class="contact__icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div class="contact__details">
-                <h3 class="contact__label">Email</h3>
-                <a href="mailto:gouthumkharvi@gmail.com" class="contact__value">gouthumkharvi@gmail.com</a>
-              </div>
+        <div class="container">
+            <header class="section__header" data-reveal>
+                <span class="section__tag">Contact</span>
+                <h2 id="contact-title" class="section__title">Let's build <span class="text-gradient">something great</span></h2>
+            </header>
+            <div class="contact__grid">
+                <div class="contact__info" data-reveal>
+                    <p class="contact__lead">I'm always open to discussing AI/ML opportunities, GenAI projects, or just geeking out over the latest LLM research.</p>
+                    <div class="contact__methods">
+                        <a href="mailto:gouthumkharvi@gmail.com" class="contact__method">
+                            <div class="contact__method-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <span class="contact__method-label">Email</span>
+                                <span class="contact__method-value">gouthumkharvi@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/gouthumkharvi" target="_blank" rel="noopener noreferrer" class="contact__method">
+                            <div class="contact__method-icon"><i class="fab fa-linkedin-in"></i></div>
+                            <div>
+                                <span class="contact__method-label">LinkedIn</span>
+                                <span class="contact__method-value">linkedin.com/in/gouthumkharvi</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/GouthumKharvi" target="_blank" rel="noopener noreferrer" class="contact__method">
+                            <div class="contact__method-icon"><i class="fab fa-github"></i></div>
+                            <div>
+                                <span class="contact__method-label">GitHub</span>
+                                <span class="contact__method-value">github.com/GouthumKharvi</span>
+                            </div>
+                        </a>
+                        <div class="contact__method">
+                            <div class="contact__method-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <span class="contact__method-label">Location</span>
+                                <span class="contact__method-value">Bengaluru, Karnataka, India</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact__social" role="list" aria-label="Social links">
+                        <a href="https://github.com/GouthumKharvi" target="_blank" rel="noopener noreferrer" class="contact__social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/gouthumkharvi" target="_blank" rel="noopener noreferrer" class="contact__social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/gouthumkharvi" target="_blank" rel="noopener noreferrer" class="contact__social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:gouthumkharvi@gmail.com" class="contact__social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <form class="contact__form" data-reveal action="https://formspree.io/f/your-form-id" method="POST" aria-label="Contact form">
+                    <div class="form__group">
+                        <label for="name" class="form__label">Name</label>
+                        <input type="text" id="name" name="name" class="form__input" placeholder="Your name" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="email" class="form__label">Email</label>
+                        <input type="email" id="email" name="email" class="form__input" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="subject" class="form__label">Subject</label>
+                        <select id="subject" name="subject" class="form__input form__select" required>
+                            <option value="">Select a topic</option>
+                            <option value="genai">GenAI / RAG / Agentic AI</option>
+                            <option value="mlops">MLOps / Deployment</option>
+                            <option value="cv">Computer Vision</option>
+                            <option value="ml">Machine Learning / Deep Learning</option>
+                            <option value="data">Data Science / Analytics</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form__group">
+                        <label for="message" class="form__label">Message</label>
+                        <textarea id="message" name="message" class="form__input form__textarea" rows="5" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full">
+                        <span>Send Message</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                    </button>
+                    <p class="form__note">Hosted on Formspree • No backend needed • Replace form action with your endpoint</p>
+                </form>
             </div>
-            <div class="contact__item">
-              <div class="contact__icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </div>
-              <div class="contact__details">
-                <h3 class="contact__label">LinkedIn</h3>
-                <a href="https://linkedin.com/in/gouthumkharvi" target="_blank" rel="noopener" class="contact__value">linkedin.com/in/gouthumkharvi</a>
-              </div>
-            </div>
-            <div class="contact__item">
-              <div class="contact__icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1a5.07 5.07 0 0 0-1 4.77 5.44 5.44 0 0 0 3.44 7.77 3.37 3.37 0 0 0-.94 2.61V19"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-              </div>
-              <div class="contact__details">
-                <h3 class="contact__label">GitHub</h3>
-                <a href="https://github.com/GouthumKharvi" target="_blank" rel="noopener" class="contact__value">github.com/GouthumKharvi</a>
-              </div>
-            </div>
-            <div class="contact__item">
-              <div class="contact__icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              </div>
-              <div class="contact__details">
-                <h3 class="contact__label">Location</h3>
-                <span class="contact__value">Bengaluru, Karnataka, India</span>
-              </div>
-            </div>
-          </div>
-          <form class="contact__form" id="contact-form" data-reveal>
-            <div class="form__group">
-              <label for="name" class="form__label">Name</label>
-              <input type="text" id="name" name="name" class="form__input" required autocomplete="name" placeholder="Your name">
-            </div>
-            <div class="form__group">
-              <label for="email" class="form__label">Email</label>
-              <input type="email" id="email" name="email" class="form__input" required autocomplete="email" placeholder="you@example.com">
-            </div>
-            <div class="form__group">
-              <label for="subject" class="form__label">Subject</label>
-              <select id="subject" name="subject" class="form__input form__select" required>
-                <option value="">Select a topic</option>
-                <option value="job">Full-time Opportunity</option>
-                <option value="freelance">Freelance / Contract</option>
-                <option value="collab">Technical Collaboration</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form__group">
-              <label for="message" class="form__label">Message</label>
-              <textarea id="message" name="message" class="form__input form__textarea" rows="5" required placeholder="Tell me about your project or role..."></textarea>
-            </div>
-            <button type="submit" class="btn btn--primary btn--full">
-              <span>Send Message</span>
-              <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-            </button>
-            <p class="form__note" id="form-status" aria-live="polite"></p>
-          </form>
         </div>
-      </div>
     </section>
-  </main>
 
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <a href="#hero" class="footer__logo">
-            <span class="footer__logo-mark" aria-hidden="true">GK</span>
-            <span class="footer__logo-text">Gouthum Kharvi</span>
-          </a>
-          <p class="footer__tagline">AI/ML Engineer crafting intelligent systems that deliver real business value.</p>
-          <div class="footer__social">
-            <a href="mailto:gouthumkharvi@gmail.com" class="footer__social-link" aria-label="Email me"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
-            <a href="https://linkedin.com/in/gouthumkharvi" target="_blank" rel="noopener" class="footer__social-link" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-            <a href="https://github.com/GouthumKharvi" target="_blank" rel="noopener" class="footer__social-link" aria-label="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1a5.07 5.07 0 0 0-1 4.77 5.44 5.44 0 0 0 3.44 7.77 3.37 3.37 0 0 0-.94 2.61V19"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></a>
-          </div>
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <span class="footer__logo">GK</span>
+                    <p class="footer__tagline">AI/ML Engineer building production GenAI systems.</p>
+                </div>
+                <nav class="footer__nav" aria-label="Footer navigation">
+                    <a href="#home" class="footer__link">Home</a>
+                    <a href="#about" class="footer__link">About</a>
+                    <a href="#portfolio" class="footer__link">Portfolio</a>
+                    <a href="#contact" class="footer__link">Contact</a>
+                </nav>
+                <div class="footer__social" role="list" aria-label="Social links">
+                    <a href="https://github.com/GouthumKharvi" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/gouthumkharvi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/gouthumkharvi" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:gouthumkharvi@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2026 Gouthum Kharvi. Built with <span class="text-gradient">code</span> &amp; <span class="text-gradient">curiosity</span>.</p>
+                <p class="footer__credits">Designed &amp; developed by Gouthum Kharvi • Deployed on GitHub Pages</p>
+            </div>
         </div>
-        <nav class="footer__nav" aria-label="Footer navigation">
-          <h4 class="footer__heading">Quick Links</h4>
-          <ul class="footer__links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#miniprojects">Mini Projects</a></li>
-            <li><a href="#portfolio">Key Projects</a></li>
-            <li><a href="#certificates">Certificates</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <nav class="footer__nav" aria-label="Project categories">
-          <h4 class="footer__heading">Specializations</h4>
-          <ul class="footer__links">
-            <li><a href="#portfolio">RAG &amp; Agentic AI</a></li>
-            <li><a href="#portfolio">MLOps &amp; Deployment</a></li>
-            <li><a href="#portfolio">Computer Vision</a></li>
-            <li><a href="#portfolio">NLP &amp; LLMs</a></li>
-            <li><a href="#portfolio">Data Analytics</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; <span id="year"></span> Gouthum Kharvi. Built with <span class="heart" aria-hidden="true">♥</span> and Python.</p>
-        <p class="footer__credit">Designed &amp; developed by Gouthum — no templates, just code.</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Certificate Modal -->
-  <dialog class="modal" id="cert-modal" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal__backdrop" data-close-modal></div>
-    <div class="modal__content">
-      <button class="modal__close" data-close-modal aria-label="Close certificate view">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="modal__body">
-        <img id="modal-img" src="" alt="" loading="lazy">
-      </div>
+    <!-- Certificate Modal -->
+    <div class="modal" id="cert-modal" role="dialog" aria-modal="true" aria-labelledby="cert-modal-title" hidden>
+        <div class="modal__backdrop" aria-hidden="true"></div>
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Close certificate view">&times;</button>
+            <img id="cert-modal-img" src="" alt="" class="modal__image">
+            <div class="modal__info">
+                <h3 id="cert-modal-title" class="modal__title"></h3>
+                <p id="cert-modal-desc" class="modal__desc"></p>
+            </div>
+        </div>
     </div>
-  </dialog>
 
-  <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
