@@ -165,7 +165,7 @@ body{
 .scroll-reveal.active {
     opacity: 1;
 }
-
+  
 /* Custom cursor trail effect */
 .cursor-trail {
     position: fixed;
