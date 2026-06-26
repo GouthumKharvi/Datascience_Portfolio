@@ -1,88 +1,81 @@
-I'll proceed with these defaults:
-- **Visual:** Futuristic AI lab aesthetic (near-black + electric cyan/magenta holographic accents, grain, glass)
-- **Animation:** Animated neural network (replacing photo) + AI data sphere (replacing hero code card)
-- **Content:** Keep all sections, skills, projects, certificates as-is
-- **Typography:** Unique mix — Fraunces (italic serif) + Geist Sans (no Inter/Space Grotesk)
-
-Let me build the new `index.html` and `style.css` now.
-Action: file_editor create /app/index.html --file-text "<!DOCTYPE html>
-<html lang=\"en\">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset=\"UTF-8\" />
-<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Gouthum Kharvi — AI / ML Engineer & Data Scientist</title>
-<link rel=\"stylesheet\" href=\"style.css\" />
-<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
-<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
-<link href=\"https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,500&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap\" rel=\"stylesheet\">
-<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css\">
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,500&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
 <!-- Ambient layers -->
-<div class=\"grain\" aria-hidden=\"true\"></div>
-<div class=\"bg-grid\" aria-hidden=\"true\"></div>
-<div class=\"bg-orb bg-orb-1\" aria-hidden=\"true\"></div>
-<div class=\"bg-orb bg-orb-2\" aria-hidden=\"true\"></div>
-<canvas id=\"neuralNet\" aria-hidden=\"true\"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-orb bg-orb-1" aria-hidden="true"></div>
+<div class="bg-orb bg-orb-2" aria-hidden="true"></div>
+<canvas id="neuralNet" aria-hidden="true"></canvas>
 
 <!-- Custom cursor -->
-<div class=\"cursor\" aria-hidden=\"true\"></div>
-<div class=\"cursor-follower\" aria-hidden=\"true\"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-follower" aria-hidden="true"></div>
 
 <!-- Progress -->
-<div class=\"page-progress\" aria-hidden=\"true\"></div>
+<div class="page-progress" aria-hidden="true"></div>
 
 <!-- =========================== HEADER =========================== -->
-<header id=\"header\">
-  <div class=\"container\">
+<header id="header">
+  <div class="container">
     <nav>
-      <a href=\"#header\" class=\"logo\">
-        <span class=\"logo-mark\">GK</span>
-        <span>gouthum<span class=\"dot\">.</span>dev</span>
+      <a href="#header" class="logo">
+        <span class="logo-mark">GK</span>
+        <span>gouthum<span class="dot">.</span>dev</span>
       </a>
-      <ul id=\"sidemenu\">
-        <li><a href=\"#header\">Home</a></li>
-        <li><a href=\"#about\">About</a></li>
-        <li><a href=\"#mini-projects\">Mini</a></li>
-        <li><a href=\"#portfolio\">Work</a></li>
-        <li><a href=\"#certificates\">Certificates</a></li>
-        <li><a href=\"#contact\">Contact</a></li>
-        <i class=\"fa-solid fa-times\" onclick=\"closemenu()\"></i>
+      <ul id="sidemenu">
+        <li><a href="#header">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#mini-projects">Mini</a></li>
+        <li><a href="#portfolio">Work</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <i class="fa-solid fa-times" onclick="closemenu()"></i>
       </ul>
-      <i class=\"fa-solid fa-bars\" onclick=\"openmenu()\"></i>
+      <i class="fa-solid fa-bars" onclick="openmenu()"></i>
     </nav>
 
-    <div class=\"hero\">
-      <div class=\"hero-left\">
-        <div class=\"status-pill\">
-          <span class=\"dot-live\"></span>
+    <div class="hero">
+      <div class="hero-left">
+        <div class="status-pill">
+          <span class="dot-live"></span>
           <span>// Available for AI / ML roles · Q1 2026</span>
         </div>
 
-        <h1 class=\"hero-title\">
+        <h1 class="hero-title">
           Engineering <em>intelligence</em><br/>
-          for the <span class=\"grad-text\">data-driven</span><br/>
+          for the <span class="grad-text">data-driven</span><br/>
           world.
         </h1>
 
-        <p class=\"hero-sub\">
+        <p class="hero-sub">
           I'm <strong>Gouthum Kharvi</strong> — an AI / ML engineer & data scientist with
           <strong>4+ years</strong> across Machine Learning, Deep Learning, NLP and Generative AI.
           I ship end-to-end systems: from RAG pipelines and multi-agent assistants
           to predictive models and interactive dashboards.
         </p>
 
-        <div class=\"hero-cta\">
-          <a href=\"#portfolio\" class=\"btn-primary\" data-testid=\"hero-explore-work-btn\">
-            Explore work <i class=\"fa-solid fa-arrow-right\"></i>
+        <div class="hero-cta">
+          <a href="#portfolio" class="btn-primary" data-testid="hero-explore-work-btn">
+            Explore work <i class="fa-solid fa-arrow-right"></i>
           </a>
-          <a href=\"#contact\" class=\"btn-ghost\" data-testid=\"hero-contact-btn\">
+          <a href="#contact" class="btn-ghost" data-testid="hero-contact-btn">
             Get in touch
           </a>
         </div>
 
-        <div class=\"hero-meta\">
+        <div class="hero-meta">
           <div>
             <strong>4+</strong>
             <span>years in tech</span>
@@ -103,40 +96,40 @@ Action: file_editor create /app/index.html --file-text "<!DOCTYPE html>
       </div>
 
       <!-- Hero animated AI sphere (replaces code editor) -->
-      <div class=\"hero-right\">
-        <div class=\"ai-sphere\" data-testid=\"hero-ai-sphere\">
-          <div class=\"sphere-core\"></div>
-          <div class=\"ring ring-1\"></div>
-          <div class=\"ring ring-2\"></div>
-          <div class=\"ring ring-3\"></div>
-          <div class=\"orbit orbit-1\"><span></span></div>
-          <div class=\"orbit orbit-2\"><span></span></div>
-          <div class=\"orbit orbit-3\"><span></span></div>
-          <div class=\"orbit orbit-4\"><span></span></div>
-          <svg class=\"sphere-svg\" viewBox=\"0 0 400 400\" aria-hidden=\"true\">
+      <div class="hero-right">
+        <div class="ai-sphere" data-testid="hero-ai-sphere">
+          <div class="sphere-core"></div>
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="ring ring-3"></div>
+          <div class="orbit orbit-1"><span></span></div>
+          <div class="orbit orbit-2"><span></span></div>
+          <div class="orbit orbit-3"><span></span></div>
+          <div class="orbit orbit-4"><span></span></div>
+          <svg class="sphere-svg" viewBox="0 0 400 400" aria-hidden="true">
             <defs>
-              <radialGradient id=\"sphereGrad\" cx=\"50%\" cy=\"50%\" r=\"50%\">
-                <stop offset=\"0%\" stop-color=\"#00ffd1\" stop-opacity=\"0.7\"/>
-                <stop offset=\"60%\" stop-color=\"#00ffd1\" stop-opacity=\"0.05\"/>
-                <stop offset=\"100%\" stop-color=\"transparent\"/>
+              <radialGradient id="sphereGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#00ffd1" stop-opacity="0.7"/>
+                <stop offset="60%" stop-color="#00ffd1" stop-opacity="0.05"/>
+                <stop offset="100%" stop-color="transparent"/>
               </radialGradient>
             </defs>
-            <circle cx=\"200\" cy=\"200\" r=\"160\" fill=\"url(#sphereGrad)\"/>
+            <circle cx="200" cy="200" r="160" fill="url(#sphereGrad)"/>
           </svg>
-          <div class=\"sphere-label\">
-            <span class=\"lbl-k\">model</span>
-            <span class=\"lbl-v\">gpt-agent.v3</span>
+          <div class="sphere-label">
+            <span class="lbl-k">model</span>
+            <span class="lbl-v">gpt-agent.v3</span>
           </div>
         </div>
 
-        <div class=\"floating-tag tag-a\">
-          <i class=\"fa-solid fa-bolt\"></i> 99.2% accuracy
+        <div class="floating-tag tag-a">
+          <i class="fa-solid fa-bolt"></i> 99.2% accuracy
         </div>
-        <div class=\"floating-tag tag-b\">
-          <i class=\"fa-solid fa-brain\"></i> LangChain · RAG
+        <div class="floating-tag tag-b">
+          <i class="fa-solid fa-brain"></i> LangChain · RAG
         </div>
-        <div class=\"floating-tag tag-c\">
-          <i class=\"fa-solid fa-database\"></i> 100M+ rows trained
+        <div class="floating-tag tag-c">
+          <i class="fa-solid fa-database"></i> 100M+ rows trained
         </div>
       </div>
     </div>
@@ -144,8 +137,8 @@ Action: file_editor create /app/index.html --file-text "<!DOCTYPE html>
 </header>
 
 <!-- Marquee divider -->
-<div class=\"marquee\" aria-hidden=\"true\">
-  <div class=\"marquee-track\">
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
     <span>Python</span><span>•</span>
     <span>PyTorch</span><span>•</span>
     <span>TensorFlow</span><span>•</span>
@@ -176,123 +169,123 @@ Action: file_editor create /app/index.html --file-text "<!DOCTYPE html>
 </div>
 
 <!-- =========================== ABOUT =========================== -->
-<section id=\"about\">
-  <div class=\"container\">
-    <div class=\"section-head scroll-reveal\">
-      <span class=\"sec-num\">01</span>
-      <h2 class=\"sub-title\">About <em>me</em></h2>
-      <div class=\"sec-line\"></div>
+<section id="about">
+  <div class="container">
+    <div class="section-head scroll-reveal">
+      <span class="sec-num">01</span>
+      <h2 class="sub-title">About <em>me</em></h2>
+      <div class="sec-line"></div>
     </div>
-    <p class=\"section-lead scroll-reveal\">
+    <p class="section-lead scroll-reveal">
       Where statistics, code and curiosity collide — building intelligent systems that turn raw data into real outcomes.
     </p>
 
-    <div class=\"about-row\">
+    <div class="about-row">
       <!-- Neural-net animation replaces photo -->
-      <div class=\"about-col-1 scroll-reveal\">
-        <div class=\"brain-frame\" data-testid=\"about-brain-animation\">
-          <svg class=\"brain-svg\" viewBox=\"0 0 360 420\" xmlns=\"http://www.w3.org/2000/svg\">
+      <div class="about-col-1 scroll-reveal">
+        <div class="brain-frame" data-testid="about-brain-animation">
+          <svg class="brain-svg" viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <radialGradient id=\"nodeGlow\" cx=\"50%\" cy=\"50%\" r=\"50%\">
-                <stop offset=\"0%\" stop-color=\"#00ffd1\" stop-opacity=\"0.9\"/>
-                <stop offset=\"100%\" stop-color=\"#00ffd1\" stop-opacity=\"0\"/>
+              <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#00ffd1" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#00ffd1" stop-opacity="0"/>
               </radialGradient>
-              <linearGradient id=\"lineGrad\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">
-                <stop offset=\"0%\" stop-color=\"#00ffd1\" stop-opacity=\"0.7\"/>
-                <stop offset=\"100%\" stop-color=\"#ff3d8c\" stop-opacity=\"0.5\"/>
+              <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#00ffd1" stop-opacity="0.7"/>
+                <stop offset="100%" stop-color="#ff3d8c" stop-opacity="0.5"/>
               </linearGradient>
             </defs>
 
             <!-- Layered neural network -->
-            <g class=\"net-lines\" stroke=\"url(#lineGrad)\" stroke-width=\"0.7\" fill=\"none\" opacity=\"0.55\">
+            <g class="net-lines" stroke="url(#lineGrad)" stroke-width="0.7" fill="none" opacity="0.55">
               <!-- L1 -> L2 -->
-              <line x1=\"60\" y1=\"90\" x2=\"160\" y2=\"80\"/>
-              <line x1=\"60\" y1=\"90\" x2=\"160\" y2=\"160\"/>
-              <line x1=\"60\" y1=\"90\" x2=\"160\" y2=\"240\"/>
-              <line x1=\"60\" y1=\"170\" x2=\"160\" y2=\"80\"/>
-              <line x1=\"60\" y1=\"170\" x2=\"160\" y2=\"160\"/>
-              <line x1=\"60\" y1=\"170\" x2=\"160\" y2=\"240\"/>
-              <line x1=\"60\" y1=\"170\" x2=\"160\" y2=\"320\"/>
-              <line x1=\"60\" y1=\"250\" x2=\"160\" y2=\"160\"/>
-              <line x1=\"60\" y1=\"250\" x2=\"160\" y2=\"240\"/>
-              <line x1=\"60\" y1=\"250\" x2=\"160\" y2=\"320\"/>
-              <line x1=\"60\" y1=\"330\" x2=\"160\" y2=\"240\"/>
-              <line x1=\"60\" y1=\"330\" x2=\"160\" y2=\"320\"/>
+              <line x1="60" y1="90" x2="160" y2="80"/>
+              <line x1="60" y1="90" x2="160" y2="160"/>
+              <line x1="60" y1="90" x2="160" y2="240"/>
+              <line x1="60" y1="170" x2="160" y2="80"/>
+              <line x1="60" y1="170" x2="160" y2="160"/>
+              <line x1="60" y1="170" x2="160" y2="240"/>
+              <line x1="60" y1="170" x2="160" y2="320"/>
+              <line x1="60" y1="250" x2="160" y2="160"/>
+              <line x1="60" y1="250" x2="160" y2="240"/>
+              <line x1="60" y1="250" x2="160" y2="320"/>
+              <line x1="60" y1="330" x2="160" y2="240"/>
+              <line x1="60" y1="330" x2="160" y2="320"/>
               <!-- L2 -> L3 -->
-              <line x1=\"160\" y1=\"80\" x2=\"260\" y2=\"120\"/>
-              <line x1=\"160\" y1=\"80\" x2=\"260\" y2=\"200\"/>
-              <line x1=\"160\" y1=\"160\" x2=\"260\" y2=\"120\"/>
-              <line x1=\"160\" y1=\"160\" x2=\"260\" y2=\"200\"/>
-              <line x1=\"160\" y1=\"160\" x2=\"260\" y2=\"280\"/>
-              <line x1=\"160\" y1=\"240\" x2=\"260\" y2=\"200\"/>
-              <line x1=\"160\" y1=\"240\" x2=\"260\" y2=\"280\"/>
-              <line x1=\"160\" y1=\"320\" x2=\"260\" y2=\"280\"/>
-              <line x1=\"160\" y1=\"320\" x2=\"260\" y2=\"200\"/>
+              <line x1="160" y1="80" x2="260" y2="120"/>
+              <line x1="160" y1="80" x2="260" y2="200"/>
+              <line x1="160" y1="160" x2="260" y2="120"/>
+              <line x1="160" y1="160" x2="260" y2="200"/>
+              <line x1="160" y1="160" x2="260" y2="280"/>
+              <line x1="160" y1="240" x2="260" y2="200"/>
+              <line x1="160" y1="240" x2="260" y2="280"/>
+              <line x1="160" y1="320" x2="260" y2="280"/>
+              <line x1="160" y1="320" x2="260" y2="200"/>
               <!-- L3 -> output -->
-              <line x1=\"260\" y1=\"120\" x2=\"320\" y2=\"210\"/>
-              <line x1=\"260\" y1=\"200\" x2=\"320\" y2=\"210\"/>
-              <line x1=\"260\" y1=\"280\" x2=\"320\" y2=\"210\"/>
+              <line x1="260" y1="120" x2="320" y2="210"/>
+              <line x1="260" y1="200" x2="320" y2="210"/>
+              <line x1="260" y1="280" x2="320" y2="210"/>
             </g>
 
             <!-- Animated signal pulses -->
-            <g class=\"pulses\">
-              <circle r=\"2.5\" fill=\"#00ffd1\">
-                <animateMotion dur=\"2.4s\" repeatCount=\"indefinite\" path=\"M60,90 L160,160 L260,200 L320,210\"/>
+            <g class="pulses">
+              <circle r="2.5" fill="#00ffd1">
+                <animateMotion dur="2.4s" repeatCount="indefinite" path="M60,90 L160,160 L260,200 L320,210"/>
               </circle>
-              <circle r=\"2.5\" fill=\"#ff3d8c\">
-                <animateMotion dur=\"3.1s\" begin=\"0.4s\" repeatCount=\"indefinite\" path=\"M60,170 L160,240 L260,280 L320,210\"/>
+              <circle r="2.5" fill="#ff3d8c">
+                <animateMotion dur="3.1s" begin="0.4s" repeatCount="indefinite" path="M60,170 L160,240 L260,280 L320,210"/>
               </circle>
-              <circle r=\"2.5\" fill=\"#ffb800\">
-                <animateMotion dur=\"2.8s\" begin=\"0.9s\" repeatCount=\"indefinite\" path=\"M60,250 L160,160 L260,120 L320,210\"/>
+              <circle r="2.5" fill="#ffb800">
+                <animateMotion dur="2.8s" begin="0.9s" repeatCount="indefinite" path="M60,250 L160,160 L260,120 L320,210"/>
               </circle>
-              <circle r=\"2.5\" fill=\"#00ffd1\">
-                <animateMotion dur=\"3.3s\" begin=\"1.4s\" repeatCount=\"indefinite\" path=\"M60,330 L160,320 L260,280 L320,210\"/>
+              <circle r="2.5" fill="#00ffd1">
+                <animateMotion dur="3.3s" begin="1.4s" repeatCount="indefinite" path="M60,330 L160,320 L260,280 L320,210"/>
               </circle>
             </g>
 
             <!-- Nodes -->
-            <g class=\"nodes\">
+            <g class="nodes">
               <!-- Layer 1 (input) -->
-              <circle cx=\"60\" cy=\"90\"  r=\"14\" fill=\"url(#nodeGlow)\"/>
-              <circle cx=\"60\" cy=\"90\"  r=\"6\" fill=\"#0a0d12\" stroke=\"#00ffd1\" stroke-width=\"1.4\"/>
-              <circle cx=\"60\" cy=\"170\" r=\"14\" fill=\"url(#nodeGlow)\"/>
-              <circle cx=\"60\" cy=\"170\" r=\"6\" fill=\"#0a0d12\" stroke=\"#00ffd1\" stroke-width=\"1.4\"/>
-              <circle cx=\"60\" cy=\"250\" r=\"14\" fill=\"url(#nodeGlow)\"/>
-              <circle cx=\"60\" cy=\"250\" r=\"6\" fill=\"#0a0d12\" stroke=\"#00ffd1\" stroke-width=\"1.4\"/>
-              <circle cx=\"60\" cy=\"330\" r=\"14\" fill=\"url(#nodeGlow)\"/>
-              <circle cx=\"60\" cy=\"330\" r=\"6\" fill=\"#0a0d12\" stroke=\"#00ffd1\" stroke-width=\"1.4\"/>
+              <circle cx="60" cy="90"  r="14" fill="url(#nodeGlow)"/>
+              <circle cx="60" cy="90"  r="6" fill="#0a0d12" stroke="#00ffd1" stroke-width="1.4"/>
+              <circle cx="60" cy="170" r="14" fill="url(#nodeGlow)"/>
+              <circle cx="60" cy="170" r="6" fill="#0a0d12" stroke="#00ffd1" stroke-width="1.4"/>
+              <circle cx="60" cy="250" r="14" fill="url(#nodeGlow)"/>
+              <circle cx="60" cy="250" r="6" fill="#0a0d12" stroke="#00ffd1" stroke-width="1.4"/>
+              <circle cx="60" cy="330" r="14" fill="url(#nodeGlow)"/>
+              <circle cx="60" cy="330" r="6" fill="#0a0d12" stroke="#00ffd1" stroke-width="1.4"/>
               <!-- Layer 2 -->
-              <circle cx=\"160\" cy=\"80\"  r=\"9\" fill=\"#0a0d12\" stroke=\"#ff3d8c\" stroke-width=\"1.4\"/>
-              <circle cx=\"160\" cy=\"160\" r=\"9\" fill=\"#0a0d12\" stroke=\"#ff3d8c\" stroke-width=\"1.4\"/>
-              <circle cx=\"160\" cy=\"240\" r=\"9\" fill=\"#0a0d12\" stroke=\"#ff3d8c\" stroke-width=\"1.4\"/>
-              <circle cx=\"160\" cy=\"320\" r=\"9\" fill=\"#0a0d12\" stroke=\"#ff3d8c\" stroke-width=\"1.4\"/>
+              <circle cx="160" cy="80"  r="9" fill="#0a0d12" stroke="#ff3d8c" stroke-width="1.4"/>
+              <circle cx="160" cy="160" r="9" fill="#0a0d12" stroke="#ff3d8c" stroke-width="1.4"/>
+              <circle cx="160" cy="240" r="9" fill="#0a0d12" stroke="#ff3d8c" stroke-width="1.4"/>
+              <circle cx="160" cy="320" r="9" fill="#0a0d12" stroke="#ff3d8c" stroke-width="1.4"/>
               <!-- Layer 3 -->
-              <circle cx=\"260\" cy=\"120\" r=\"9\" fill=\"#0a0d12\" stroke=\"#ffb800\" stroke-width=\"1.4\"/>
-              <circle cx=\"260\" cy=\"200\" r=\"9\" fill=\"#0a0d12\" stroke=\"#ffb800\" stroke-width=\"1.4\"/>
-              <circle cx=\"260\" cy=\"280\" r=\"9\" fill=\"#0a0d12\" stroke=\"#ffb800\" stroke-width=\"1.4\"/>
+              <circle cx="260" cy="120" r="9" fill="#0a0d12" stroke="#ffb800" stroke-width="1.4"/>
+              <circle cx="260" cy="200" r="9" fill="#0a0d12" stroke="#ffb800" stroke-width="1.4"/>
+              <circle cx="260" cy="280" r="9" fill="#0a0d12" stroke="#ffb800" stroke-width="1.4"/>
               <!-- Output -->
-              <circle cx=\"320\" cy=\"210\" r=\"18\" fill=\"url(#nodeGlow)\"/>
-              <circle cx=\"320\" cy=\"210\" r=\"9\"  fill=\"#0a0d12\" stroke=\"#00ffd1\" stroke-width=\"1.6\"/>
+              <circle cx="320" cy="210" r="18" fill="url(#nodeGlow)"/>
+              <circle cx="320" cy="210" r="9"  fill="#0a0d12" stroke="#00ffd1" stroke-width="1.6"/>
             </g>
 
             <!-- Layer labels -->
-            <g class=\"net-labels\" font-family=\"JetBrains Mono\" font-size=\"10\" fill=\"#6b7180\">
-              <text x=\"42\" y=\"380\">input</text>
-              <text x=\"138\" y=\"380\">hidden</text>
-              <text x=\"240\" y=\"380\">attention</text>
-              <text x=\"296\" y=\"380\">output</text>
+            <g class="net-labels" font-family="JetBrains Mono" font-size="10" fill="#6b7180">
+              <text x="42" y="380">input</text>
+              <text x="138" y="380">hidden</text>
+              <text x="240" y="380">attention</text>
+              <text x="296" y="380">output</text>
             </g>
           </svg>
 
-          <div class=\"brain-tag\">
-            <i class=\"fa-solid fa-circle\"></i>
+          <div class="brain-tag">
+            <i class="fa-solid fa-circle"></i>
             <span>training · epoch 047</span>
           </div>
         </div>
       </div>
 
-      <div class=\"about-col-2 scroll-reveal\">
-        <p class=\"about-bio\">
+      <div class="about-col-2 scroll-reveal">
+        <p class="about-bio">
           I'm an AI and Data Science professional with 4+ years of experience in the IT industry,
           specializing in Machine Learning, Deep Learning, NLP, and Generative AI. With a strong
           foundation in Python, SQL, Power BI, Tableau, and Streamlit, I've built end-to-end
@@ -302,14 +295,14 @@ Action: file_editor create /app/index.html --file-text "<!DOCTYPE html>
           to deliver intelligent, data-driven solutions that create real business value.
         </p>
 
-        <div class=\"tab-titles\">
-          <p class=\"tab-links active-link\" onclick=\"opentab('skills')\">Skills</p>
-          <p class=\"tab-links\" onclick=\"opentab('experience')\">Experience</p>
-          <p class=\"tab-links\" onclick=\"opentab('education')\">Education</p>
-          <p class=\"tab-links\" onclick=\"opentab('certifications')\">Certificates</p>
+        <div class="tab-titles">
+          <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+          <p class="tab-links" onclick="opentab('experience')">Experience</p>
+          <p class="tab-links" onclick="opentab('education')">Education</p>
+          <p class="tab-links" onclick="opentab('certifications')">Certificates</p>
         </div>
 
-        <div class=\"tab-contents active-tab\" id=\"skills\">
+        <div class="tab-contents active-tab" id="skills">
           <ul>
             <li><span>Python</span>Data analysis, model development, and automation using Pandas, NumPy, Scikit-learn, and PyTorch.</li>
             <li><span>SQL</span>Querying, data extraction, and database management for analytics and reporting.</li>
@@ -324,7 +317,7 @@ Action: file_editor create /app/index.html --file-text "<!DOCTYPE html>
           </ul>
         </div>
 
-        <div class=\"tab-contents\" id=\"experience\">
+        <div class="tab-contents" id="experience">
           <ul>
             <li><span>Aug 2025 – Nov 2025</span>AI-ML Engineer Intern @ InLighnX Global Pvt Ltd</li>
             <li><span>Aug 2025 – Sep 2025</span>AI-ML Engineer Intern @ Pinnacle Labs</li>
@@ -335,7 +328,7 @@ Action: file_editor create /app/index.html --file-text "<!DOCTYPE html>
           </ul>
         </div>
 
-        <div class=\"tab-contents\" id=\"education\">
+        <div class="tab-contents" id="education">
           <ul>
             <li><span>2024</span>Data Science from UpGrad, Bangalore.</li>
             <li><span>2019</span>BCA from Bhandarkars Arts &amp; Science College, Kundapura.</li>
@@ -344,7 +337,7 @@ Action: file_editor create /app/index.html --file-text "<!DOCTYPE html>
           </ul>
         </div>
 
-        <div class=\"tab-contents\" id=\"certifications\">
+        <div class="tab-contents" id="certifications">
           <ul>
             <li><span>Certificate</span>Data Science Bootcamp Certificate — UpGrad</li>
             <li><span>Certificate</span>Hackathon Certificate — UpGrad</li>
@@ -362,87 +355,87 @@ Action: file_editor create /app/index.html --file-text "<!DOCTYPE html>
 </section>
 
 <!-- =========================== MINI PROJECTS =========================== -->
-<section id=\"mini-projects\">
-  <div class=\"container\">
-    <div class=\"section-head scroll-reveal\">
-      <span class=\"sec-num\">02</span>
-      <h2 class=\"sub-title\">Mini <em>projects</em></h2>
-      <div class=\"sec-line\"></div>
+<section id="mini-projects">
+  <div class="container">
+    <div class="section-head scroll-reveal">
+      <span class="sec-num">02</span>
+      <h2 class="sub-title">Mini <em>projects</em></h2>
+      <div class="sec-line"></div>
     </div>
-    <p class=\"section-lead scroll-reveal\">
+    <p class="section-lead scroll-reveal">
       Focused experiments across statistics, SQL, BI dashboards, deep learning &amp; NLP.
     </p>
 
-    <div class=\"work-list\">
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/st1%20(5).jpg\" alt=\"Dental Reimbursements\">
-        <div class=\"layer\">
+    <div class="work-list">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/st1%20(5).jpg" alt="Dental Reimbursements">
+        <div class="layer">
           <h3>Counting Claims — Statistical Deep-Dive into Dental Reimbursements</h3>
           <p>Analyzes a random sample of dental claims to estimate average reimbursements for 2021. Confidence intervals constructed at 90%, 95% and 99% levels using Excel — blending statistical rigor with healthcare finance insights.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/house.jpg\" alt=\"House Prices\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/house.jpg" alt="House Prices">
+        <div class="layer">
           <h3>Statistical Analysis of Factors Influencing House Prices</h3>
           <p>Multiple regression analysis to evaluate the impact of price per sq.ft, bathrooms, and floor size on high-floor 2-bedroom homes — testing null-hypothesis on each factor.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/nftt.jpg\" alt=\"NFT SQL\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/nftt.jpg" alt="NFT SQL">
+        <div class="layer">
           <h3>NFT Market Trends — SQL Analysis of Cryptopunks Transactions</h3>
           <p>SQL-driven analysis of Cryptopunks NFT sales (2018–2021): total sales, top transactions, average prices, daily trends, buyer-specific insights and price distributions.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/healthcare-sector.jpg\" alt=\"Healthcare Tableau\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/healthcare-sector.jpg" alt="Healthcare Tableau">
+        <div class="layer">
           <h3>Healthcare Summary Report — Tableau</h3>
           <p>Interactive dashboards on diabetes, blood pressure and BMI distributions — culminating in a patient-data story with key insights and visualizations.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/annsalary.png\" alt=\"ANN Salary\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/annsalary.png" alt="ANN Salary">
+        <div class="layer">
           <h3>ANN Regression — Salary Prediction (Deep Learning)</h3>
           <p>End-to-end ANN regression app with TensorFlow, Keras, Scikit-learn and Streamlit — preprocessing, encoding, scaling, training, evaluation and real-time prediction.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/ann%20class.png\" alt=\"ANN Churn\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/ann%20class.png" alt="ANN Churn">
+        <div class="layer">
           <h3>ANN Customer Churn Prediction (Deep Learning)</h3>
           <p>End-to-end churn prediction with TensorFlow, Keras and Streamlit — covering label/one-hot encoding, scaling, ANN training and real-time inference.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/endtoend.png\" alt=\"Movie Sentiment RNN\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/endtoend.png" alt="Movie Sentiment RNN">
+        <div class="layer">
           <h3>Movie Sentiment Prediction — Simple RNN</h3>
           <p>End-to-end DL app classifying IMDB reviews as positive/negative — text preprocessing, sequence padding, Simple RNN training and real-time inference via Streamlit.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/nextword.png\" alt=\"Next Word LSTM/GRU\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/nextword.png" alt="Next Word LSTM/GRU">
+        <div class="layer">
           <h3>Next Word Prediction — LSTM &amp; GRU (NLP)</h3>
           <p>Predicts the next word in a sentence using LSTM and GRU networks — tokenization, sequence generation, model training and real-time prediction on Shakespeare's Hamlet.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
     </div>
@@ -450,249 +443,249 @@ Action: file_editor create /app/index.html --file-text "<!DOCTYPE html>
 </section>
 
 <!-- =========================== MY PROJECTS =========================== -->
-<section id=\"portfolio\">
-  <div class=\"container\">
-    <div class=\"section-head scroll-reveal\">
-      <span class=\"sec-num\">03</span>
-      <h2 class=\"sub-title\">Selected <em>work</em></h2>
-      <div class=\"sec-line\"></div>
+<section id="portfolio">
+  <div class="container">
+    <div class="section-head scroll-reveal">
+      <span class="sec-num">03</span>
+      <h2 class="sub-title">Selected <em>work</em></h2>
+      <div class="sec-line"></div>
     </div>
-    <p class=\"section-lead scroll-reveal\">
+    <p class="section-lead scroll-reveal">
       End-to-end production-ready builds across Agentic AI, GenAI, MLOps, ML &amp; BI.
     </p>
 
-    <div class=\"work-list\">
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/careernav.png\" alt=\"Career Navigator AI\">
-        <div class=\"layer\">
+    <div class="work-list">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/careernav.png" alt="Career Navigator AI">
+        <div class="layer">
           <h3>Career Navigator AI — Multi-Agent</h3>
           <p>LangChain-powered career assistant that analyzes live jobs, extracts in-demand skills, provides salary insights, builds personalized learning roadmaps and generates AI career strategies.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/researchmimd.png\" alt=\"ResearchMind AI\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/researchmimd.png" alt="ResearchMind AI">
+        <div class="layer">
           <h3>ResearchMind AI — Multi-Agent Research</h3>
           <p>LangChain research assistant performing live web search, intelligent scraping, report generation and AI-powered evaluation via a shared-state agent workflow.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/agenticaii.png\" alt=\"Travel Planner\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/agenticaii.png" alt="Travel Planner">
+        <div class="layer">
           <h3>Agentic AI Travel Planner — LangChain</h3>
           <p>Autonomous travel agent gathering country info, weather, currency and attractions through multiple APIs — generating full travel plans via a ReAct-based workflow.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/singlee.png\" alt=\"Single AI Agent\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/singlee.png" alt="Single AI Agent">
+        <div class="layer">
           <h3>Single AI Agent — LangChain ReAct</h3>
           <p>Production-style AI agent that reasons through queries, picks the right tools, retrieves live web/weather data and produces intelligent responses with LLMs + real-world APIs.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/ecosort.png\" alt=\"EcoSort\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/ecosort.png" alt="EcoSort">
+        <div class="layer">
           <h3>EcoSort Vision — Computer Vision &amp; MLOps</h3>
           <p>End-to-end CV + MLOps app detecting 10 categories of waste with YOLO11. Flask, Docker, GitHub Actions, AWS + CI/CD for automated training, deployment and real-time detection.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/Medicalbot.png\" alt=\"Medical Chatbot\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/Medicalbot.png" alt="Medical Chatbot">
+        <div class="layer">
           <h3>Medical Chatbot — GenAI &amp; RAG</h3>
           <p>RAG medical chatbot with LangChain, Pinecone, Groq Llama 3.3, Flask, Docker and AWS — retrieves trusted medical knowledge from a vector DB for context-aware responses.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/chatbot-restaurant.jpg\" alt=\"AI Recipe\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/chatbot-restaurant.jpg" alt="AI Recipe">
+        <div class="layer">
           <h3>AI Global Language Translator — GenAI &amp; Agentic AI</h3>
           <p>RAG + multi-agent recipe assistant with CrewAI, LangChain and Groq LLMs — contextual chat, recipe gen, smart shopping, order tracking and voice (coming soon) on Streamlit.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/salarypreictionimage.jpg\" alt=\"Salary Prediction\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/salarypreictionimage.jpg" alt="Salary Prediction">
+        <div class="layer">
           <h3>Salary Prediction — ML / DL</h3>
           <p>End-to-end pipeline — EDA, model training, real-time prediction. Compares model performance and forecasts salaries interactively via a Streamlit interface.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/aitranslator.jpeg\" alt=\"AI Translator\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/aitranslator.jpeg" alt="AI Translator">
+        <div class="layer">
           <h3>AI Global Language Translator</h3>
           <p>AI app for translating text, speech and files across 100+ languages — real-time translation, voice input, TTS output and document upload. Built with Python, AI &amp; Streamlit.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/aiparser.png\" alt=\"AI Resume Parser\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/aiparser.png" alt="AI Resume Parser">
+        <div class="layer">
           <h3>AI-powered Job Recommendation System</h3>
           <p>Transformer-based sentence embeddings to semantically match candidate resumes with job postings — improving fit beyond traditional keyword search.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/aistory.jpg\" alt=\"TinyTales\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/aistory.jpg" alt="TinyTales">
+        <div class="layer">
           <h3>TinyTales — GenAI Children's Story Generator</h3>
           <p>GPT-2 + Hugging Face Transformers app that generates imaginative, age-appropriate children's stories from a prompt — for parents, teachers and young learners.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/aidefect.png\" alt=\"Defect Detection\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/aidefect.png" alt="Defect Detection">
+        <div class="layer">
           <h3>Product Defect Detection</h3>
           <p>AI web app detecting defective products with MobileNetV2, Custom CNN and EfficientNetB0 — real-time classification, Grad-CAM explainability, email alerts and logs.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/invoice.jpg\" alt=\"Invoice Extraction\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/invoice.jpg" alt="Invoice Extraction">
+        <div class="layer">
           <h3>Invoice Information Extraction</h3>
           <p>Extracts invoice number, date and line-items from invoice images. Scalable model structure supports training on any field for key-value extraction.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/carprice.jpg\" alt=\"Used Car Price\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/carprice.jpg" alt="Used Car Price">
+        <div class="layer">
           <h3>Used Car Price Prediction — ML</h3>
           <p>Regression on brand, model, year, mileage and fuel type. Compares Linear Regression, Random Forest and XGBoost — final model evaluated with RMSE and R².</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/collegeevent.jpeg\" alt=\"Student Feedback\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/collegeevent.jpeg" alt="Student Feedback">
+        <div class="layer">
           <h3>Student Feedback Analyzer — ML, NLP &amp; Power BI</h3>
           <p>Sentiment analysis (TextBlob/VADER) + Logistic Regression / Random Forest classifiers, paired with a Streamlit app and Power BI dashboard for campus-event insights.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/social.png\" alt=\"Social Media Campaign\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/social.png" alt="Social Media Campaign">
+        <div class="layer">
           <h3>Social Media Campaign Performance Tracker — Power BI</h3>
           <p>Analyzes Facebook &amp; Instagram ad campaigns with interactive visuals, DAX measures and KPI cards to reveal user behaviour, effectiveness and ROI.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/ecom1.jpeg\" alt=\"E-commerce\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/ecom1.jpeg" alt="E-commerce">
+        <div class="layer">
           <h3>E-commerce Sales Dashboard — Power BI</h3>
           <p>Superstore data (2011–2014) cleaned with Power Query, modeled with DAX. Reveals top products, peak seasons and regional drivers via interactive dashboards &amp; forecasts.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/pc.jpg\" alt=\"Ecommerce Categorization\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/pc.jpg" alt="Ecommerce Categorization">
+        <div class="layer">
           <h3>E-commerce Product Categorization</h3>
           <p>Product categorization by description using NLP, ML and Deep Learning — implemented with PyTorch.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/retails.jpg\" alt=\"Retail Allocation\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/retails.jpg" alt="Retail Allocation">
+        <div class="layer">
           <h3>Retail Store Allocation Optimization — PuLP</h3>
           <p>Linear programming with PuLP/Gurobi to optimize product distribution from warehouses to stores — minimizing shipping cost under supply &amp; demand constraints.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/cred.jpg\" alt=\"Credit Fraud\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/cred.jpg" alt="Credit Fraud">
+        <div class="layer">
           <h3>Credit Card Fraud Detection — ML</h3>
           <p>Data exploration, cleaning, SMOTE balancing and feature engineering. Logistic Regression, XGBoost and Decision Trees compared — ROC-AUC 0.99 (train) / 0.97 (test).</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/NLP%20(1).jpg\" alt=\"Duplicate Detection\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/NLP%20(1).jpg" alt="Duplicate Detection">
+        <div class="layer">
           <h3>Duplicate Question Detection — RF + BoW</h3>
           <p>Bag-of-Words vectorization + custom feature engineering. RandomForestClassifier identifies duplicate questions, deployed on Streamlit / Heroku.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/Blinkitt%20(1).png\" alt=\"Blinkit\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/Blinkitt%20(1).png" alt="Blinkit">
+        <div class="layer">
           <h3>Comprehensive Sales Analysis of Blinkit — Power BI</h3>
           <p>In-depth Power BI analysis of Blinkit's sales performance, customer satisfaction and inventory management — uncovering actionable insights via KPIs.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/sla.jpg\" alt=\"SLA Monitoring\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/sla.jpg" alt="SLA Monitoring">
+        <div class="layer">
           <h3>Real-Time SLA Monitoring &amp; Alert System</h3>
           <p>Tracks SLA violations from platform logs, sends automated email alerts, and provides an interactive Streamlit dashboard with filters and auto-refresh.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/hrimage.jpg\" alt=\"HR Dashboard\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/hrimage.jpg" alt="HR Dashboard">
+        <div class="layer">
           <h3>HR Insights &amp; Employee Data Dashboard — Tableau</h3>
           <p>Tracks hires, terminations, department distributions and salary variations — detailed records with filters for in-depth workforce analysis.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/carrsales.jpeg\" alt=\"Car Sales DB\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/carrsales.jpeg" alt="Car Sales DB">
+        <div class="layer">
           <h3>Car Sales Database Management System — SQL</h3>
           <p>The GlobalCarDetails database structures car sales data — manufacturers, models, sales and regions — enabling insights into trends, pricing and performance.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
 
-      <div class=\"work scroll-reveal\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/vk2.jpeg\" alt=\"Virat Kohli\">
-        <div class=\"layer\">
+      <div class="work scroll-reveal">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/vk2.jpeg" alt="Virat Kohli">
+        <div class="layer">
           <h3>Virat Kohli's Complete T20 Performance Analysis (2010–2024)</h3>
           <p>Complete T20 performance breakdown for Virat Kohli with year-on-year, opposition and tournament insights — built entirely in Excel.</p>
-          <a href=\"#\"><i class=\"fa-solid fa-arrow-up-right-from-square\"></i></a>
+          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
     </div>
@@ -700,138 +693,138 @@ Action: file_editor create /app/index.html --file-text "<!DOCTYPE html>
 </section>
 
 <!-- =========================== CERTIFICATES =========================== -->
-<section id=\"certificates\">
-  <div class=\"container\">
-    <div class=\"section-head scroll-reveal\">
-      <span class=\"sec-num\">04</span>
-      <h2 class=\"sub-title\">My <em>certificates</em></h2>
-      <div class=\"sec-line\"></div>
+<section id="certificates">
+  <div class="container">
+    <div class="section-head scroll-reveal">
+      <span class="sec-num">04</span>
+      <h2 class="sub-title">My <em>certificates</em></h2>
+      <div class="sec-line"></div>
     </div>
-    <p class=\"section-lead scroll-reveal\">
+    <p class="section-lead scroll-reveal">
       Validated learning from UpGrad, NVIDIA, TATA, Pinnacle Labs, InLighnX &amp; Future Interns.
     </p>
 
-    <div class=\"work-list cert-grid\">
-      <div class=\"certificate-item scroll-reveal\" onclick=\"openCertificateModal('https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/upgrad_certificate.jpg')\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/upgrad_certificate.jpg\" alt=\"UpGrad\">
-        <div class=\"certificate-overlay\">
+    <div class="work-list cert-grid">
+      <div class="certificate-item scroll-reveal" onclick="openCertificateModal('https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/upgrad_certificate.jpg')">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/upgrad_certificate.jpg" alt="UpGrad">
+        <div class="certificate-overlay">
           <h3>Data Science Bootcamp</h3>
           <p>upGrad — August 2024</p>
         </div>
-        <div class=\"view-btn\"><i class=\"fa-solid fa-magnifying-glass-plus\"></i></div>
+        <div class="view-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
 
-      <div class=\"certificate-item scroll-reveal\" onclick=\"openCertificateModal('https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/nvidia_certificate.jpg')\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/nvidia_certificate.jpg\" alt=\"NVIDIA\">
-        <div class=\"certificate-overlay\">
+      <div class="certificate-item scroll-reveal" onclick="openCertificateModal('https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/nvidia_certificate.jpg')">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/nvidia_certificate.jpg" alt="NVIDIA">
+        <div class="certificate-overlay">
           <h3>AI for All — Basics to GenAI</h3>
           <p>NVIDIA — July 2025</p>
         </div>
-        <div class=\"view-btn\"><i class=\"fa-solid fa-magnifying-glass-plus\"></i></div>
+        <div class="view-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
 
-      <div class=\"certificate-item scroll-reveal\" onclick=\"openCertificateModal('https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/tata_certificate.jpg')\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/tata_certificate.jpg\" alt=\"TATA\">
-        <div class=\"certificate-overlay\">
+      <div class="certificate-item scroll-reveal" onclick="openCertificateModal('https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/tata_certificate.jpg')">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/tata_certificate.jpg" alt="TATA">
+        <div class="certificate-overlay">
           <h3>GenAI Data Analytics Simulation</h3>
           <p>TATA via Forage — August 2025</p>
         </div>
-        <div class=\"view-btn\"><i class=\"fa-solid fa-magnifying-glass-plus\"></i></div>
+        <div class="view-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
 
-      <div class=\"certificate-item scroll-reveal\" onclick=\"openCertificateModal('https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/future_interns_certificate.jpg')\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/future_interns_certificate.jpg\" alt=\"Future Interns\">
-        <div class=\"certificate-overlay\">
+      <div class="certificate-item scroll-reveal" onclick="openCertificateModal('https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/future_interns_certificate.jpg')">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/future_interns_certificate.jpg" alt="Future Interns">
+        <div class="certificate-overlay">
           <h3>Data Science &amp; Analytics Internship</h3>
           <p>Future Interns — July 2025</p>
         </div>
-        <div class=\"view-btn\"><i class=\"fa-solid fa-magnifying-glass-plus\"></i></div>
+        <div class="view-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
 
-      <div class=\"certificate-item scroll-reveal\" onclick=\"openCertificateModal('https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/future_interns_certificate-lor.jpg')\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/future_interns_certificate-lor.jpg\" alt=\"Future Interns LOR\">
-        <div class=\"certificate-overlay\">
+      <div class="certificate-item scroll-reveal" onclick="openCertificateModal('https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/future_interns_certificate-lor.jpg')">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/future_interns_certificate-lor.jpg" alt="Future Interns LOR">
+        <div class="certificate-overlay">
           <h3>Data Science Internship — LOR</h3>
           <p>Future Interns — July 2025</p>
         </div>
-        <div class=\"view-btn\"><i class=\"fa-solid fa-magnifying-glass-plus\"></i></div>
+        <div class="view-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
 
-      <div class=\"certificate-item scroll-reveal\" onclick=\"openCertificateModal('https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/pinnacle_certificates.jpg')\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/pinnacle_certificates.jpg\" alt=\"Pinnacle\">
-        <div class=\"certificate-overlay\">
+      <div class="certificate-item scroll-reveal" onclick="openCertificateModal('https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/pinnacle_certificates.jpg')">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/pinnacle_certificates.jpg" alt="Pinnacle">
+        <div class="certificate-overlay">
           <h3>AI &amp; ML Internship</h3>
           <p>Pinnacle Labs — August 2025</p>
         </div>
-        <div class=\"view-btn\"><i class=\"fa-solid fa-magnifying-glass-plus\"></i></div>
+        <div class="view-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
 
-      <div class=\"certificate-item scroll-reveal\" onclick=\"openCertificateModal('https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/inlighn.jpg')\">
-        <img src=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/inlighn.jpg\" alt=\"InLighnX\">
-        <div class=\"certificate-overlay\">
+      <div class="certificate-item scroll-reveal" onclick="openCertificateModal('https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/inlighn.jpg')">
+        <img src="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/inlighn.jpg" alt="InLighnX">
+        <div class="certificate-overlay">
           <h3>AI &amp; ML Internship</h3>
           <p>InLighnX Global — August 2025</p>
         </div>
-        <div class=\"view-btn\"><i class=\"fa-solid fa-magnifying-glass-plus\"></i></div>
+        <div class="view-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
     </div>
   </div>
 
   <!-- Certificate modal -->
-  <div class=\"certificate-modal\" id=\"certificateModal\" onclick=\"closeCertificateModal()\">
-    <span class=\"certificate-close\" onclick=\"closeCertificateModal()\">&times;</span>
-    <div class=\"certificate-modal-content\">
-      <img id=\"modalImage\" src=\"\" alt=\"Certificate\" />
+  <div class="certificate-modal" id="certificateModal" onclick="closeCertificateModal()">
+    <span class="certificate-close" onclick="closeCertificateModal()">&times;</span>
+    <div class="certificate-modal-content">
+      <img id="modalImage" src="" alt="Certificate" />
     </div>
   </div>
 </section>
 
 <!-- =========================== CONTACT =========================== -->
-<section id=\"contact\">
-  <div class=\"container\">
-    <div class=\"section-head scroll-reveal\">
-      <span class=\"sec-num\">05</span>
-      <h2 class=\"sub-title\">Contact <em>me</em></h2>
-      <div class=\"sec-line\"></div>
+<section id="contact">
+  <div class="container">
+    <div class="section-head scroll-reveal">
+      <span class="sec-num">05</span>
+      <h2 class="sub-title">Contact <em>me</em></h2>
+      <div class="sec-line"></div>
     </div>
 
-    <div class=\"contact-row\">
-      <div class=\"contact-left scroll-reveal\">
-        <h3 class=\"contact-headline\">Let's build something <em>intelligent</em> together.</h3>
-        <p class=\"contact-blurb\">
+    <div class="contact-row">
+      <div class="contact-left scroll-reveal">
+        <h3 class="contact-headline">Let's build something <em>intelligent</em> together.</h3>
+        <p class="contact-blurb">
           Open to AI/ML engineering, GenAI and data science roles. Reach out — I usually respond within 24 hours.
         </p>
 
-        <div class=\"contact-info\">
-          <p><i class=\"fa-solid fa-envelope\"></i><span>gouthumkharvi1899@gmail.com</span></p>
-          <p><i class=\"fa-solid fa-phone\"></i><span>+91 90711 01929</span></p>
-          <p><i class=\"fa-solid fa-location-dot\"></i><span>India · Remote-friendly</span></p>
+        <div class="contact-info">
+          <p><i class="fa-solid fa-envelope"></i><span>gouthumkharvi1899@gmail.com</span></p>
+          <p><i class="fa-solid fa-phone"></i><span>+91 90711 01929</span></p>
+          <p><i class="fa-solid fa-location-dot"></i><span>India · Remote-friendly</span></p>
         </div>
 
-        <div class=\"social-icons\">
-          <a href=\"https://facebook.com/\" target=\"_blank\" aria-label=\"Facebook\"><i class=\"fa-brands fa-facebook\"></i></a>
-          <a href=\"https://twitter.com/\" target=\"_blank\" aria-label=\"Twitter\"><i class=\"fa-brands fa-twitter\"></i></a>
-          <a href=\"https://github.com/GouthumKharvi\" target=\"_blank\" aria-label=\"GitHub\"><i class=\"fa-brands fa-github\"></i></a>
-          <a href=\"https://www.linkedin.com/in/gouthum-kharvi-2366a6219\" target=\"_blank\" aria-label=\"LinkedIn\"><i class=\"fa-brands fa-linkedin\"></i></a>
+        <div class="social-icons">
+          <a href="https://facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://github.com/GouthumKharvi" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/gouthum-kharvi-2366a6219" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
         </div>
 
-        <a href=\"https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/GouthumKharvi_RESUME(AI-ML).pdf\" download class=\"btn btn2\" data-testid=\"download-cv-btn\">
-          Download CV <i class=\"fa-solid fa-arrow-down\"></i>
+        <a href="https://customer-assets.emergentagent.com/job_ea24b44f-629b-4417-a7f2-77eb595ad66d/artifacts/images/GouthumKharvi_RESUME(AI-ML).pdf" download class="btn btn2" data-testid="download-cv-btn">
+          Download CV <i class="fa-solid fa-arrow-down"></i>
         </a>
       </div>
 
-      <div class=\"contact-right scroll-reveal\">
-        <form name=\"submit-to-google-sheet\" onsubmit=\"event.preventDefault(); fakeSubmit();\">
-          <label>name<input type=\"text\" name=\"Name\" placeholder=\"Your name\" required /></label>
-          <label>email<input type=\"email\" name=\"Email\" placeholder=\"you@domain.com\" required /></label>
-          <label>message<textarea name=\"Message\" rows=\"5\" placeholder=\"Tell me about your project, role or idea…\" required></textarea></label>
-          <button type=\"submit\" class=\"btn btn2\">Send message <i class=\"fa-solid fa-paper-plane\"></i></button>
-          <span id=\"msg\"></span>
+      <div class="contact-right scroll-reveal">
+        <form name="submit-to-google-sheet" onsubmit="event.preventDefault(); fakeSubmit();">
+          <label>name<input type="text" name="Name" placeholder="Your name" required /></label>
+          <label>email<input type="email" name="Email" placeholder="you@domain.com" required /></label>
+          <label>message<textarea name="Message" rows="5" placeholder="Tell me about your project, role or idea…" required></textarea></label>
+          <button type="submit" class="btn btn2">Send message <i class="fa-solid fa-paper-plane"></i></button>
+          <span id="msg"></span>
         </form>
       </div>
     </div>
 
-    <footer class=\"site-footer\">
+    <footer class="site-footer">
       <span>© 2026 Gouthum Kharvi · Engineered with curiosity.</span>
       <span>v3.0 · last deploy · Jan 2026</span>
     </footer>
@@ -968,5 +961,3 @@ Action: file_editor create /app/index.html --file-text "<!DOCTYPE html>
 </script>
 </body>
 </html>
-"
-Observation: Create successful: /app/index.html
