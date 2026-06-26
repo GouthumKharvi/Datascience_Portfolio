@@ -96,43 +96,40 @@
                 </div>
             </div>
             <div class="hero-right" data-reveal="right">
-                <div class="hero-card tilt-card">
-                    <div class="hero-card-head">
-                        <span class="trio"><i></i><i></i><i></i></span>
-                        <span class="hero-card-title">~/portfolio.py</span>
-                        <div class="card-actions">
-                            <span class="c-dot red"></span>
-                            <span class="c-dot yellow"></span>
-                            <span class="c-dot green"></span>
-                        </div>
+                <div class="hero-3d-wrap">
+                    <!-- Three.js neural network renders here -->
+                    <canvas id="heroNNCanvas"></canvas>
+                    <!-- Overlay gradient frame -->
+                    <div class="nn-frame-glow"></div>
+                    <!-- HUD labels pinned to corners -->
+                    <div class="nn-hud nn-hud-tl">
+                        <span class="nn-hud-dot"></span>
+                        <span>Neural Network</span>
                     </div>
-                    <pre class="hero-code"><span class="c-com"># AI/ML Engineer · Data Scientist</span>
-<span class="c-key">class</span> <span class="c-var">Gouthum</span>:
-  <span class="c-prop">name</span> = <span class="c-str">"Gouthum Kharvi"</span>
-  <span class="c-prop">role</span> = <span class="c-str">"AI-ML Engineer"</span>
-  <span class="c-prop">stack</span> = [
-    <span class="c-str">"Python"</span>, <span class="c-str">"PyTorch"</span>,
-    <span class="c-str">"LangChain"</span>, <span class="c-str">"CrewAI"</span>,
-    <span class="c-str">"SQL"</span>, <span class="c-str">"PowerBI"</span>
-  ]
-  <span class="c-prop">focus</span> = <span class="c-str">"GenAI · Agentic AI"</span>
-  <span class="c-prop">status</span> = <span class="c-str">"Open to work"</span> <span class="c-accent">✦</span>
-
-  <span class="c-key">def</span> <span class="c-fn">build</span>(self):
-    <span class="c-key">return</span> <span class="c-str">"data → intelligence"</span></pre>
-                    <div class="card-glow"></div>
-                </div>
-                <div class="floating-tag tag-a">
-                    <i class="fas fa-brain"></i> Machine Learning
-                </div>
-                <div class="floating-tag tag-b">
-                    <i class="fas fa-link"></i> RAG · LangChain
-                </div>
-                <div class="floating-tag tag-c">
-                    <i class="fas fa-network-wired"></i> Deep Learning
-                </div>
-                <div class="floating-tag tag-d">
-                    <i class="fas fa-robot"></i> Agentic AI
+                    <div class="nn-hud nn-hud-tr">
+                        <span>34 Projects</span>
+                        <span class="nn-hud-dot accent"></span>
+                    </div>
+                    <div class="nn-hud nn-hud-bl">
+                        <span class="nn-hud-badge">LIVE</span>
+                        <span>Model Active</span>
+                    </div>
+                    <div class="nn-hud nn-hud-br">
+                        <span>Accuracy</span>
+                        <span class="nn-acc" id="nnAcc">97.4%</span>
+                    </div>
+                    <!-- Floating pill tags -->
+                    <div class="floating-tag tag-a">
+                        <i class="fas fa-brain"></i> Machine Learning
+                    </div>
+                    <div class="floating-tag tag-b">
+                        <i class="fas fa-link"></i> RAG · LangChain
+                    </div>
+                    <div class="floating-tag tag-c">
+                        <i class="fas fa-network-wired"></i> Deep Learning
+                    </div>
+                    <div class="floating-tag tag-d">
+                        <i class="fas fa-robot"></i> Agentic AI
                 </div>
             </div>
         </div>
