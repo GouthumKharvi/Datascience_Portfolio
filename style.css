@@ -1,4 +1,3 @@
-
 Action: file_editor create /app/static_portfolio/style.css --file-text "/* ============ TOKENS ============ */
 :root{
   --bg:          #06060c;
