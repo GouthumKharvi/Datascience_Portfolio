@@ -1,10 +1,4 @@
 
-Action: file_editor create /app/portfolio/style.css --file-text "/* ==============================================
-   Gouthum Kharvi · Portfolio v2 — Modern Redesign
-   Aesthetic: Dark editorial · Acid lime accent
-   Fonts: Bricolage Grotesque (display) + Outfit (body) + JetBrains Mono
-   ============================================== */
-
 /* ---------- CSS Variables ---------- */
 :root{
     --bg: #0a0c10;
@@ -999,13 +993,11 @@ section + section{ border-top: 1px solid var(--border-soft); }
 
 /* Native input cursor restore */
 input, textarea, select{ cursor: text !important; }
-a, button, [role=\"button\"]{ cursor: none; }
-@media (max-width: 720px){ a, button, [role=\"button\"], input, textarea{ cursor: auto !important; } }
+a, button, [role="button"]{ cursor: none; }
+@media (max-width: 720px){ a, button, [role="button"], input, textarea{ cursor: auto !important; } }
 
 /* Scrollbar */
 ::-webkit-scrollbar{ width: 10px; height: 10px; }
 ::-webkit-scrollbar-track{ background: var(--bg); }
 ::-webkit-scrollbar-thumb{ background: var(--surface-2); border-radius: 10px; border: 2px solid var(--bg); }
 ::-webkit-scrollbar-thumb:hover{ background: var(--accent); }
-"
-Observation: Create successful: /app/portfolio/style.css
