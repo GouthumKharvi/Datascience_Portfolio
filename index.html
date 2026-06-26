@@ -1,899 +1,298 @@
-<!DOCTYPE html>
-<html lang="en">
+
+Action: file_editor create /app/static_portfolio/index.html --file-text "<!doctype html>
+<html lang=\"en\">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Website</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/3e00ef2ebf.js" crossorigin="anonymous"></script>
+<meta charset=\"utf-8\" />
+<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />
+<title>Gouthum Kharvi — AI / Data Science Portfolio</title>
+<meta name=\"description\" content=\"AI & Data Science portfolio of Gouthum Kharvi — 4+ years building ML, DL, NLP, GenAI & Agentic AI systems.\" />
+
+<!-- Fonts -->
+<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+<link href=\"https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap\" rel=\"stylesheet\">
+
+<!-- Icons -->
+<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css\">
+
+<!-- Style -->
+<link rel=\"stylesheet\" href=\"style.css\" />
 </head>
 <body>
-<!-- Custom Cursor Elements -->
-<div class="cursor"></div>
-<div class="cursor-follower"></div>
 
-<!-- Page Progress Bar -->
-<div class="page-progress"></div>
+<!-- noise + grid overlay -->
+<div class=\"noise\"></div>
+<div class=\"grid-bg\"></div>
 
-<div id="header">
-    <div class="container"> 
-        <nav>
-            
-            <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#miniprojects">Mini Projects</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#certificates">My Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <i class="fas fa-times" onclick="closemenu()"></i>
-            </ul>
-            <i class="fas fa-bars" onclick="openmenu()"></i>
-        </nav>
-        <div class="header-text">
-            <p>AI-ML Intern @Inlighn X tech pvt ltd</p>
-            <h1>Hi, I'm <span>Gouthum</span><br>Kharvi From India</h1>
-        </div>  
+<!-- custom cursor -->
+<div class=\"cursor-dot\" id=\"cursorDot\"></div>
+<div class=\"cursor-ring\" id=\"cursorRing\"></div>
+
+<!-- progress bar -->
+<div class=\"progress\" id=\"progress\"></div>
+
+<!-- 3D canvas backdrop -->
+<canvas id=\"bg3d\"></canvas>
+
+<!-- NAV -->
+<header class=\"nav\" data-testid=\"main-nav\">
+  <a href=\"#home\" class=\"brand\">
+    <span class=\"brand-mark\">GK</span>
+    <span class=\"brand-text\">Gouthum<span class=\"dot\">.</span></span>
+  </a>
+  <nav>
+    <ul id=\"navList\">
+      <li><a href=\"#home\" data-testid=\"nav-home\">Home</a></li>
+      <li><a href=\"#about\" data-testid=\"nav-about\">About</a></li>
+      <li><a href=\"#mini\" data-testid=\"nav-mini\">Mini</a></li>
+      <li><a href=\"#projects\" data-testid=\"nav-projects\">Projects</a></li>
+      <li><a href=\"#certs\" data-testid=\"nav-certs\">Certificates</a></li>
+      <li><a href=\"#contact\" data-testid=\"nav-contact\">Contact</a></li>
+    </ul>
+  </nav>
+  <button class=\"menu-btn\" id=\"menuBtn\" aria-label=\"menu\" data-testid=\"menu-btn\"><i class=\"fas fa-bars\"></i></button>
+</header>
+
+<!-- HERO -->
+<section id=\"home\" class=\"hero\">
+  <div class=\"hero-inner\">
+    <p class=\"kicker\"><span class=\"pulse\"></span> Available for AI / ML / Data Science roles</p>
+    <h1 class=\"title\">
+      <span class=\"line\">Building <em>intelligent</em></span>
+      <span class=\"line\">systems that <em>think,</em></span>
+      <span class=\"line\"><em>see</em> &amp; <em>decide.</em></span>
+    </h1>
+    <p class=\"sub\">AI &amp; Data Science engineer with <strong>4+ years</strong> shipping production ML, Deep Learning, NLP, GenAI &amp; Agentic AI — from RAG assistants to computer-vision pipelines.</p>
+
+    <div class=\"hero-cta\">
+      <a href=\"#projects\" class=\"btn primary\" data-testid=\"hero-cta-projects\">
+        <span>Explore Work</span><i class=\"fas fa-arrow-right\"></i>
+      </a>
+      <a href=\"#contact\" class=\"btn ghost\" data-testid=\"hero-cta-contact\">
+        <span>Get in touch</span>
+      </a>
     </div>
-</div>
 
-    
-<!-- -----------about---------- -->
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1 scroll-reveal">
-                <img src="images/dp.png">
-            </div>
-            <div class="about-col-2 scroll-reveal">
-                <h1 class="sub-title">About Me</h1>
-                <p>I’m an AI and Data Science professional with 4+ years of experience in the IT industry, specializing in Machine Learning, Deep Learning, NLP, and Generative AI. With a strong foundation in Python, SQL, Power BI, Tableau, and Streamlit, I’ve built end-to-end predictive systems, GenAI assistants, and interactive data dashboards that transform raw data into actionable insights. Having completed a Data Science Bootcamp from UpGrad and multiple AI/ML internships, I combine technical expertise with analytical thinking to deliver intelligent, data-driven solutions that create real business value.</p>
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('education')">Education</p>
-                    <p class="tab-links" onclick="opentab('certificates')">Certificates</p>
-                </div>
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>Python</span><br>Data analysis, model development, and automation using Pandas, NumPy, Scikit-learn, and PyTorch.</li>
-                        <li><span>SQL</span><br>Querying, data extraction, and database management for analytics and reporting.</li>
-                        <li><span>Machine Learning</span><br>Building and evaluating predictive models for regression, classification, and optimization tasks.</li>
-                        <li><span>Deep Learning</span><br>Developing CNN and transformer-based models for image and text data.</li>
-                        <li><span>Generative AI & Agentic AI</span><br>Implementing RAG pipelines, LangChain, and CrewAI for intelligent assistants and automation.</li>
-                        <li><span>NLP</span><br>Applying text preprocessing, sentiment analysis, and semantic search using BERT and Hugging Face.</li>
-                        <li><span>Data Visualization</span><br>Creating dynamic dashboards and reports using Power BI, Tableau, and Streamlit.</li>
-                        <li><span>Data Preprocessing</span><br>Cleaning, transforming, and feature engineering for high-quality model inputs.</li>
-                        <li><span>Statistics</span><br>Applying hypothesis testing, probability, and regression techniques for data-driven decisions.</li>
-                        <li><span>MLOps & Cloud</span><br>Model deployment, monitoring, and pipeline automation using AWS SageMaker.</li>
+    <div class=\"hero-stats\">
+      <div><strong>26+</strong><span>Production projects</span></div>
+      <div><strong>8</strong><span>Mini projects</span></div>
+      <div><strong>7</strong><span>Certifications</span></div>
+      <div><strong>3</strong><span>AI/ML internships</span></div>
+    </div>
+  </div>
 
-                    </ul>
-                </div>
-                <div class="tab-contents" id="experience">
-                    <ul>
-                        <li><span>Aug 2025 - November 2025</span><br>AI-ML Engineer Intern @InLighnX Global Pvt Ltd</li>
-                        <li><span>Aug 2025 - September 2025</span><br>AI-ML Engineer Intern @Pinnacle labs</li>
-                        <li><span>Jul 2025 - Aug 2025</span><br>DataScience & Analytics Intern @Future Interns</li>
-                        <li><span>2021 - 2023</span><br>Technical Support Engineer at GlowTouch Technologies</li>
-                        <li><span>2020 - 2021</span><br>EPUB Operator at Bit9 Business Solutions Pvt LTD</li>
-                        <li><span>2019 - 2019</span><br>Claims Adjudicator at HGS - Hinduja Global Solutions</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>2024</span><br>Data Science from Upgrad Bangalore.</li>
-                        <li><span>2019</span><br>BCA from Bhandarkars arts and science college Kundapura.</li>
-                        <li><span>2016</span><br>PUC from SVPU college Gangolli.</li>
-                        <li><span>2014</span><br>SSLC from stella maris english medium high school Gangolli.</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="certificates">
-                    <ul>
-                        <li><span>Certificate</span><br>Data Science Bootcamp Certificate from UpGrad</li>
-                        <li><span>Certificate</span><br>Hackathon Certificate from UpGrad</li>
-                        <li><span>Certificate</span><br>AI for All: From Basics to GenAI Practice(Nvidia Certificate)</li>
-                        <li><span>Certificate</span><br>GenAI Powered Data Analytics Job Simulation(Tata Job simulation Certifcate)</li>
-                        <li><span>Certificate</span><br>Data Science Internship Certificate(Future Interns)</li>
-                        <li><span>Certificate</span><br>Data Science Internship Certificate & Letter of Recomendations(Future Interns)</li>
-                        <li><span>Certificate</span><br>Artificial Intelligence & Machine Learning Internship Certificate(Pinnacle labs)</li>
-                        <li><span>Certificate</span><br>Artificial Intelligence & Machine Learning Internship Certificate(Inlighn global X pvt ltd)</li>
-                    </ul>
-                </div>
-            </div>
+  <div class=\"scroll-hint\"><span>Scroll</span><i class=\"fas fa-arrow-down\"></i></div>
+</section>
+
+<!-- ABOUT -->
+<section id=\"about\" class=\"section\">
+  <div class=\"section-head\">
+    <span class=\"num\">01 //</span>
+    <h2 class=\"h2\">About <em>me</em></h2>
+  </div>
+
+  <div class=\"about\">
+    <div class=\"about-photo tilt\">
+      <div class=\"photo-frame\">
+        <img src=\"https://customer-assets.emergentagent.com/job_1a30dae5-366e-4fc5-a92b-7365fce0bdfe/artifacts/images/dp.png\" alt=\"Gouthum Kharvi\" />
+      </div>
+      <div class=\"photo-tag\">
+        <span class=\"dot-live\"></span> Bangalore, IN
+      </div>
+    </div>
+
+    <div class=\"about-body\">
+      <p class=\"lead\">I'm an AI and Data Science professional with <strong>4+ years</strong> in the IT industry, specializing in Machine Learning, Deep Learning, NLP, and Generative AI. With a strong foundation in Python, SQL, Power BI, Tableau, and Streamlit, I've built end-to-end predictive systems, GenAI assistants, and interactive dashboards that turn raw data into actionable insights.</p>
+      <p class=\"muted\">Completed a Data Science Bootcamp at UpGrad and multiple AI/ML internships — combining technical depth with analytical thinking to deliver data-driven solutions that create real business value.</p>
+
+      <div class=\"tabs\">
+        <div class=\"tab-titles\" role=\"tablist\">
+          <button class=\"tab active\" data-tab=\"skills\" data-testid=\"tab-skills\">Skills</button>
+          <button class=\"tab\" data-tab=\"exp\" data-testid=\"tab-exp\">Experience</button>
+          <button class=\"tab\" data-tab=\"edu\" data-testid=\"tab-edu\">Education</button>
+          <button class=\"tab\" data-tab=\"cert\" data-testid=\"tab-cert\">Certificates</button>
         </div>
-    </div>
-</div>
 
-<div id="miniprojects">
-    <div class="container">
-        <h1 class="sub-title scroll-reveal">My mini Projects</h1>
-
-        <div class="work-list">
-
-            <div class="work scroll-reveal">
-                <img src="images/st1 (5).jpg">
-                <div class="layer">
-                    <h3>Counting-Claims-A-Statistical-Deep-Dive-into-Dental-Reimbursements(Statistics Projects)</h3>
-                    <p>This project analyzes a random sample of dental claims to estimate average reimbursements for 2021. Confidence intervals are constructed at 90%, 95%, and 99% confidence levels using Excel. The analysis blends statistical rigor with practical healthcare finance insights, revealing how data informs reimbursement understanding.</p>
-                    <a href="https://github.com/GouthumKharvi/Counting-Claims-A-Statistical-Deep-Dive-into-Dental-Reimbursements" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="work scroll-reveal">
-                <img src="images/house.jpg">
-                <div class="layer">
-                    <h3>Statistical-Analysis-of-Factors-Influencing-House-Prices(Statistics Projects)</h3>
-                    <p>This study employs multiple regression analysis to evaluate the impact of price per square foot, number of bathrooms, and floor size on the price of high-floor, spacious 2-bedroom houses, testing the null hypothesis that these factors have no significant effect.</p>
-                    <a href="https://github.com/GouthumKharvi/-Statistical-Analysis-of-Factors-Influencing-House-Prices" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="work scroll-reveal">
-                <img src="images/nftt.jpg">
-                <div class="layer">
-                    <h3>NFT-Market-Trends-SQL-Analysis-of-Cryptopunks-Transactions(SQL Projects)</h3>
-                    <p>This project analyzes Cryptopunks NFT sales from January 2018 to December 2021 using SQL. We explore total sales, top transactions, average prices, and daily trends, including buyer-specific insights and price distributions. The goal is to uncover valuable insights into the NFT market dynamics.</p>
-                    <a href="https://github.com/GouthumKharvi/NFT-Market-Trends-SQL-Analysis-of-Cryptopunks-Transactions" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="work scroll-reveal">
-                <img src="images/healthcare-sector.jpg">
-                <div class="layer">
-                    <h3>Healthcare-summary-report(Tableu Projects)</h3>
-                    <p>This project analyzes patient health metrics from a Healthcare dataset, focusing on diabetes, blood pressure, and BMI. Two interactive dashboards highlight diabetic and non-diabetic distributions and summarize patient data by blood pressure and BMI, culminating in a comprehensive story of key insights and visualizations.</p>
-                    <a href="https://github.com/GouthumKharvi/Healthcare-summary-report-Tableu-" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-
-            
-
-            <div class="work scroll-reveal">
-                <img src="images/annsalary.png">
-
-                <div class="layer">
-                    <h3>ANN Regression Salary Prediction (Deep Learning)</h3>
-
-                    <p>
-                        An end-to-end ANN regression application built with TensorFlow, Keras, Scikit-learn, and Streamlit that predicts customer estimated salary. The project includes data preprocessing, feature engineering, categorical encoding, feature scaling, model training, evaluation, and real-time salary prediction through an interactive web interface.
-                    </p>
-
-                    <a href="https://github.com/GouthumKharvi/ANN-REGRESSION-SALARY-PREDICTION" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-
-        
-
-            <div class="work scroll-reveal">
-                <img src="images/ann class.png">
-            
-                <div class="layer">
-                    <h3>ANN Customer Churn Prediction (Deep Learning)</h3>
-            
-                    <p>
-                        An end-to-end customer churn prediction application built with TensorFlow, Keras, Scikit-learn, and Streamlit. The project includes data preprocessing, feature engineering, label encoding, one-hot encoding, feature scaling, ANN model training, evaluation, and real-time churn prediction through an interactive web application.
-                    </p>
-            
-                    <a href="https://github.com/GouthumKharvi/ANN-CLASSIFICATION-CUSTOMER-CHURN" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            
-            
-            <div class="work scroll-reveal">
-                <img src="images/endtoend.png">
-            
-                <div class="layer">
-                    <h3>Movie Sentiment Prediction using Simple RNN (Deep Learning)</h3>
-            
-                    <p>
-                        An end-to-end deep learning application built with TensorFlow, Keras, and Streamlit that classifies IMDB movie reviews as positive or negative. The project includes text preprocessing, sequence padding, Simple RNN model training, sentiment prediction, and real-time inference through an interactive web interface.
-                    </p>
-            
-                    <a href="https://github.com/GouthumKharvi/End-To_End-DL-Projects-with-Simple-RNN-Movie-Sentiment-Prediction-" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-
-
-            <div class="work scroll-reveal">
-                <img src="images/nextword.png">
-            
-                <div class="layer">
-                    <h3>Next Word Prediction using LSTM & GRU (Deep Learning & NLP)</h3>
-            
-                    <p>
-                        An end-to-end deep learning NLP application built with TensorFlow, Keras, and Streamlit that predicts the next word in a sentence using LSTM and GRU networks. The project includes text preprocessing, tokenization, sequence generation, model training, and real-time next-word prediction using Shakespeare's Hamlet dataset.
-                    </p>
-            
-                    <a href="https://github.com/GouthumKharvi/Next-Word-Prediction-Using-LSTM-and-GRU" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
+        <div class=\"tab-panel active\" id=\"skills\">
+          <ul>
+            <li><span>Python</span> Data analysis, model development &amp; automation with Pandas, NumPy, Scikit-learn, PyTorch.</li>
+            <li><span>SQL</span> Querying, data extraction &amp; database management for analytics.</li>
+            <li><span>Machine Learning</span> Predictive models for regression, classification &amp; optimization.</li>
+            <li><span>Deep Learning</span> CNN &amp; transformer-based models for image and text.</li>
+            <li><span>Generative &amp; Agentic AI</span> RAG pipelines, LangChain, CrewAI assistants &amp; automation.</li>
+            <li><span>NLP</span> Text preprocessing, sentiment, semantic search with BERT &amp; Hugging Face.</li>
+            <li><span>Data Visualization</span> Dynamic dashboards in Power BI, Tableau, Streamlit.</li>
+            <li><span>Data Preprocessing</span> Cleaning, transforming &amp; feature engineering.</li>
+            <li><span>Statistics</span> Hypothesis testing, probability &amp; regression techniques.</li>
+            <li><span>MLOps &amp; Cloud</span> Model deployment &amp; pipelines on AWS SageMaker.</li>
+          </ul>
         </div>
-    </div>
-</div>
 
-<!-- ----------Portfolio------------ -->
-<div id="portfolio">
-    <div class="container">
-        <h1 class="sub-title scroll-reveal">My projects</h1>
-        <div class="work-list">
-
-
-            <!-- Career Navigator AI START -->
-
-            <div class="work scroll-reveal">
-                <img src="images/careernav.png">
-            
-                <div class="layer">
-                    <h3>Career Navigator AI (Multi-Agent AI)</h3>
-            
-                    <p>
-                        An intelligent multi-agent career assistant built with LangChain that analyzes live job opportunities, extracts in-demand skills, provides salary insights, creates personalized learning roadmaps, and generates AI-powered career strategies using real-time market data.
-                    </p>
-            
-                    <a href="https://github.com/GouthumKharvi/CompleteAgenticAI/tree/main/6.1%20Career%20Navigator%20Multi%20Agent-AI-System%20using%20Langchain" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Career Navigator AI END -->
-
-            <!-- ResearchMind AI START -->
-
-            <div class="work scroll-reveal">
-                <img src="images/researchmimd.png">
-            
-                <div class="layer">
-                    <h3>ResearchMind AI (Multi-Agent Research System)</h3>
-            
-                    <p>
-                        A multi-agent AI research assistant built with LangChain that performs live web search, intelligent web scraping, report generation, and AI-powered research evaluation by coordinating multiple specialized agents through a shared state workflow.
-                    </p>
-            
-                    <a href="https://github.com/GouthumKharvi/CompleteAgenticAI/tree/main/6.%20Multi%20Agent-AI-System%20using%20Langchain" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- ResearchMind AI END -->
-
-            <!-- Agentic AI Travel Planner START -->
-
-            <div class="work scroll-reveal">
-                <img src="images/agenticaii.png">
-            
-                <div class="layer">
-                    <h3>Agentic AI Travel Planner (LangChain)</h3>
-            
-                    <p>
-                        An intelligent AI travel planning agent built with LangChain that autonomously gathers country information, live weather, real-time currency conversion, and top tourist attractions using multiple APIs to generate complete travel plans through a ReAct-based reasoning workflow.
-                    </p>
-            
-                    <a href="https://github.com/GouthumKharvi/CompleteAgenticAI/tree/main/5.1%20Agentic-AI-Travel-Planner-Agent" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Agentic AI Travel Planner END -->
-            
-            
-            <!-- Single AI Agent System START -->
-
-            <div class="work scroll-reveal">
-                <img src="images/singlee.png">
-            
-                <div class="layer">
-                    <h3>Single AI Agent System using LangChain (Agentic AI)</h3>
-            
-                    <p>
-                        A production-style AI agent built with LangChain's ReAct framework that reasons through user queries, selects the appropriate tools, retrieves live web search and weather information, and generates intelligent responses using LLMs and real-world APIs.
-                    </p>
-            
-                    <a href="https://github.com/GouthumKharvi/CompleteAgenticAI/tree/main/5.Single%20AI%20Agent%20system%20using%20Langchain" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Single AI Agent System END -->
-                        
-
-            
-            <!-- EcoSort Vision START -->
-
-            <div class="work scroll-reveal">
-                <img src="images/ecosort.png">
-            
-                <div class="layer">
-                    <h3>EcoSort Vision (Computer Vision & MLOps)</h3>
-            
-                    <p>
-                        An end-to-end Computer Vision and MLOps application that detects and classifies 10 categories of waste using YOLO11. Built with Flask, Docker, GitHub Actions, AWS, and CI/CD for automated training, deployment, and real-time object detection.
-                    </p>
-            
-                    <a href="https://github.com/GouthumKharvi/EcoSort-Vision-AI-Powered-Waste-Detection-and-Classification-System-using-YOLO11" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- EcoSort Vision END -->
-            
-
-            <!-- Medical Chatbot START -->
-
-            <div class="work scroll-reveal">
-                <img src="images/Medicalbot.png">
-            
-                <div class="layer">
-                    <h3>Medical Chatbot (GenAI & RAG)</h3>
-            
-                    <p>
-                        A Retrieval-Augmented Generation (RAG) medical chatbot built with LangChain, Pinecone, Groq Llama 3.3, Flask, Docker, and AWS. It retrieves trusted medical knowledge from a vector database to generate accurate, context-aware responses through an interactive chat interface.
-                    </p>
-            
-                    <a href="https://github.com/GouthumKharvi/Medical-Chatbot-GenAI-" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Medical Chatbot END -->
-            
-            
-            <div class="work scroll-reveal">
-                <img src="images/chatbot-restaurant.jpg">
-                <div class="layer">
-                    <h3>AI Global Language Translator(GenAI & AgenticAI Projects)</h3>
-                    <p>A RAG-powered multi-agent Generative AI recipe assistant built with CrewAI, LangChain, and Groq LLMs. It delivers contextual chat, adaptive recipe generation, smart shopping, order tracking, and voice interaction(coming soon) — a complete Agentic AI ecosystem using Streamlit.</p>
-                    <a href="https://github.com/GouthumKharvi/AI-Global-Translator" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/salarypreictionimage.jpg">
-                <div class="layer">
-                    <h3>Salary Prediction(ML-DL Projects)</h3>
-                    <p>This project focuses on predicting employee salaries using machine learning techniques. It provides an end-to-end pipeline—from exploratory data analysis to model training and real-time prediction—allowing users to compare model performance and forecast salaries interactively through a Streamlit interface.</p>
-                    <a href="https://github.com/GouthumKharvi/AI-Global-Translator" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/aitranslator.jpeg">
-                <div class="layer">
-                    <h3>AI Global Language Translator(AI Projects)</h3>
-                    <p>AI Global Language Translator is an AI-powered app for translating text, speech, and files across 100+ languages. It supports real-time translation, voice input, and text-to-speech output. Users can upload any type of documents directly for instant translation. Built with Python, AI, and Streamlit, it's fast, accurate, and easy to use.</p>
-                    <a href="https://github.com/GouthumKharvi/AI-Global-Translator" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/aiparser.png">
-                <div class="layer">
-                    <h3>AI-powered job recommendation system(AI Projects)</h3>
-                    <p>An AI-powered job recommendation system that uses transformer-based sentence embeddings to semantically match candidate resumes with job postings, enhancing recruitment efficiency and candidate-job fit beyond traditional keyword-based search.</p>
-                    <a href="https://github.com/GouthumKharvi/AI-Resume-Parser" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/aistory.jpg">
-                <div class="layer">
-                    <h3>GenAI-Based Children's Story Generator(GenAI Projects)</h3>
-                    <p>A GenAI-Based Children's Story Generator using GPT-2 and Hugging Face Transformers
-                         TinyTales is a Generative AI (GenAI) project designed to create imaginative and age-appropriate children's stories from a simple prompt. Built using the GPT-2 language model and Hugging Face Transformers, the tool generates complete short stories tailored to early readers. It provides a fun and educational experience for parents, teachers, and young learners.</p>
-                    <a href="https://github.com/GouthumKharvi/TinyTales-GenAI" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/aidefect.png">
-                <div class="layer">
-                    <h3>Product-Defect-Detection(AI Projects)</h3>
-                    <p>This project creates an AI-powered web application that detects defective products from uploaded images using deep learning models including MobileNetV2, Custom CNN, and EfficientNetB0. Built with Streamlit, the system provides real-time binary classification (good vs defective) with confidence scoring, email alerts for low-confidence predictions, Grad-CAM visualization for model explainability, and comprehensive logging for performance monitoring, serving as an automated quality control solution for manufacturing environments.</p>
-                    <a href="https://github.com/GouthumKharvi/AI-Product-Defect" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/invoice.jpg">
-                <div class="layer">
-                    <h3>Invoice-Information-Extraction (Python and ML Projects)</h3>
-                    <p>This is projects is about extracting Extract invoice number, invoice date, line items from invoice images. Also, the model structure should be scalable where we can train a model for any field and extract the key-value pair.</p>
-                    <a href="https://github.com/GouthumKharvi/Invoice-Information-Extraction-Using-Python-and-Machine-Learning" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/carprice.jpg">
-                <div class="layer">
-                    <h3> usedcarprediction(ML Projects)</h3>
-                    <p>This project develops a machine learning model to predict used car prices using regression algorithms on vehicle features like brand, model, year, mileage, and fuel type. The system preprocesses data through cleaning, encoding categorical variables, and feature engineering, then compares multiple algorithms including Linear Regression, Random Forest, and XGBoost to identify the best performing model. After hyperparameter tuning and cross-validation, the final model achieves accurate price predictions using evaluation metrics like RMSE and R-squared, providing a practical tool for buyers and sellers to estimate fair market values in the used car market.</p>
-                    <a href="https://github.com/GouthumKharvi/usedcarprediction" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/collegeevent.jpeg">
-                <div class="layer">
-                    <h3> student feedback analyzer(ML, NLP and PowerBI Projects)</h3>
-                    <p>This project analyzes student feedback from college events using NLP and machine learning to extract actionable insights. The system processes Google Forms data containing ratings and text comments, applies sentiment analysis using TextBlob and VADER, and builds classification models (Logistic Regression, Random Forest) to categorize feedback as positive, neutral, or negative. The solution includes a Streamlit web app for real-time sentiment prediction and an interactive Power BI dashboard, revealing that seminars outperform workshops and identifying top-performing departments while providing data-driven recommendations for improving future campus events.</p>
-                    <a href="https://github.com/GouthumKharvi/FUTURE_DS_03" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/social.png">
-                <div class="layer">
-                    <h3>Social Media Campaign Performance Tracker (PowerBI Projects)</h3>
-                    <p>This is a Power BI dashboard project designed to analyze Facebook and Instagram ad campaign performance. It leverages interactive visualizations, DAX measures, and KPI cards to reveal user behaviour, campaign effectiveness, and ROI over a specified period.</p>
-                    <a href="https://github.com/GouthumKharvi/FUTURE_DS_02" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/ecom1.jpeg">
-                <div class="layer">
-                    <h3>E-commerce sales dashboard (ML, NLP and PowerBI Projects)</h3>
-                    <p>This is a Power BI e-commerce sales dashboard project that analyzes Superstore sales data from 2011-2014 to create interactive business intelligence visualizations. The project involves cleaning and modeling sales data using Power Query, creating DAX measures for key metrics, and building comprehensive dashboards with charts, maps, and forecasts that reveal insights like Canon copier being the top product (₹62K sales), November-December as peak sales periods, and West/East regions driving 62% of revenue. It includes sales forecasting, regional analysis, product performance tracking, and interactive filters, essentially transforming raw e-commerce data into actionable business insights through professional Power BI dashboards - completed as part of a data science internship task.</p>
-                    <a href="https://github.com/GouthumKharvi/FUTURE_DS_01" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/pc.jpg">
-                <div class="layer">
-                    <h3>Ecommerce Product Categorization(ML, DL Projects)</h3>
-                    <p>A project focused on e-commerce product categorization by description, utilizing NLP along with Machine Learning and Deep Learning, implemented with PyTorch.</p>
-                    <a href="https://github.com/GouthumKharvi/Product-Categorization" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/retails.jpg">
-                <div class="layer">
-                    <h3>Retail-Store-Allocation-Optimization-using-PuLP(ML, DL and NLP Projects)</h3>
-                    <p>Retail-Store-Allocation-Optimization-using-PuLP. This project uses Linear Programming (PuLP/Gurobi) to optimize product distribution from warehouses to retail stores by minimizing shipping costs while meeting supply and demand constraints. Given warehouse inventory, store demand, and shipping cost data, it calculates the optimal allocation plan that determines exactly how many products to ship from each warehouse to each store for minimum total cost - essentially solving a classic supply chain optimization problem using Python.</p>
-                    <a href="https://github.com/GouthumKharvi/Retail-Store-Allocation-Optimization-using-PuLP" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/cred.jpg">
-                <div class="layer">
-                    <h3>credit card fraud detection project(ML Projects)</h3>
-                    <p>A credit card fraud detection project leveraging machine learning. It encompasses data exploration, cleaning, balancing (SMOTE), feature engineering, and model evaluation. Various models, including Logistic Regression, XGBoost, and Decision Tree were tested, with the final model achieving impressive ROC-AUC scores of 0.99 (train) and 0.97 (test).</p>
-                    <a href="https://github.com/GouthumKharvi/Credit-Card-Capstone-" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/NLP (1).jpg">
-                <div class="layer">
-                    <h3>Duplicate Detection using Random Forest and Bag of Words (BoW)(Machine learning, Deep learning, NLP Projects)</h3>
-                    <p>This project addresses the problem of identifying duplicate questions using NLP. It combines Bag of Words text vectorization with custom feature engineering to create a powerful feature set. A RandomForestClassifier is trained on these features to predict question duplication, with the model deployed via Streamlit on Heroku.</p>
-                    <a href="https://github.com/GouthumKharvi/Duplicate_Question_Pair-NLP-" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/Blinkitt (1).png">
-                <div class="layer">
-                    <h3>Comprehensive-Sales-Analysis-of-Blinkit-Using(Power-BI Projects)</h3>
-                    <p>This project focuses on an in-depth analysis of Blinkit's sales data to explore performance metrics, customer satisfaction, and inventory management using Power BI. By examining various KPIs, the analysis seeks to uncover actionable insights and highlight opportunities for business improvement.</p>
-                    <a href="https://github.com/GouthumKharvi/Comprehensive-Sales-Analysis-of-Blinkit-Using-Power-BI" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>   
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/sla.jpg">
-                <div class="layer">
-                    <h3>Real-Time-SLA-Monitoring-and-Alert-System(ML & Data Engineering Projects)</h3>
-                    <p>https://github.com/GouthumKharvi/Real-Time-SLA-Monitoring-and-Alert-System. A real-time SLA Monitoring and Alert System that tracks SLA violations from platform logs, sends automated email alerts, and provides an interactive Streamlit dashboard with filters and auto-refresh. It also simulates cloud storage using a local database for scalable report management.</p>
-                    <a href="https://github.com/GouthumKharvi/Real-Time-SLA-Monitoring-and-Alert-System" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/hrimage.jpg">
-                <div class="layer">
-                    <h3>HR-Insights-and-Employee-Data-Dashboard(Tableau Projects)</h3>
-                    <p>This Tableau dashboard provides HR managers with a clear view of workforce data, including key metrics, demographics, and income analysis. It tracks hires, terminations, department distributions, and salary variations, with detailed employee records and filters for in-depth analysis.</p>
-                    <a href="https://github.com/GouthumKharvi/HR-Insights-and-Employee-Data-Dashboard?tab=readme-ov-file#hr-insights-and-employee-data-dashboard" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/carrsales.jpeg">
-                <div class="layer">
-                    <h3>Car-Sales-Database-Management-System (SQL Projects)</h3>
-                    <p>The `GlobalCarDetails` database structures car sales data for effective analysis. It organizes information on manufacturers, models, sales, and regions, enabling insights into sales trends, pricing, and manufacturer performance across different markets using SQL queries and sample datasets.</p>
-                    <a href="https://github.com/GouthumKharvi/Car-Sales-Database-Management-System-using-SQL" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="work scroll-reveal">
-                <img src="images/vk2.jpeg">
-                <div class="layer">
-                    <h3>Virat Kohli's Complete T20 Performance Analysis (2010-2024)(Excel Projects)</h3>
-                    <p>The `GlobalCarDetails` database structures car sales data for effective analysis. It organizes information on manufacturers, models, sales, and regions, enabling insights into sales trends, pricing, and manufacturer performance across different markets using SQL queries and sample datasets.</p>
-                    <a href="https://github.com/GouthumKharvi/ViratKohli_T20_Stats_2010-2024" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
+        <div class=\"tab-panel\" id=\"exp\">
+          <ul>
+            <li><span>Aug 2025 – Nov 2025</span> AI-ML Engineer Intern @ InLighnX Global Pvt Ltd</li>
+            <li><span>Aug 2025 – Sep 2025</span> AI-ML Engineer Intern @ Pinnacle Labs</li>
+            <li><span>Jul 2025 – Aug 2025</span> Data Science &amp; Analytics Intern @ Future Interns</li>
+            <li><span>2021 – 2023</span> Technical Support Engineer @ GlowTouch Technologies</li>
+            <li><span>2020 – 2021</span> EPUB Operator @ Bit9 Business Solutions Pvt Ltd</li>
+            <li><span>2019</span> Claims Adjudicator @ HGS — Hinduja Global Solutions</li>
+          </ul>
         </div>
-    </div>
-</div>
 
-<div id="certificates">
-    <div class="container">
-        <h1 class="sub-title scroll-reveal">My Certificates</h1>
-        <div class="work-list">
-            
-            <div class="certificate-item scroll-reveal" onclick="openCertificate('cert1')">
-                <img src="images/upgrad_certificate.jpg" alt="Data Science Bootcamp Certificate">
-                <div class="certificate-overlay">
-                    <h3>Data Science Bootcamp</h3>
-                    <p>upGrad - August 2024</p>
-                    <span class="view-btn">
-                        <i class="fas fa-eye"></i>
-                    </span>
-                </div>
-            </div>
-
-            <div class="certificate-item scroll-reveal" onclick="openCertificate('cert2')">
-                <img src="images/nvidia_certificate.jpg" alt="AI for All Certificate">
-                <div class="certificate-overlay">
-                    <h3>AI for All: From Basics to GenAI Practice</h3>
-                    <p>NVIDIA - July 2025</p>
-                    <span class="view-btn">
-                        <i class="fas fa-eye"></i>
-                    </span>
-                </div>
-            </div>
-
-            <div class="certificate-item scroll-reveal" onclick="openCertificate('cert3')">
-                <img src="images/tata_certificate.jpg" alt="TATA Job Simulation Certificate">
-                <div class="certificate-overlay">
-                    <h3>GenAI Powered Data Analytics Job Simulation</h3>
-                    <p>TATA over Forage - August 2025</p>
-                    <span class="view-btn">
-                        <i class="fas fa-eye"></i>
-                    </span>
-                </div>
-            </div>
-
-            <div class="certificate-item scroll-reveal" onclick="openCertificate('cert4')">
-                <img src="images/future_interns_certificate.jpg" alt="Data Science Internship Certificate">
-                <div class="certificate-overlay">
-                    <h3>Data Science & Analytics Internship</h3>
-                    <p>Future Interns - July 2025</p>
-                    <span class="view-btn">
-                        <i class="fas fa-eye"></i>
-                    </span>
-                </div>
-            </div>
-
-            <div class="certificate-item scroll-reveal" onclick="openCertificate('cert5')">
-                <img src="images/future_interns_certificate-lor.jpg" alt="Data Science Internship Certificate LOR">
-                <div class="certificate-overlay">
-                    <h3>Data Science & Analytics Internship</h3>
-                    <p>Future Interns - July 2025</p>
-                    <span class="view-btn">
-                        <i class="fas fa-eye"></i>
-                    </span>
-                </div>
-            </div>
-            
-            <div class="certificate-item scroll-reveal" onclick="openCertificate('cert6')">
-                <img src="images/pinnacle_certificates.jpg" alt="Artificial Intelligence Internship Certificate">
-                <div class="certificate-overlay">
-                    <h3>Artificial Intelligence & Machine Learning Internship</h3>
-                    <p>Pinnacle labs - August 2025</p>
-                    <span class="view-btn">
-                        <i class="fas fa-eye"></i>
-                    </span>
-                </div>
-            </div>
-
-            <div class="certificate-item scroll-reveal" onclick="openCertificate('cert7')">
-                <img src="images/inlighn.jpg" alt="Artificial Intelligence and Machine Learning Internship Certificate">
-                <div class="certificate-overlay">
-                    <h3>Artificial Intelligence & Machine Learning Internship</h3>
-                    <p>Inlighn X global tech pvt ltd - August 2025</p>
-                    <span class="view-btn">
-                        <i class="fas fa-eye"></i>
-                    </span>
-                </div>
-            </div>
-
+        <div class=\"tab-panel\" id=\"edu\">
+          <ul>
+            <li><span>2024</span> Data Science from UpGrad, Bangalore</li>
+            <li><span>2019</span> BCA — Bhandarkars Arts &amp; Science College, Kundapura</li>
+            <li><span>2016</span> PUC — SVPU College, Gangolli</li>
+            <li><span>2014</span> SSLC — Stella Maris English Medium High School, Gangolli</li>
+          </ul>
         </div>
-    </div>
-</div>
 
-<!-- Certificate Modal -->
-<div id="certificateModal" class="certificate-modal">
-    <span class="certificate-close" onclick="closeCertificate()">&times;</span>
-    <div class="certificate-modal-content">
-        <img id="modalCertificateImage" src="" alt="Certificate">
-    </div>
-</div>
-
-<!-- ----------contact------------- -->
-<div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left scroll-reveal">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class="fa-solid fa-paper-plane"></i> gouthumkharvi1899@gmail.com</p>
-                <p><i class="fas fa-phone-alt"></i> 9071101929</p>
-                
-                <div class="social-icons">
-                    <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook"></i>
-                     </a>
-                    <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
-                        <i class="fab fa-twitter-square"></i>
-                    </a>
-                    <a href="https://github.com/GouthumKharvi" target="_blank" aria-label="github">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/gouthum-kharvi-2366a6219" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </div>
-                <a href="images/GouthumKharvi_RESUME(AI-ML).pdf" download class="btn btn2">Download CV</a>
-            </div>
-            <div class="contact-right scroll-reveal">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="Email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-                <span id="msg"></span>
-            </div>
+        <div class=\"tab-panel\" id=\"cert\">
+          <ul>
+            <li><span>UpGrad</span> Data Science Bootcamp Certificate</li>
+            <li><span>UpGrad</span> Hackathon Certificate</li>
+            <li><span>NVIDIA</span> AI for All: From Basics to GenAI Practice</li>
+            <li><span>TATA / Forage</span> GenAI Powered Data Analytics Job Simulation</li>
+            <li><span>Future Interns</span> Data Science Internship + Letter of Recommendation</li>
+            <li><span>Pinnacle Labs</span> AI &amp; Machine Learning Internship</li>
+            <li><span>InLighnX Global</span> AI &amp; Machine Learning Internship</li>
+          </ul>
         </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- MINI PROJECTS -->
+<section id=\"mini\" class=\"section\">
+  <div class=\"section-head\">
+    <span class=\"num\">02 //</span>
+    <h2 class=\"h2\">Mini <em>Projects</em></h2>
+    <p class=\"section-sub\">Eight focused builds covering Statistics, SQL, Tableau &amp; Deep Learning.</p>
+  </div>
+
+  <div class=\"grid\" id=\"miniGrid\"></div>
+</section>
+
+<!-- PROJECTS -->
+<section id=\"projects\" class=\"section\">
+  <div class=\"section-head\">
+    <span class=\"num\">03 //</span>
+    <h2 class=\"h2\">Featured <em>Projects</em></h2>
+    <p class=\"section-sub\">26 end-to-end builds across GenAI, Agentic AI, MLOps, NLP &amp; BI.</p>
+
+    <div class=\"filters\" id=\"filters\">
+      <button class=\"chip active\" data-filter=\"all\" data-testid=\"filter-all\">All</button>
+      <button class=\"chip\" data-filter=\"genai\" data-testid=\"filter-genai\">GenAI / Agentic</button>
+      <button class=\"chip\" data-filter=\"ml\" data-testid=\"filter-ml\">ML / DL</button>
+      <button class=\"chip\" data-filter=\"nlp\" data-testid=\"filter-nlp\">NLP</button>
+      <button class=\"chip\" data-filter=\"bi\" data-testid=\"filter-bi\">BI / Analytics</button>
+      <button class=\"chip\" data-filter=\"sql\" data-testid=\"filter-sql\">SQL</button>
+    </div>
+  </div>
+
+  <div class=\"grid\" id=\"projGrid\"></div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id=\"certs\" class=\"section\">
+  <div class=\"section-head\">
+    <span class=\"num\">04 //</span>
+    <h2 class=\"h2\">Certi<em>ficates</em></h2>
+    <p class=\"section-sub\">Original certifications — click to view full image.</p>
+  </div>
+
+  <div class=\"cert-grid\" id=\"certGrid\"></div>
+</section>
+
+<!-- CONTACT -->
+<section id=\"contact\" class=\"section\">
+  <div class=\"section-head\">
+    <span class=\"num\">05 //</span>
+    <h2 class=\"h2\">Let's <em>talk</em></h2>
+    <p class=\"section-sub\">Open to AI / ML engineer, Data Scientist &amp; GenAI roles.</p>
+  </div>
+
+  <div class=\"contact\">
+    <div class=\"contact-left\">
+      <h3 class=\"ctitle\">Reach out directly</h3>
+      <a class=\"contact-row\" href=\"mailto:gouthumkharvi1899@gmail.com\" data-testid=\"contact-email\">
+        <i class=\"fa-solid fa-paper-plane\"></i>
+        <div><span>Email</span><strong>gouthumkharvi1899@gmail.com</strong></div>
+      </a>
+      <a class=\"contact-row\" href=\"tel:+919071101929\" data-testid=\"contact-phone\">
+        <i class=\"fas fa-phone-alt\"></i>
+        <div><span>Phone</span><strong>+91 9071101929</strong></div>
+      </a>
+
+      <div class=\"socials\">
+        <a href=\"https://github.com/GouthumKharvi\" target=\"_blank\" rel=\"noopener\" aria-label=\"GitHub\" data-testid=\"social-github\"><i class=\"fab fa-github\"></i></a>
+        <a href=\"https://www.linkedin.com/in/gouthum-kharvi-2366a6219\" target=\"_blank\" rel=\"noopener\" aria-label=\"LinkedIn\" data-testid=\"social-linkedin\"><i class=\"fab fa-linkedin\"></i></a>
+        <a href=\"https://twitter.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Twitter\" data-testid=\"social-twitter\"><i class=\"fab fa-x-twitter\"></i></a>
+        <a href=\"https://facebook.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Facebook\" data-testid=\"social-facebook\"><i class=\"fab fa-facebook\"></i></a>
+      </div>
+
+      <a class=\"btn primary cv\" href=\"https://customer-assets.emergentagent.com/job_1a30dae5-366e-4fc5-a92b-7365fce0bdfe/artifacts/images/GouthumKharvi_RESUME(AI-ML).pdf\" download data-testid=\"download-cv\">
+        <i class=\"fas fa-download\"></i><span>Download CV</span>
+      </a>
+    </div>
+
+    <div class=\"contact-right\">
+      <form id=\"contactForm\" data-testid=\"contact-form\">
+        <!-- Web3Forms: replace YOUR_ACCESS_KEY_HERE with your free key from https://web3forms.com -->
+        <input type=\"hidden\" name=\"access_key\" value=\"YOUR_ACCESS_KEY_HERE\" />
+        <input type=\"hidden\" name=\"subject\" value=\"New portfolio message — Gouthum Kharvi\" />
+        <input type=\"checkbox\" name=\"botcheck\" style=\"display:none\" />
+
+        <div class=\"field\">
+          <label>Name</label>
+          <input type=\"text\" name=\"name\" required placeholder=\"Your full name\" data-testid=\"form-name\" />
+        </div>
+        <div class=\"field\">
+          <label>Email</label>
+          <input type=\"email\" name=\"email\" required placeholder=\"you@company.com\" data-testid=\"form-email\" />
+        </div>
+        <div class=\"field\">
+          <label>Message</label>
+          <textarea name=\"message\" rows=\"5\" required placeholder=\"Tell me about the role or project…\" data-testid=\"form-message\"></textarea>
+        </div>
+        <button type=\"submit\" class=\"btn primary\" data-testid=\"form-submit\">
+          <span>Send message</span><i class=\"fas fa-paper-plane\"></i>
+        </button>
+        <p id=\"formMsg\" class=\"form-msg\" data-testid=\"form-msg\"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class=\"footer\">
+  <div>© <span id=\"year\"></span> Gouthum Kharvi · Crafted with <i class=\"fas fa-heart\"></i> &amp; Three.js</div>
+  <div class=\"foot-links\">
+    <a href=\"https://github.com/GouthumKharvi\" target=\"_blank\" rel=\"noopener\">github.com/GouthumKharvi</a>
+  </div>
+</footer>
+
+<!-- Certificate modal -->
+<div class=\"modal\" id=\"certModal\" data-testid=\"cert-modal\">
+  <button class=\"modal-close\" id=\"modalClose\" aria-label=\"close\" data-testid=\"modal-close\"><i class=\"fas fa-times\"></i></button>
+  <img id=\"modalImg\" src=\"\" alt=\"certificate\" />
 </div>
 
-<script>
-    // Tab switching
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-    function opentab(tabname){
-        for(tablink of tablinks){ tablink.classList.remove("active-link"); }
-        for(tabcontent of tabcontents){ tabcontent.classList.remove("active-tab"); }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
-    
-    // Mobile menu
-    var sidemeu = document.getElementById("sidemenu");
-    function openmenu(){ sidemeu.style.right = "0"; }
-    function closemenu(){ sidemeu.style.right = "-200px"; }
-    
-    // Form submission with visual feedback
-    const scriptURL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec' // Replace with your Google Apps Script URL
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-    
-    form.addEventListener('submit', e => {
-        e.preventDefault()
-        
-        // Show loading state
-        const submitBtn = form.querySelector('button[type="submit"]')
-        const originalText = submitBtn.textContent
-        submitBtn.textContent = 'Sending...'
-        submitBtn.disabled = true
-        
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "✓ Message sent successfully!"
-                msg.style.color = "#61b752"
-                msg.style.display = "block"
-                msg.style.marginTop = "20px"
-                msg.style.padding = "10px"
-                msg.style.backgroundColor = "rgba(97, 183, 82, 0.1)"
-                msg.style.borderRadius = "5px"
-                msg.style.animation = "fadeInUp 0.5s ease-out"
-                
-                submitBtn.textContent = originalText
-                submitBtn.disabled = false
-                
-                setTimeout(function(){ 
-                    msg.style.display = "none"
-                }, 5000)
-                form.reset()
-            })
-            .catch(error => {
-                console.error('Error!', error.message)
-                msg.innerHTML = "✗ Something went wrong. Please try again."
-                msg.style.color = "#ff004f"
-                msg.style.display = "block"
-                msg.style.marginTop = "20px"
-                msg.style.padding = "10px"
-                msg.style.backgroundColor = "rgba(255, 0, 79, 0.1)"
-                msg.style.borderRadius = "5px"
-                
-                submitBtn.textContent = originalText
-                submitBtn.disabled = false
-                
-                setTimeout(function(){ 
-                    msg.style.display = "none"
-                }, 5000)
-            })
-    })
-    
-    // Certificate modal
-    const certificateImages = {
-        'cert1': 'images/upgrad_certificate.jpg',
-        'cert2': 'images/nvidia_certificate.jpg', 
-        'cert3': 'images/tata_certificate.jpg',
-        'cert4': 'images/future_interns_certificate.jpg',
-        'cert5': 'images/future_interns_certificate-lor.jpg',
-        'cert6': 'images/pinnacle_certificates.jpg',
-        'cert7': 'images/inlighn.jpg'
-    };
-
-    function openCertificate(certId) {
-        const modal = document.getElementById('certificateModal');
-        const modalImg = document.getElementById('modalCertificateImage');
-        
-        modalImg.src = certificateImages[certId];
-        modal.style.display = 'block';
-    }
-
-    function closeCertificate() {
-        const modal = document.getElementById('certificateModal');
-        modal.style.display = 'none';
-    }
-
-    window.onclick = function(event) {
-        const modal = document.getElementById('certificateModal');
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    }
-    
-    // Scroll reveal animation
-    const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
-    
-    const scrollReveal = () => {
-        scrollRevealElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-            
-            if (elementTop < window.innerHeight - elementVisible) {
-                element.classList.add('active');
-            }
-        });
-    };
-    
-    window.addEventListener('scroll', scrollReveal);
-    scrollReveal(); // Initial check on page load
-    
-    // Custom cursor functionality
-    (function(){
-        if (typeof window === 'undefined') return;
-        
-        // Disable on touch devices
-        if ('ontouchstart' in window || (navigator.maxTouchPoints && navigator.maxTouchPoints > 0)) {
-            return;
-        }
-        
-        function ready(fn){
-            if (document.readyState !== 'loading') fn();
-            else document.addEventListener('DOMContentLoaded', fn);
-        }
-        
-        ready(function(){
-            const cursor = document.querySelector('.cursor');
-            const follower = document.querySelector('.cursor-follower');
-            
-            if (!cursor || !follower) return;
-            
-            let mouseX = window.innerWidth/2, mouseY = window.innerHeight/2;
-            let posX = mouseX, posY = mouseY;
-            const lerp = (a,b,n) => (1-n)*a + n*b;
-            
-            window.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-                cursor.style.left = mouseX + 'px';
-                cursor.style.top = mouseY + 'px';
-            }, {passive:true});
-            
-            function animate(){
-                posX = lerp(posX, mouseX, 0.16);
-                posY = lerp(posY, mouseY, 0.16);
-                follower.style.transform = `translate(${posX}px, ${posY}px) translate(-50%, -50%)`;
-                requestAnimationFrame(animate);
-            }
-            requestAnimationFrame(animate);
-            
-            const hoverSelector = 'a, button, .work, .logo, .layer a, .tab-links, .btn, .view-btn, .certificate-item';
-            
-            document.addEventListener('mouseover', (e) => {
-                const target = e.target.closest && e.target.closest(hoverSelector);
-                if (target) {
-                    cursor.classList.add('cursor--hover');
-                    follower.classList.add('cursor-follower--hover');
-                }
-            });
-            
-            document.addEventListener('mouseout', (e) => {
-                const target = e.target.closest && e.target.closest(hoverSelector);
-                if (target) {
-                    cursor.classList.remove('cursor--hover');
-                    follower.classList.remove('cursor-follower--hover');
-                }
-            });
-            
-            document.addEventListener('mouseover', (e) => {
-                if (e.target.matches('input, textarea, select') || e.target.closest('input, textarea, select')) {
-                    document.documentElement.style.cursor = 'auto';
-                } else {
-                    document.documentElement.style.cursor = 'none';
-                }
-            });
-            
-            document.documentElement.style.cursor = 'none';
-            
-            // Progress bar
-            const progress = document.querySelector('.page-progress');
-            if (progress) {
-                function onScroll(){
-                    const docHeight = document.body.scrollHeight - window.innerHeight;
-                    const scrolled = (window.scrollY / Math.max(1, docHeight)) * 100;
-                    progress.style.width = scrolled + '%';
-                }
-                window.addEventListener('scroll', onScroll, {passive:true});
-                onScroll();
-            }
-        });
-    })();
+<!-- Libs -->
+<script type=\"importmap\">
+{
+  \"imports\": {
+    \"three\": \"https://unpkg.com/three@0.160.0/build/three.module.js\"
+  }
+}
 </script>
-    
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js\"></script>
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js\"></script>
+
+<script type=\"module\" src=\"script.js\"></script>
 </body>
 </html>
+"
+Observation: Create successful: /app/static_portfolio/index.html
